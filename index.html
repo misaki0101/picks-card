@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#0f1115" />
 <link rel="manifest" href="manifest.webmanifest" />
 <link rel="apple-touch-icon" href="icon.svg" />
-<title>选股日记 · 2026-09-08</title>
+<title>选股日记 · 2026-09-09</title>
 <style>
   :root{
     --bg:#0f1115; --card:#1a1d24; --card2:#22262f; --line:#2a2f3a;
@@ -257,7 +257,7 @@
 
   <div class="hd">
     <div class="t"><span class="dot"></span>选股日记</div>
-    <div class="d" id="hd-date">2026-09-08 选股 · 09-08 更新</div>
+    <div class="d" id="hd-date">2026-09-09 选股 · 09-10 更新</div>
   </div>
 
   <!-- 第一大行：活跃市值（多空区间） -->
@@ -344,7 +344,7 @@
 </div>
 
 <script>
-// === 数据：2026-09-08 选股（文档更新于 2026-09-08，与文档一致）===
+// === 数据：2026-09-09 选股（文档更新于 2026-09-10，与文档一致）===
 // 字段：board 板块(688科创板/300创业板)，sec 板块概念，mkNow 最新总市值，
 // chg 最新一日涨幅，kdj {j,jp} 最新J值与昨日J值，reason 选股理由(文档有写才有)
 // AMV = 指南针活跃市值指数 Z_SK0AMV（来源：F:\指南针\unzipped\Z_SK0AMV_daily.csv，提取自本机指南针）
@@ -352,7 +352,7 @@
 // 规则：单日≥+4% 或 连续2日红累计≥+4% 或 连续3日红累计≥+4% → 多头；单日≤-2.3% → 空头；区间持续至反向触发
 // since = 进入当前区间的日期；days = 最近5个交易日 {d:日期, chg:当日涨跌%}
 // UPDATED_AT：最近一次"新选股"更新时间（自动化写入，格式 YYYY-MM-DD HH:MM），用于手机角标/横幅
-const UPDATED_AT = "2026-09-08 22:17";
+const UPDATED_AT = "2026-09-10 00:22";
 const REASONS = {}; // 选股理由兜底（自动化重写 B1/QB 时此表保留，文档有理由的股票在此登记）
 const PUSHER_URL = "https://same-extending-create-acute.trycloudflare.com"; // 推送服务(本机经cloudflared隧道暴露)；重启隧道会变，届时需同步更新此处
 const AMV = {
@@ -362,26 +362,31 @@ const AMV = {
 };
 // 往期选股：完整流程新一期时把旧 B1/QB 备份到此处，渲染到"往期选股"折叠区
 const PREV_B1 = [
-  {name:"锐捷网络",code:"301165",board:"300",sec:"网络交换机",mkNow:"1247亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
-  {name:"中国稀土",code:"000831",board:"",sec:"稀土",mkNow:"592亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
-  {name:"思瑞浦",code:"688536",board:"688",sec:"半导体",mkNow:"419亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},];
-const PREV_QB = [
-  {name:"行云科技",code:"300209",board:"300",sec:"算力租赁",mkNow:"333亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
-  {name:"天孚通信",code:"300394",board:"300",sec:"CPO",mkNow:"3000亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
-  {name:"生益科技",code:"600183",board:"",sec:"PCB",mkNow:"4000亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},];
-const PREV_DATE = "2026-09-07";
-const B1 = [
   {name:"中国石油",code:"601857",board:"",sec:"石油",mkNow:"18000亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
   {name:"宝丰能源",code:"600989",board:"",sec:"煤",mkNow:"1800亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
   {name:"纳芯微",code:"688052",board:"688",sec:"半导体",mkNow:"342亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
   {name:"西部黄金",code:"601069",board:"",sec:"黄金",mkNow:"266亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
   {name:"闰土股份",code:"002440",board:"",sec:"化工产品",mkNow:"143亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},];
-const QB = [
+const PREV_QB = [
   {name:"中粮资本",code:"002423",board:"",sec:"粮食控股",mkNow:"228亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
   {name:"盛屯矿业",code:"600711",board:"",sec:"钴矿",mkNow:"366亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
   {name:"秦禾股份",code:"",board:"",sec:"农药",mkNow:"107亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:"代码反查失败，smartbox未找到该股票"},
   {name:"康美药业",code:"600518",board:"",sec:"中药",mkNow:"200亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
   {name:"江西铜业",code:"600362",board:"",sec:"铜",mkNow:"1000亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},];
+const PREV_DATE = "2026-09-08";
+const B1 = [
+  {name:"中国平安",code:"601318",board:"",sec:"保险",mkNow:"5997亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
+  {name:"潞安环能",code:"601699",board:"",sec:"煤炭",mkNow:"498亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
+  {name:"英科医疗",code:"300677",board:"300",sec:"医疗耗材",mkNow:"352亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
+  {name:"隆鑫通用",code:"603766",board:"",sec:"摩托车",mkNow:"293亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
+  {name:"新集能源",code:"601918",board:"",sec:"煤炭",mkNow:"272亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
+  {name:"中粮资本",code:"002423",board:"",sec:"粮食控股",mkNow:"228亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
+  {name:"三友化工",code:"600409",board:"",sec:"化工",mkNow:"145亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
+  {name:"京北方",code:"002987",board:"",sec:"软件",mkNow:"120亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
+  {name:"哈投股份",code:"600864",board:"",sec:"证券",mkNow:"118亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},];
+const QB = [
+  {name:"潞安环能",code:"601699",board:"",sec:"煤炭",mkNow:"498亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
+  {name:"新集能源",code:"601918",board:"",sec:"煤炭",mkNow:"272亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},];
 const RULE = { takeProfit: 15, stopLoss: -8 }; // 止盈/止损（%），可调
 const ALL = [...B1, ...QB];
 
