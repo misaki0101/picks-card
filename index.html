@@ -354,7 +354,7 @@
 // UPDATED_AT：最近一次"新选股"更新时间（自动化写入，格式 YYYY-MM-DD HH:MM），用于手机角标/横幅
 const UPDATED_AT = "2026-09-10 00:22";
 const REASONS = {}; // 选股理由兜底（自动化重写 B1/QB 时此表保留，文档有理由的股票在此登记）
-const PUSHER_URL = "https://same-extending-create-acute.trycloudflare.com"; // 推送服务(本机经cloudflared隧道暴露)；重启隧道会变，届时需同步更新此处
+const PUSHER_URL = "https://pill-attorneys-brothers-round.trycloudflare.com"; // 推送服务(本机经cloudflared隧道暴露)；重启隧道会变，届时需同步更新此处
 const AMV = {
   date:"2026-09-02", close:182861.70, prev:187685.00, time:"14:58:59",
   zone:"bear", since:"2026-08-19", sinceNote:"-5.3% 转空",
@@ -499,7 +499,7 @@ renderMon();
 // === 持仓股：纯手机本地（2026-08-30 用户要求关闭云端同步，只在手机上用）===
 // 持仓只存本机 localStorage；PUSH_API 仅保留给 0AMV 活跃市值 /api/amv 使用（本机隧道）
 // 隧道地址由本机 tunnel_watch.js 写 push_api.txt；自动化同步已停用（2026-08-30）
-var PUSH_API = 'https://same-extending-create-acute.trycloudflare.com';
+var PUSH_API = 'https://pill-attorneys-brothers-round.trycloudflare.com';
 var CLOUD_API = '';
 // === 内嵌K线快照（tdx 抓取，前复权，60日，YYYYMMDD→MM-DD，每行 [d,o,h,l,c]）===
 // 手机零运行时外网依赖：点开即渲染；网络可达时 showKline 后台刷新到最新
