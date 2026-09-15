@@ -352,7 +352,7 @@
 // 规则：单日≥+4% 或 连续2日红累计≥+4% 或 连续3日红累计≥+4% → 多头；单日≤-2.3% → 空头；区间持续至反向触发
 // since = 进入当前区间的日期；days = 最近5个交易日 {d:日期, chg:当日涨跌%}
 // UPDATED_AT：最近一次"新选股"更新时间（自动化写入，格式 YYYY-MM-DD HH:MM），用于手机角标/横幅
-const UPDATED_AT = "2026-09-14 00:15";
+const UPDATED_AT = "2026-09-15 20:40";
 const REASONS = {}; // 选股理由兜底（自动化重写 B1/QB 时此表保留，文档有理由的股票在此登记）
 const PUSHER_URL = "https://pill-attorneys-brothers-round.trycloudflare.com"; // 推送服务(本机经cloudflared隧道暴露)；重启隧道会变，届时需同步更新此处
 const AMV = {
@@ -362,17 +362,17 @@ const AMV = {
 };
 // 往期选股：完整流程新一期时把旧 B1/QB 备份到此处，渲染到"往期选股"折叠区
 const PREV_B1 = [
-  {name:"英科医疗",code:"300677",board:"300",sec:"医疗耗材",mkNow:"352亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
-  {name:"中石科技",code:"300684",board:"300",sec:"光模块散热",mkNow:"250亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
-  {name:"国恩股份",code:"002768",board:"",sec:"化工塑料",mkNow:"240亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
-  {name:"中粮资本",code:"002423",board:"",sec:"粮食控股",mkNow:"228亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},];
-const PREV_QB = [
-  {name:"华泰证券",code:"601688",board:"",sec:"证券",mkNow:"19亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},];
-const PREV_DATE = "2026-09-10";
-const B1 = [
   {name:"中国平安",code:"601318",board:"",sec:"保险",mkNow:"5800亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
   {name:"牧原股份",code:"002714",board:"",sec:"猪肉",mkNow:"2304亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
   {name:"平安银行",code:"000001",board:"",sec:"银行",mkNow:"2278亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},];
+const PREV_QB = [];
+const PREV_DATE = "2026-09-14";
+const B1 = [
+  {name:"中国平安",code:"601318",board:"",sec:"保险",mkNow:"5800亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
+  {name:"牧原股份",code:"002714",board:"",sec:"猪肉",mkNow:"2304亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
+  {name:"中国太保",code:"601601",board:"",sec:"保险",mkNow:"2256亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
+  {name:"金田股份",code:"601609",board:"",sec:"铜",mkNow:"227亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
+  {name:"奥普特",code:"688686",board:"688",sec:"工业控制装备",mkNow:"170亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},];
 const QB = [];
 const RULE = { takeProfit: 15, stopLoss: -8 }; // 止盈/止损（%），可调
 const ALL = [...B1, ...QB];
