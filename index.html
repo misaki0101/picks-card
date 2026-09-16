@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#0f1115" />
 <link rel="manifest" href="manifest.webmanifest" />
 <link rel="apple-touch-icon" href="icon.svg" />
-<title>选股日记 · 2026-09-14</title>
+<title>选股日记 · 2026-09-15</title>
 <style>
   :root{
     --bg:#0f1115; --card:#1a1d24; --card2:#22262f; --line:#2a2f3a;
@@ -344,7 +344,7 @@
 </div>
 
 <script>
-// === 数据：2026-09-14 选股（文档更新于 2026-09-14，与文档一致）===
+// === 数据：2026-09-15 选股（文档更新于 2026-09-15，与文档一致）===
 // 字段：board 板块(688科创板/300创业板)，sec 板块概念，mkNow 最新总市值，
 // chg 最新一日涨幅，kdj {j,jp} 最新J值与昨日J值，reason 选股理由(文档有写才有)
 // AMV = 指南针活跃市值指数 Z_SK0AMV（来源：F:\指南针\unzipped\Z_SK0AMV_daily.csv，提取自本机指南针）
@@ -352,7 +352,7 @@
 // 规则：单日≥+4% 或 连续2日红累计≥+4% 或 连续3日红累计≥+4% → 多头；单日≤-2.3% → 空头；区间持续至反向触发
 // since = 进入当前区间的日期；days = 最近5个交易日 {d:日期, chg:当日涨跌%}
 // UPDATED_AT：最近一次"新选股"更新时间（自动化写入，格式 YYYY-MM-DD HH:MM），用于手机角标/横幅
-const UPDATED_AT = "2026-09-15 20:40";
+const UPDATED_AT = "2026-09-16 16:45";
 const REASONS = {}; // 选股理由兜底（自动化重写 B1/QB 时此表保留，文档有理由的股票在此登记）
 const PUSHER_URL = "https://pill-attorneys-brothers-round.trycloudflare.com"; // 推送服务(本机经cloudflared隧道暴露)；重启隧道会变，届时需同步更新此处
 const AMV = {
@@ -364,16 +364,20 @@ const AMV = {
 const PREV_B1 = [
   {name:"中国平安",code:"601318",board:"",sec:"保险",mkNow:"5800亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
   {name:"牧原股份",code:"002714",board:"",sec:"猪肉",mkNow:"2304亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
-  {name:"平安银行",code:"000001",board:"",sec:"银行",mkNow:"2278亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},];
-const PREV_QB = [];
-const PREV_DATE = "2026-09-14";
-const B1 = [
-  {name:"中国平安",code:"601318",board:"",sec:"保险",mkNow:"5800亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
-  {name:"牧原股份",code:"002714",board:"",sec:"猪肉",mkNow:"2304亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
   {name:"中国太保",code:"601601",board:"",sec:"保险",mkNow:"2256亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
   {name:"金田股份",code:"601609",board:"",sec:"铜",mkNow:"227亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
   {name:"奥普特",code:"688686",board:"688",sec:"工业控制装备",mkNow:"170亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},];
-const QB = [];
+const PREV_QB = [];
+const PREV_DATE = "2026-09-14";
+const B1 = [
+  {name:"中国平安",code:"601318",board:"",sec:"保险",mkNow:"5746亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
+  {name:"中国石化",code:"600028",board:"",sec:"石化",mkNow:"5139亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
+  {name:"中国人保",code:"601319",board:"",sec:"保险",mkNow:"2744亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
+  {name:"中国太保",code:"601601",board:"",sec:"保险",mkNow:"2233亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
+  {name:"海油工程",code:"600583",board:"",sec:"油气",mkNow:"264亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
+  {name:"海天精工",code:"601882",board:"",sec:"机床制造",mkNow:"113亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},];
+const QB = [
+  {name:"生益电子",code:"688183",board:"688",sec:"PCB",mkNow:"1054亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},];
 const RULE = { takeProfit: 15, stopLoss: -8 }; // 止盈/止损（%），可调
 const ALL = [...B1, ...QB];
 
