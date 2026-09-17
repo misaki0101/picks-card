@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8" />
@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#0f1115" />
 <link rel="manifest" href="manifest.webmanifest" />
 <link rel="apple-touch-icon" href="icon.svg" />
-<title>选股日记 · 2026-09-15</title>
+<title>閫夎偂鏃ヨ 路 2026-09-16</title>
 <style>
   :root{
     --bg:#0f1115; --card:#1a1d24; --card2:#22262f; --line:#2a2f3a;
@@ -26,7 +26,7 @@
   .hd .t .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--accent);margin-right:8px;vertical-align:middle}
   .hd .d{font-size:12px;color:var(--sub)}
 
-  /* 多空区间：页面底色（bull=多头红 / bear=空头绿） */
+  /* 澶氱┖鍖洪棿锛氶〉闈㈠簳鑹诧紙bull=澶氬ご绾?/ bear=绌哄ご缁匡級 */
   body.z-bull{--bg:#26100f;--card:#2b1614;--card2:#331a18;--line:#4a2320}
   body.z-bear{--bg:#0c1e16;--card:#122619;--card2:#162c1e;--line:#22503a}
   @media (prefers-color-scheme: light){
@@ -34,7 +34,7 @@
     body.z-bear{--bg:#e9f5ee;--card:#fff;--card2:#e6f2eb;--line:#c8e3d3}
   }
 
-  /* 活跃市值第一大行（醒目） */
+  /* 娲昏穬甯傚€肩涓€澶ц锛堥啋鐩級 */
   .amv{margin:12px 0 4px;border-radius:14px;padding:14px 16px;position:relative;overflow:hidden;
     border:1px solid var(--line)}
   body.z-bull .amv{background:linear-gradient(160deg,rgba(226,59,59,.22),rgba(226,59,59,.06))}
@@ -89,7 +89,7 @@
   .it .chg{font-size:13px;font-weight:700;flex:0 0 auto;min-width:62px;margin-left:9px;
     text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
   .chg.u{color:var(--up)}.chg.d{color:var(--dn)}.chg.f{color:var(--sub)}
-  /* 尾部槽：选股行留空、持仓行放删除按钮 —— 保证所有区块涨幅右边缘在同一条垂直线 */
+  /* 灏鹃儴妲斤細閫夎偂琛岀暀绌恒€佹寔浠撹鏀惧垹闄ゆ寜閽?鈥斺€?淇濊瘉鎵€鏈夊尯鍧楁定骞呭彸杈圭紭鍦ㄥ悓涓€鏉″瀭鐩寸嚎 */
   .it .tail{flex:0 0 22px;display:flex;align-items:center;justify-content:flex-end;user-select:none}
   .l2{display:flex;align-items:center;gap:6px;margin-top:3px;font-size:11px;color:var(--muted);flex-wrap:wrap}
   .l2 .mk{white-space:nowrap}
@@ -100,7 +100,7 @@
   .l2 .ar{font-weight:700}
   .ar.u{color:var(--up)}.ar.d{color:var(--dn)}
 
-  /* 顶部刷新按钮（手机首屏即可点，不用下滑） */
+  /* 椤堕儴鍒锋柊鎸夐挳锛堟墜鏈洪灞忓嵆鍙偣锛屼笉鐢ㄤ笅婊戯級 */
   .refbtn{display:flex;align-items:center;justify-content:center;gap:6px;width:100%;
     margin:0 0 4px;padding:12px;
     background:var(--card2);color:var(--txt);border:1px solid var(--line);border-radius:12px;
@@ -122,8 +122,8 @@
   details.mon summary{padding:11px 13px;font-size:13px;color:var(--sub);cursor:pointer;list-style:none;
     display:flex;align-items:center;justify-content:space-between}
   details.mon summary::-webkit-details-marker{display:none}
-  details.mon summary::after{content:"展开▾";font-size:11px;color:var(--muted)}
-  details.mon[open] summary::after{content:"收起▴"}
+  details.mon summary::after{content:"灞曞紑鈻?;font-size:11px;color:var(--muted)}
+  details.mon[open] summary::after{content:"鏀惰捣鈻?}
   .mod table{width:100%;border-collapse:collapse;font-size:12px;font-variant-numeric:tabular-nums}
   .mod th{font-size:10.5px;color:var(--muted);font-weight:600;padding:7px 6px;text-align:right;
     border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--card2);white-space:nowrap}
@@ -131,20 +131,20 @@
   .mod td{padding:7px 6px;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap}
   .mod tr:last-child td{border-bottom:none}
 
-  /* 可折叠模块（今日选股 / 选后监测 / 持仓股） */
+  /* 鍙姌鍙犳ā鍧楋紙浠婃棩閫夎偂 / 閫夊悗鐩戞祴 / 鎸佷粨鑲★級 */
   details.mod{margin:11px 0;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
   details.mod > summary{list-style:none;cursor:pointer;padding:12px 14px;font-size:14px;font-weight:700;
     display:flex;align-items:center;gap:8px;color:var(--txt);user-select:none}
   details.mod > summary::-webkit-details-marker{display:none}
-  details.mod > summary::after{content:"▾";margin-left:auto;color:var(--muted);font-size:12px}
-  details.mod[open] > summary::after{content:"▴"}
+  details.mod > summary::after{content:"鈻?;margin-left:auto;color:var(--muted);font-size:12px}
+  details.mod[open] > summary::after{content:"鈻?}
   details.mod > summary .cnt{font-size:11px;font-weight:600;color:var(--sub);background:var(--chip);
     padding:1px 8px;border-radius:10px;white-space:nowrap}
   details.mod .sec{margin:8px 13px 6px}
   details.mod .list{border:none;border-radius:0;border-top:1px solid var(--line)}
   details.mod .copyall{margin:10px 13px 13px;width:calc(100% - 26px)}
 
-  /* 持仓股：添加表单 */
+  /* 鎸佷粨鑲★細娣诲姞琛ㄥ崟 */
   .hadd{display:flex;gap:7px;padding:10px 12px 2px;flex-wrap:wrap}
   .hadd input{flex:1;min-width:120px;background:var(--card2);color:var(--txt);border:1px solid var(--line);
     border-radius:9px;padding:9px 10px;font-size:14px;outline:none}
@@ -153,7 +153,7 @@
     padding:9px 16px;font-size:14px;font-weight:700;cursor:pointer}
   .hadd button:active{opacity:.85}
   .htip{font-size:11.5px;color:var(--muted);padding:2px 14px 6px;min-height:15px}
-  /* 持仓跌破提醒角标：红=跌破多空线，黄=跌破短期趋势线（只显示角标，不响不震） */
+  /* 鎸佷粨璺岀牬鎻愰啋瑙掓爣锛氱孩=璺岀牬澶氱┖绾匡紝榛?璺岀牬鐭湡瓒嬪娍绾匡紙鍙樉绀鸿鏍囷紝涓嶅搷涓嶉渿锛?*/
   .it .al{display:inline-flex;align-items:center;justify-content:center;width:17px;height:17px;border-radius:50%;
       color:#fff;font-size:12px;font-weight:600;line-height:1;cursor:pointer;flex:0 0 auto}
   .it .al.bull{background:#e23b3b}
@@ -189,7 +189,7 @@
     box-shadow:0 6px 20px rgba(0,0,0,.4)}
   #toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 
-  /* K线弹窗 */
+  /* K绾垮脊绐?*/
   #kl-modal{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center}
   #kl-modal[hidden]{display:none}
   .kl-mask{position:absolute;inset:0;background:rgba(0,0,0,.62)}
@@ -219,7 +219,7 @@
   #kl-cv,#kl-chl{position:absolute;display:none;pointer-events:none;z-index:2;background:rgba(120,140,170,.6)}
   #kl-cv{width:1px}
   #kl-chl{height:1px}
-  /* 行情信息栏：固定在 K 线图上方，永不遮挡 K 线 */
+  /* 琛屾儏淇℃伅鏍忥細鍥哄畾鍦?K 绾垮浘涓婃柟锛屾案涓嶉伄鎸?K 绾?*/
   #kl-tip{display:none;flex-wrap:wrap;gap:1px 12px;align-items:center;
     margin:0 0 7px;padding:5px 10px;border:1px solid var(--line);border-radius:8px;
     background:var(--card2);color:var(--txt);font-size:11px;line-height:1.6}
@@ -230,7 +230,7 @@
   #kl-tip .dn{color:#1ea672;font-weight:700}
   #kl-tip .flat{color:var(--muted);font-weight:700}
 
-  /* 更新提示横幅 + 图标角标（小红点） */
+  /* 鏇存柊鎻愮ず妯箙 + 鍥炬爣瑙掓爣锛堝皬绾㈢偣锛?*/
   .upd{display:flex;align-items:center;justify-content:space-between;gap:10px;
     margin-bottom:12px;padding:9px 13px;border-radius:11px;font-size:13px;color:var(--txt);
     background:linear-gradient(90deg,rgba(245,211,106,.18),rgba(245,211,106,.06));
@@ -256,82 +256,82 @@
 <div class="wrap">
 
   <div class="hd">
-    <div class="t"><span class="dot"></span>选股日记</div>
-    <div class="d" id="hd-date">2026-09-10 选股 · 09-11 更新</div>
+    <div class="t"><span class="dot"></span>閫夎偂鏃ヨ</div>
+    <div class="d" id="hd-date">2026-09-16 閫夎偂 路 09-17 鏇存柊</div>
   </div>
 
-  <!-- 第一大行：活跃市值（多空区间） -->
+  <!-- 绗竴澶ц锛氭椿璺冨競鍊硷紙澶氱┖鍖洪棿锛?-->
   <div class="amv" id="amv"></div>
 
-  <div class="sub" id="subline">行情截至 <span id="qtime">--:--</span> · <a href="https://www.kdocs.cn/l/ccIRM5oPN4oq" target="_blank">文档</a></div>
+  <div class="sub" id="subline">琛屾儏鎴嚦 <span id="qtime">--:--</span> 路 <a href="https://www.kdocs.cn/l/ccIRM5oPN4oq" target="_blank">鏂囨。</a></div>
 
-  <!-- 模块：今日选股 -->
+  <!-- 妯″潡锛氫粖鏃ラ€夎偂 -->
   <details class="mod" open>
-    <summary>今日选股</summary>
-    <div class="sec"><h3>B1</h3><span class="tag">核心</span></div>
+    <summary>浠婃棩閫夎偂</summary>
+    <div class="sec"><h3>B1</h3><span class="tag">鏍稿績</span></div>
     <div class="list" id="b1"></div>
-    <div class="sec"><h3>鼎美搬砖</h3><span class="tag">短线</span></div>
+    <div class="sec"><h3>榧庣編鎼爾</h3><span class="tag">鐭嚎</span></div>
     <div class="list" id="qb"></div>
-    <button class="copyall" id="copyall">📋 一键复制全部名称</button>
+    <button class="copyall" id="copyall">馃搵 涓€閿鍒跺叏閮ㄥ悕绉?/button>
   </details>
 
-  <!-- 模块：往期选股 -->
+  <!-- 妯″潡锛氬線鏈熼€夎偂 -->
   <details class="mod" id="prev-mod" hidden>
-    <summary>往期选股</summary>
+    <summary>寰€鏈熼€夎偂</summary>
     <div id="prev-body"></div>
   </details>
 
-  <!-- 模块：选后监测 -->
+  <!-- 妯″潡锛氶€夊悗鐩戞祴 -->
   <details class="mod">
-    <summary>选后监测 <span class="cnt">基准 2026-08-28</span></summary>
+    <summary>閫夊悗鐩戞祴 <span class="cnt">鍩哄噯 2026-08-28</span></summary>
     <table>
-      <thead><tr><th>股票</th><th>基准</th><th>现价</th><th>盈亏</th><th>状态</th></tr></thead>
+      <thead><tr><th>鑲＄エ</th><th>鍩哄噯</th><th>鐜颁环</th><th>鐩堜簭</th><th>鐘舵€?/th></tr></thead>
       <tbody id="mon"></tbody>
     </table>
     <div class="mon-note" id="mon-note"></div>
   </details>
 
-  <!-- 模块：持仓股（自己添加，存本机） -->
+  <!-- 妯″潡锛氭寔浠撹偂锛堣嚜宸辨坊鍔狅紝瀛樻湰鏈猴級 -->
   <details class="mod" open>
-    <summary>持仓股</summary>
+    <summary>鎸佷粨鑲?/summary>
     <div class="hadd">
-      <input id="h-in" type="text" placeholder="输入代码或名称，如 603259 / 药明康德" autocomplete="off">
-      <input id="h-cost" type="number" step="0.01" inputmode="decimal" placeholder="成本价(选填)">
-      <button id="h-add">添加</button>
+      <input id="h-in" type="text" placeholder="杈撳叆浠ｇ爜鎴栧悕绉帮紝濡?603259 / 鑽槑搴峰痉" autocomplete="off">
+      <input id="h-cost" type="number" step="0.01" inputmode="decimal" placeholder="鎴愭湰浠?閫夊～)">
+      <button id="h-add">娣诲姞</button>
     </div>
     <div class="htip" id="h-tip"></div>
     <div class="list" id="hold"></div>
-    <div class="mon-note">输入代码或名称即可添加（如 603259 / 药明康德），自动显示行情与 K 线；首次联网拉取后本机缓存，之后点开秒出。手机/电脑经本机隧道同步。</div>
+    <div class="mon-note">杈撳叆浠ｇ爜鎴栧悕绉板嵆鍙坊鍔狅紙濡?603259 / 鑽槑搴峰痉锛夛紝鑷姩鏄剧ず琛屾儏涓?K 绾匡紱棣栨鑱旂綉鎷夊彇鍚庢湰鏈虹紦瀛橈紝涔嬪悗鐐瑰紑绉掑嚭銆傛墜鏈?鐢佃剳缁忔湰鏈洪毀閬撳悓姝ャ€?/div>
   </details>
 
 </div>
-<div id="toast">已复制</div>
+<div id="toast">宸插鍒?/div>
 <div id="al-modal" class="al-modal" hidden></div>
 
-<!-- K线弹窗：点股票行弹出，实时拉东方财富前复权日K -->
+<!-- K绾垮脊绐楋細鐐硅偂绁ㄨ寮瑰嚭锛屽疄鏃舵媺涓滄柟璐㈠瘜鍓嶅鏉冩棩K -->
 <div id="kl-modal" hidden>
   <div class="kl-mask"></div>
   <div class="kl-box">
     <div class="kl-head">
       <span class="t" id="kl-title"></span>
       <span style="display:flex;align-items:center;gap:5px">
-        <button class="zb" id="kl-left" title="往前看">‹</button>
-        <button class="zb" id="kl-right" title="往后看">›</button>
-        <button class="zb" id="kl-zout" title="缩小">−</button>
-        <button class="zb" id="kl-zin" title="放大">＋</button>
-        <button class="zb" id="kl-reset" title="全览复位">⤢</button>
-        <button id="kl-close" aria-label="关闭">✕</button>
+        <button class="zb" id="kl-left" title="寰€鍓嶇湅">鈥?/button>
+        <button class="zb" id="kl-right" title="寰€鍚庣湅">鈥?/button>
+        <button class="zb" id="kl-zout" title="缂╁皬">鈭?/button>
+        <button class="zb" id="kl-zin" title="鏀惧ぇ">锛?/button>
+        <button class="zb" id="kl-reset" title="鍏ㄨ澶嶄綅">猡?/button>
+        <button id="kl-close" aria-label="鍏抽棴">鉁?/button>
       </span>
     </div>
     <div class="kl-nav">
-      <button class="nb" id="kl-prev">‹ 上一只</button>
+      <button class="nb" id="kl-prev">鈥?涓婁竴鍙?/button>
       <span class="pos" id="kl-pos"></span>
-      <button class="nb" id="kl-next">下一只 ›</button>
+      <button class="nb" id="kl-next">涓嬩竴鍙?鈥?/button>
     </div>
     <div class="kl-per">
-      <button class="pb on" id="kl-pday">日K</button>
-      <button class="pb" id="kl-pweek">周K</button>
-      <button class="pb" id="kl-pmin">分时</button>
+      <button class="pb on" id="kl-pday">鏃</button>
+      <button class="pb" id="kl-pweek">鍛↘</button>
+      <button class="pb" id="kl-pmin">鍒嗘椂</button>
     </div>
     <div id="kl-tip"></div>
     <div id="kl-wrap" style="position:relative">
@@ -344,77 +344,78 @@
 </div>
 
 <script>
-// === 数据：2026-09-15 选股（文档更新于 2026-09-15，与文档一致）===
-// 字段：board 板块(688科创板/300创业板)，sec 板块概念，mkNow 最新总市值，
-// chg 最新一日涨幅，kdj {j,jp} 最新J值与昨日J值，reason 选股理由(文档有写才有)
-// AMV = 指南针活跃市值指数 Z_SK0AMV（来源：F:\指南针\unzipped\Z_SK0AMV_daily.csv，提取自本机指南针）
-// zone 多空区间：bull=多头 / bear=空头 / neutral=中性
-// 规则：单日≥+4% 或 连续2日红累计≥+4% 或 连续3日红累计≥+4% → 多头；单日≤-2.3% → 空头；区间持续至反向触发
-// since = 进入当前区间的日期；days = 最近5个交易日 {d:日期, chg:当日涨跌%}
-// UPDATED_AT：最近一次"新选股"更新时间（自动化写入，格式 YYYY-MM-DD HH:MM），用于手机角标/横幅
+// === 鏁版嵁锛?026-09-15 閫夎偂锛堟枃妗ｆ洿鏂颁簬 2026-09-15锛屼笌鏂囨。涓€鑷达級===
+// 瀛楁锛歜oard 鏉垮潡(688绉戝垱鏉?300鍒涗笟鏉?锛宻ec 鏉垮潡姒傚康锛宮kNow 鏈€鏂版€诲競鍊硷紝
+// chg 鏈€鏂颁竴鏃ユ定骞咃紝kdj {j,jp} 鏈€鏂癑鍊间笌鏄ㄦ棩J鍊硷紝reason 閫夎偂鐞嗙敱(鏂囨。鏈夊啓鎵嶆湁)
+// AMV = 鎸囧崡閽堟椿璺冨競鍊兼寚鏁?Z_SK0AMV锛堟潵婧愶細F:\鎸囧崡閽圽unzipped\Z_SK0AMV_daily.csv锛屾彁鍙栬嚜鏈満鎸囧崡閽堬級
+// zone 澶氱┖鍖洪棿锛歜ull=澶氬ご / bear=绌哄ご / neutral=涓€?
+// 瑙勫垯锛氬崟鏃モ墺+4% 鎴?杩炵画2鏃ョ孩绱鈮?4% 鎴?杩炵画3鏃ョ孩绱鈮?4% 鈫?澶氬ご锛涘崟鏃モ墹-2.3% 鈫?绌哄ご锛涘尯闂存寔缁嚦鍙嶅悜瑙﹀彂
+// since = 杩涘叆褰撳墠鍖洪棿鐨勬棩鏈燂紱days = 鏈€杩?涓氦鏄撴棩 {d:鏃ユ湡, chg:褰撴棩娑ㄨ穼%}
+// UPDATED_AT锛氭渶杩戜竴娆?鏂伴€夎偂"鏇存柊鏃堕棿锛堣嚜鍔ㄥ寲鍐欏叆锛屾牸寮?YYYY-MM-DD HH:MM锛夛紝鐢ㄤ簬鎵嬫満瑙掓爣/妯箙
 const UPDATED_AT = "2026-09-16 16:45";
-const REASONS = {}; // 选股理由兜底（自动化重写 B1/QB 时此表保留，文档有理由的股票在此登记）
-const PUSHER_URL = "https://pill-attorneys-brothers-round.trycloudflare.com"; // 推送服务(本机经cloudflared隧道暴露)；重启隧道会变，届时需同步更新此处
+const REASONS = {}; // 閫夎偂鐞嗙敱鍏滃簳锛堣嚜鍔ㄥ寲閲嶅啓 B1/QB 鏃舵琛ㄤ繚鐣欙紝鏂囨。鏈夌悊鐢辩殑鑲＄エ鍦ㄦ鐧昏锛?
+const PUSHER_URL = "https://pill-attorneys-brothers-round.trycloudflare.com"; // 鎺ㄩ€佹湇鍔?鏈満缁廲loudflared闅ч亾鏆撮湶)锛涢噸鍚毀閬撲細鍙橈紝灞婃椂闇€鍚屾鏇存柊姝ゅ
 const AMV = {
   date:"2026-09-02", close:182861.70, prev:187685.00, time:"14:58:59",
-  zone:"bear", since:"2026-08-19", sinceNote:"-5.3% 转空",
+  zone:"bear", since:"2026-08-19", sinceNote:"-5.3% 杞┖",
   days:[{d:"08-27",chg:2.32},{d:"08-28",chg:-1.1},{d:"08-31",chg:0.7},{d:"09-01",chg:-1.54},{d:"09-02",chg:-2.57}],
 };
-// 往期选股：完整流程新一期时把旧 B1/QB 备份到此处，渲染到"往期选股"折叠区
+// 寰€鏈熼€夎偂锛氬畬鏁存祦绋嬫柊涓€鏈熸椂鎶婃棫 B1/QB 澶囦唤鍒版澶勶紝娓叉煋鍒?寰€鏈熼€夎偂"鎶樺彔鍖?
 const PREV_B1 = [
-  {name:"中国平安",code:"601318",board:"",sec:"保险",mkNow:"5800亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
-  {name:"牧原股份",code:"002714",board:"",sec:"猪肉",mkNow:"2304亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
-  {name:"中国太保",code:"601601",board:"",sec:"保险",mkNow:"2256亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
-  {name:"金田股份",code:"601609",board:"",sec:"铜",mkNow:"227亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
-  {name:"奥普特",code:"688686",board:"688",sec:"工业控制装备",mkNow:"170亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},];
-const PREV_QB = [];
-const PREV_DATE = "2026-09-14";
+  {name:"涓浗骞冲畨",code:"601318",board:"",sec:"淇濋櫓",mkNow:"5746浜?,chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
+  {name:"涓浗鐭冲寲",code:"600028",board:"",sec:"鐭冲寲",mkNow:"5139浜?,chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
+  {name:"涓浗浜轰繚",code:"601319",board:"",sec:"淇濋櫓",mkNow:"2744浜?,chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
+  {name:"涓浗澶繚",code:"601601",board:"",sec:"淇濋櫓",mkNow:"2233浜?,chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
+  {name:"娴锋补宸ョ▼",code:"600583",board:"",sec:"娌规皵",mkNow:"264浜?,chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
+  {name:"娴峰ぉ绮惧伐",code:"601882",board:"",sec:"鏈哄簥鍒堕€?,mkNow:"113浜?,chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},];
+const PREV_QB = [
+  {name:"鐢熺泭鐢靛瓙",code:"688183",board:"688",sec:"PCB",mkNow:"1054浜?,chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},];
+const PREV_DATE = "2026-09-15";
 const B1 = [
-  {name:"中国平安",code:"601318",board:"",sec:"保险",mkNow:"5746亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
-  {name:"中国石化",code:"600028",board:"",sec:"石化",mkNow:"5139亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
-  {name:"中国人保",code:"601319",board:"",sec:"保险",mkNow:"2744亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
-  {name:"中国太保",code:"601601",board:"",sec:"保险",mkNow:"2233亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
-  {name:"海油工程",code:"600583",board:"",sec:"油气",mkNow:"264亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
-  {name:"海天精工",code:"601882",board:"",sec:"机床制造",mkNow:"113亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},];
+  {name:"涓浗浜轰繚",code:"601319",board:"",sec:"淇濋櫓",mkNow:"2744浜?,chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
+  {name:"鐢熺泭鐢靛瓙",code:"688183",board:"688",sec:"PCB",mkNow:"1000浜?,chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
+  {name:"涓埅瑗块",code:"000768",board:"",sec:"鑸┖瑁呭",mkNow:"617浜?,chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},];
 const QB = [
-  {name:"生益电子",code:"688183",board:"688",sec:"PCB",mkNow:"1054亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},];
-const RULE = { takeProfit: 15, stopLoss: -8 }; // 止盈/止损（%），可调
+  {name:"娣寳鐭夸笟",code:"600985",board:"",sec:"鐒︾偔鐓?,mkNow:"448浜?,chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
+  {name:"楣忛紟鎺ц偂",code:"002938",board:"",sec:"PCB",mkNow:"2102浜?,chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
+  {name:"闀块鍏夌氦",code:"601869",board:"",sec:"鍏夌氦",mkNow:"1898浜?,chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},];
+const RULE = { takeProfit: 15, stopLoss: -8 }; // 姝㈢泩/姝㈡崯锛?锛夛紝鍙皟
 const ALL = [...B1, ...QB];
 
 function fmtChg(c){return (c>0?'+':'')+c.toFixed(2)+'%'}
 function chgCls(c){return c>0.005?'u':(c<-0.005?'d':'f')}
 
-// 多空区间：页面底色 + 活跃市值大横幅（第一大行）。抽成函数，刷新后可重绘
+// 澶氱┖鍖洪棿锛氶〉闈㈠簳鑹?+ 娲昏穬甯傚€煎ぇ妯箙锛堢涓€澶ц锛夈€傛娊鎴愬嚱鏁帮紝鍒锋柊鍚庡彲閲嶇粯
 function renderAMV(){
   const zone = AMV.zone || 'neutral';
   document.body.classList.remove('z-bull','z-bear','z-neutral');
   document.body.classList.add('z-'+zone);
   const meta = document.querySelector('meta[name=theme-color]');
   if(meta) meta.content = zone==='bull' ? '#26100f' : (zone==='bear' ? '#0c1e16' : '#0f1115');
-  document.title = (zone==='bull'?'🟥 多头':zone==='bear'?'🟩 空头':'') + ' · 选股日记';
+  document.title = (zone==='bull'?'馃煡 澶氬ご':zone==='bear'?'馃煩 绌哄ご':'') + ' 路 閫夎偂鏃ヨ';
 
-  const zoneTxt = zone==='bull'?'多 头 区 间':zone==='bear'?'空 头 区 间':'中 性 观 望';
+  const zoneTxt = zone==='bull'?'澶?澶?鍖?闂?:zone==='bear'?'绌?澶?鍖?闂?:'涓?鎬?瑙?鏈?;
   const chg = (AMV.prev>0)?(AMV.close/AMV.prev-1)*100:0;
   const cls = chg>0.005?'u':(chg<-0.005?'d':'f');
   document.getElementById('amv').innerHTML = `
     <div class="row1">
-      <span class="lab">活跃市值 <span style="opacity:.65" title="数据时刻：指南针写入该值的时刻；盘中每分钟变，收盘定格">(${AMV.date.slice(5)}${AMV.time?' '+AMV.time:''})</span></span>
+      <span class="lab">娲昏穬甯傚€?<span style="opacity:.65" title="鏁版嵁鏃跺埢锛氭寚鍗楅拡鍐欏叆璇ュ€肩殑鏃跺埢锛涚洏涓瘡鍒嗛挓鍙橈紝鏀剁洏瀹氭牸">(${AMV.date.slice(5)}${AMV.time?' '+AMV.time:''})</span></span>
       <span class="zone">${zoneTxt}</span>
-      <button class="amv-ref" id="amv-ref" title="立即刷新活跃市值">↻</button>
+      <button class="amv-ref" id="amv-ref" title="绔嬪嵆鍒锋柊娲昏穬甯傚€?>鈫?/button>
     </div>
     <div class="chgline">
       <span class="pct chg ${cls}">${(chg>0?'+':'')+chg.toFixed(2)}%</span>
     </div>
-    <div class="since">${AMV.since?`自 ${AMV.since} ${AMV.sinceNote||''}`:''}</div>`;
+    <div class="since">${AMV.since?`鑷?${AMV.since} ${AMV.sinceNote||''}`:''}</div>`;
 }
 renderAMV();
 
-// 列表
+// 鍒楄〃
 function row(s){
-  // 行情/KDJ 可能尚未刷到（清历史留存后一律从最新拉）：全部做空值保护，未到显示占位
+  // 琛屾儏/KDJ 鍙兘灏氭湭鍒峰埌锛堟竻鍘嗗彶鐣欏瓨鍚庝竴寰嬩粠鏈€鏂版媺锛夛細鍏ㄩ儴鍋氱┖鍊间繚鎶わ紝鏈埌鏄剧ず鍗犱綅
   const kj = !!(s.kdj && s.kdj.j!=null && s.kdj.jp!=null);
   const kd = kj ? (s.kdj.j >= s.kdj.jp ? 'u' : 'd') : '';
-  const ar = kd==='u' ? '↑' : (kd==='d' ? '↓' : '');
+  const ar = kd==='u' ? '鈫? : (kd==='d' ? '鈫? : '');
   const reason = s.reason || (typeof REASONS!=='undefined' && REASONS[s.code]) || '';
   return `<div class="it" data-code="${s.code}" data-name="${s.name}">
     <div class="l1">
@@ -423,25 +424,25 @@ function row(s){
         ${s.board?`<span class="bd ${s.board==='688'?'b688':'b300'}">${s.board}</span>`:''}
       </div>
       <span class="sc">${s.sec}</span>
-      <span class="chg ${chgCls(s.chg)}">${s.chg!=null?fmtChg(s.chg):'…'}</span>
+      <span class="chg ${chgCls(s.chg)}">${s.chg!=null?fmtChg(s.chg):'鈥?}</span>
       <span class="tail"></span>
     </div>
     <div class="l2">
       <span class="cd" data-code="${s.code}">${s.code}</span>
-      <span class="mk">市值 <b>${s.mkNow||'…'}</b></span>
-      <span class="kdj">J <b>${kj?s.kdj.j.toFixed(1):'—'}</b><span class="ar ${kd}">${ar}</span></span>
+      <span class="mk">甯傚€?<b>${s.mkNow||'鈥?}</b></span>
+      <span class="kdj">J <b>${kj?s.kdj.j.toFixed(1):'鈥?}</b><span class="ar ${kd}">${ar}</span></span>
     </div>
-    ${reason?`<div class="l3"><span class="rs">📌 ${reason}</span></div>`:''}
+    ${reason?`<div class="l3"><span class="rs">馃搶 ${reason}</span></div>`:''}
   </div>`;
 }
-// 选股列表渲染（抽成函数，刷新行情后可重绘）
+// 閫夎偂鍒楄〃娓叉煋锛堟娊鎴愬嚱鏁帮紝鍒锋柊琛屾儏鍚庡彲閲嶇粯锛?
 function renderPicks(){
   document.getElementById('b1').innerHTML = B1.map(row).join('');
   document.getElementById('qb').innerHTML = QB.map(row).join('');
 }
 renderPicks();
 
-// 往期选股渲染（如有 PREV_B1/PREV_QB 则展开折叠区）
+// 寰€鏈熼€夎偂娓叉煋锛堝鏈?PREV_B1/PREV_QB 鍒欏睍寮€鎶樺彔鍖猴級
 function renderPrev(){
   const mod = document.getElementById('prev-mod');
   const body = document.getElementById('prev-body');
@@ -451,56 +452,56 @@ function renderPrev(){
   if(!hasPrev){ mod.hidden = true; return; }
   mod.hidden = false;
   const allPrev = [...(PREV_B1||[]), ...(PREV_QB||[])];
-  // 数量显示已按用户要求移除
+  // 鏁伴噺鏄剧ず宸叉寜鐢ㄦ埛瑕佹眰绉婚櫎
   body.innerHTML = `
-    <div class="sec"><h3>B1</h3><span class="tag">核心</span></div>
+    <div class="sec"><h3>B1</h3><span class="tag">鏍稿績</span></div>
     <div class="list">${(PREV_B1||[]).map(row).join('')}</div>
     ${(PREV_QB&&PREV_QB.length)?`
-    <div class="sec"><h3>鼎美搬砖</h3><span class="tag">短线</span></div>
+    <div class="sec"><h3>榧庣編鎼爾</h3><span class="tag">鐭嚎</span></div>
     <div class="list">${PREV_QB.map(row).join('')}</div>`:''}`;
 }
 renderPrev();
 
-// 监测表渲染（抽成函数，刷新行情后可重绘）
-var HOLD_ALERT = {};   // 持仓跌破提醒状态 {code:{bullBelow,trendBelow,bullVal,trendVal,price}}；须早于任何渲染调用
+// 鐩戞祴琛ㄦ覆鏌擄紙鎶芥垚鍑芥暟锛屽埛鏂拌鎯呭悗鍙噸缁橈級
+var HOLD_ALERT = {};   // 鎸佷粨璺岀牬鎻愰啋鐘舵€?{code:{bullBelow,trendBelow,bullVal,trendVal,price}}锛涢』鏃╀簬浠讳綍娓叉煋璋冪敤
 function renderMon(){
   const all=ALL.map(s=>{
-    // 价格未刷到时（清历史留存后一律从最新拉）：pnl 为 null，显示占位不算盈亏
+    // 浠锋牸鏈埛鍒版椂锛堟竻鍘嗗彶鐣欏瓨鍚庝竴寰嬩粠鏈€鏂版媺锛夛細pnl 涓?null锛屾樉绀哄崰浣嶄笉绠楃泩浜?
     const pnl=(s.price!=null && s.base)?(s.price/s.base-1)*100:null;
     let st,cls;
-    if(pnl==null){st='待刷新';cls='hold'}
-    else if(pnl>=RULE.takeProfit){st='止盈';cls='tp'}
-    else if(pnl<=RULE.stopLoss){st='止损预警';cls='sl'}
-    else{st='持有';cls='hold'}
+    if(pnl==null){st='寰呭埛鏂?;cls='hold'}
+    else if(pnl>=RULE.takeProfit){st='姝㈢泩';cls='tp'}
+    else if(pnl<=RULE.stopLoss){st='姝㈡崯棰勮';cls='sl'}
+    else{st='鎸佹湁';cls='hold'}
     return {...s,pnl,st,cls};
   }).sort((a,b)=>(b.pnl==null?-1e9:b.pnl)-(a.pnl==null?-1e9:a.pnl));
   document.getElementById('mon').innerHTML=all.map(s=>{
     const c=(s.pnl==null)?'var(--sub)':(s.pnl>0.005?'var(--up)':(s.pnl<-0.005?'var(--dn)':'var(--sub)'));
     return `<tr>
-      <td>${s.name}</td><td>${s.base.toFixed(2)}</td><td>${s.price!=null?s.price.toFixed(2):'…'}</td>
-      <td style="color:${c};font-weight:600">${s.pnl!=null?fmtChg(s.pnl):'…'}</td>
+      <td>${s.name}</td><td>${s.base.toFixed(2)}</td><td>${s.price!=null?s.price.toFixed(2):'鈥?}</td>
+      <td style="color:${c};font-weight:600">${s.pnl!=null?fmtChg(s.pnl):'鈥?}</td>
       <td><span class="st ${s.cls}">${s.st}</span></td>
     </tr>`;
   }).join('');
   document.getElementById('mon-note').textContent=
-    `止盈 ≥ +${RULE.takeProfit}%，止损预警 ≤ ${RULE.stopLoss}%。`;
+    `姝㈢泩 鈮?+${RULE.takeProfit}%锛屾鎹熼璀?鈮?${RULE.stopLoss}%銆俙;
 }
 renderMon();
 
-// === 持仓股：纯手机本地（2026-08-30 用户要求关闭云端同步，只在手机上用）===
-// 持仓只存本机 localStorage；PUSH_API 仅保留给 0AMV 活跃市值 /api/amv 使用（本机隧道）
-// 隧道地址由本机 tunnel_watch.js 写 push_api.txt；自动化同步已停用（2026-08-30）
+// === 鎸佷粨鑲★細绾墜鏈烘湰鍦帮紙2026-08-30 鐢ㄦ埛瑕佹眰鍏抽棴浜戠鍚屾锛屽彧鍦ㄦ墜鏈轰笂鐢級===
+// 鎸佷粨鍙瓨鏈満 localStorage锛汸USH_API 浠呬繚鐣欑粰 0AMV 娲昏穬甯傚€?/api/amv 浣跨敤锛堟湰鏈洪毀閬擄級
+// 闅ч亾鍦板潃鐢辨湰鏈?tunnel_watch.js 鍐?push_api.txt锛涜嚜鍔ㄥ寲鍚屾宸插仠鐢紙2026-08-30锛?
 var PUSH_API = 'https://pill-attorneys-brothers-round.trycloudflare.com';
 var CLOUD_API = '';
-// === 内嵌K线快照（tdx 抓取，前复权，60日，YYYYMMDD→MM-DD，每行 [d,o,h,l,c]）===
-// 手机零运行时外网依赖：点开即渲染；网络可达时 showKline 后台刷新到最新
-var KL_DATA = {};   // 内嵌K线快照已移除（2026-08-30）：手机联网打开时 cacheKline 直接拉最新，不再显示旧快照;
+// === 鍐呭祵K绾垮揩鐓э紙tdx 鎶撳彇锛屽墠澶嶆潈锛?0鏃ワ紝YYYYMMDD鈫扢M-DD锛屾瘡琛?[d,o,h,l,c]锛?==
+// 鎵嬫満闆惰繍琛屾椂澶栫綉渚濊禆锛氱偣寮€鍗虫覆鏌擄紱缃戠粶鍙揪鏃?showKline 鍚庡彴鍒锋柊鍒版渶鏂?
+var KL_DATA = {};   // 鍐呭祵K绾垮揩鐓у凡绉婚櫎锛?026-08-30锛夛細鎵嬫満鑱旂綉鎵撳紑鏃?cacheKline 鐩存帴鎷夋渶鏂帮紝涓嶅啀鏄剧ず鏃у揩鐓?
 var HOLD = (function(){
   try{ var a=JSON.parse(localStorage.getItem('picks_hold_v1')||'[]'); return Array.isArray(a)?a:[]; }catch(e){ return []; }
 })();
 function saveHoldLocal(){
   try{
-    // 只持久化持仓信息（code/name/mkt/cost/board/备注），不存行情字段——避免显示"历史留存"的旧价
+    // 鍙寔涔呭寲鎸佷粨淇℃伅锛坈ode/name/mkt/cost/board/澶囨敞锛夛紝涓嶅瓨琛屾儏瀛楁鈥斺€旈伩鍏嶆樉绀?鍘嗗彶鐣欏瓨"鐨勬棫浠?
     var slim=HOLD.map(function(h){ return {code:h.code, name:h.name, mkt:h.mkt, cost:h.cost, board:h.board, reason:h.reason}; });
     localStorage.setItem('picks_hold_v1', JSON.stringify(slim));
   }catch(e){}
@@ -511,20 +512,20 @@ function postHoldings(base){
     .then(function(r){return r.json();}).then(function(j){ return !!(j && (j.ok || j.ok===undefined)); });
 }
 function postHoldingsTimed(base, ms){
-  // 带超时的提交：防止某路请求挂起导致整个 promise 永不 settle
+  // 甯﹁秴鏃剁殑鎻愪氦锛氶槻姝㈡煇璺姹傛寕璧峰鑷存暣涓?promise 姘镐笉 settle
   return Promise.race([
     postHoldings(base),
     new Promise(function(_, rej){ setTimeout(function(){ rej(new Error('timeout')); }, ms||8000); })
   ]);
 }
 function saveHoldCloud(){
-  // 云端优先（免费、不依赖电脑），失败回退本机隧道；都失败返回 false 供 UI 提示
+  // 浜戠浼樺厛锛堝厤璐广€佷笉渚濊禆鐢佃剳锛夛紝澶辫触鍥為€€鏈満闅ч亾锛涢兘澶辫触杩斿洖 false 渚?UI 鎻愮ず
   if(CLOUD_API || PUSH_API){
     var first = CLOUD_API || PUSH_API;
     var fallback = (CLOUD_API && PUSH_API) ? PUSH_API : '';
     return postHoldingsTimed(first).then(function(ok){
       if(ok) return true;
-      // 云端成功标志异常（响应格式不对）→ 若有隧道则兜底
+      // 浜戠鎴愬姛鏍囧織寮傚父锛堝搷搴旀牸寮忎笉瀵癸級鈫?鑻ユ湁闅ч亾鍒欏厹搴?
       if(fallback) return postHoldingsTimed(fallback).then(function(ok2){ return !!ok2; });
       return false;
     }).catch(function(){
@@ -534,8 +535,8 @@ function saveHoldCloud(){
   }
   return Promise.resolve(false);
 }
-function saveHold(){ saveHoldLocal(); }   // 纯手机本地（不再依赖电脑云端）
-// 云端持仓与本地合并：保留本机新增（隧道曾中断时加的），云端只补全行情字段，绝不覆盖你新加的
+function saveHold(){ saveHoldLocal(); }   // 绾墜鏈烘湰鍦帮紙涓嶅啀渚濊禆鐢佃剳浜戠锛?
+// 浜戠鎸佷粨涓庢湰鍦板悎骞讹細淇濈暀鏈満鏂板锛堥毀閬撴浘涓柇鏃跺姞鐨勶級锛屼簯绔彧琛ュ叏琛屾儏瀛楁锛岀粷涓嶈鐩栦綘鏂板姞鐨?
 function mergeHoldings(cloud){
   if(!cloud || !cloud.length) return;
   var map={}; HOLD.forEach(function(h){ map[h.code]=h; });
@@ -548,14 +549,14 @@ function mergeHoldings(cloud){
   HOLD=Object.keys(map).map(function(k){return map[k];});
 }
 function loadHoldCloud(){
-  // 拉取优先级：CLOUD_API（云端）→ PUSH_API（本机隧道）。失败给可见提示，不影响本机使用
+  // 鎷夊彇浼樺厛绾э細CLOUD_API锛堜簯绔級鈫?PUSH_API锛堟湰鏈洪毀閬擄級銆傚け璐ョ粰鍙鎻愮ず锛屼笉褰卞搷鏈満浣跨敤
   var bases = [];
   if(CLOUD_API) bases.push(CLOUD_API);
   if(PUSH_API && PUSH_API!==CLOUD_API) bases.push(PUSH_API);
   if(!bases.length) return;
   var attempt = function(i){
     if(i>=bases.length){
-      holdTip('云端同步不可用（本机可正常使用）');
+      holdTip('浜戠鍚屾涓嶅彲鐢紙鏈満鍙甯镐娇鐢級');
       return;
     }
     fetchWithTimeout(bases[i]+'/api/holdings',{},6000).then(function(r){return r.json();}).then(function(j){
@@ -564,7 +565,7 @@ function loadHoldCloud(){
         saveHoldLocal();
         renderHold();
         refreshHoldQuote();
-        saveHoldCloud();   // 把本机新增的反向同步回云端
+        saveHoldCloud();   // 鎶婃湰鏈烘柊澧炵殑鍙嶅悜鍚屾鍥炰簯绔?
         holdTip('');
       } else { attempt(i+1); }
     }).catch(function(){ attempt(i+1); });
@@ -575,7 +576,7 @@ function holdBoard(code){ return /^688/.test(code)?'688':(/^30/.test(code)?'300'
 function holdRow(h,hi){
   var pnl=(h.cost>0&&h.price>0)?(h.price/h.cost-1)*100:null;
   var pc=(pnl==null)?'f':(pnl>0.005?'u':(pnl<-0.005?'d':'f'));
-  var idx=B1.length+QB.length+hi;   // 在K线切换列表里的位置（持仓与今日选股重名时也能定位准）
+  var idx=B1.length+QB.length+hi;   // 鍦↘绾垮垏鎹㈠垪琛ㄩ噷鐨勪綅缃紙鎸佷粨涓庝粖鏃ラ€夎偂閲嶅悕鏃朵篃鑳藉畾浣嶅噯锛?
   return `<div class="it" data-code="${h.code}" data-name="${h.name}" data-idx="${idx}">
     <div class="l1">
       <div class="l1m">
@@ -587,14 +588,14 @@ function holdRow(h,hi){
            return ''; })()}
       </div>
       <span class="sc">${h.mkNow||''}</span>
-      <span class="chg ${(h.price!=null&&h.chg!=null)?chgCls(h.chg):'f'}">${(h.price!=null&&h.chg!=null)?fmtChg(h.chg):'…'}</span>
-      <span class="tail"><button class="del" data-del="${h.code}" aria-label="删除">✕</button></span>
+      <span class="chg ${(h.price!=null&&h.chg!=null)?chgCls(h.chg):'f'}">${(h.price!=null&&h.chg!=null)?fmtChg(h.chg):'鈥?}</span>
+      <span class="tail"><button class="del" data-del="${h.code}" aria-label="鍒犻櫎">鉁?/button></span>
     </div>
     <div class="l2">
       <span class="cd" data-code="${h.code}">${h.code}</span>
-      <span class="mk">现价 <b>${h.price!=null?h.price.toFixed(2):'…'}</b></span>
-      <span class="cost" data-cost="${h.code}">成本 <b>${h.cost>0?h.cost.toFixed(2):'点此填'}</b></span>
-      ${pnl!=null?`<span class="pnl"><span class="${pc}">盈亏 <b>${fmtChg(pnl)}</b></span></span>`:''}
+      <span class="mk">鐜颁环 <b>${h.price!=null?h.price.toFixed(2):'鈥?}</b></span>
+      <span class="cost" data-cost="${h.code}">鎴愭湰 <b>${h.cost>0?h.cost.toFixed(2):'鐐规濉?}</b></span>
+      ${pnl!=null?`<span class="pnl"><span class="${pc}">鐩堜簭 <b>${fmtChg(pnl)}</b></span></span>`:''}
     </div>
   </div>`;
 }
@@ -603,10 +604,10 @@ function renderHold(){
   if(!el)return;
   HOLD.forEach(function(h){ h.board=holdBoard(h.code); });
   el.innerHTML = HOLD.length ? HOLD.map(function(h,i){ return holdRow(h,i); }).join('')
-    : '<div class="empty">还没有持仓股。<br>上面输入代码或名称（如 603259 / 药明康德），可顺带填成本价。</div>';
-  // 持仓数量显示已按用户要求移除
+    : '<div class="empty">杩樻病鏈夋寔浠撹偂銆?br>涓婇潰杈撳叆浠ｇ爜鎴栧悕绉帮紙濡?603259 / 鑽槑搴峰痉锛夛紝鍙『甯﹀～鎴愭湰浠枫€?/div>';
+  // 鎸佷粨鏁伴噺鏄剧ず宸叉寜鐢ㄦ埛瑕佹眰绉婚櫎
 }
-function refreshHoldQuote(){   // 批量拉行情（东财 ulist，有 CORS，可直连）
+function refreshHoldQuote(){   // 鎵归噺鎷夎鎯咃紙涓滆储 ulist锛屾湁 CORS锛屽彲鐩磋繛锛?
   if(!HOLD.length)return;
   var secids=HOLD.map(function(h){ return h.mkt+'.'+h.code; }).join(',');
   fetchWithTimeout('https://push2.eastmoney.com/api/qt/ulist.np/get?secids='+secids+'&fields=f2,f3,f12,f14,f20&fltt=2',{},8000)
@@ -617,13 +618,13 @@ function refreshHoldQuote(){   // 批量拉行情（东财 ulist，有 CORS，�
       var d=map[h.code]; if(!d)return;
       if(typeof d.f2==='number') h.price=d.f2;
       if(typeof d.f3==='number') h.chg=d.f3;
-      if(typeof d.f20==='number') h.mkNow=(d.f20/1e8).toFixed(0)+'亿';
+      if(typeof d.f20==='number') h.mkNow=(d.f20/1e8).toFixed(0)+'浜?;
       var _hn=saneName(d.f14); if(_hn) h.name=_hn;
     });
     renderHold();
   }).catch(function(){});
 }
-// 代码/名称 → 股票（东财 suggest 无 CORS，用 JSONP 注入 script）
+// 浠ｇ爜/鍚嶇О 鈫?鑲＄エ锛堜笢璐?suggest 鏃?CORS锛岀敤 JSONP 娉ㄥ叆 script锛?
 var _sugN=0;
 function suggestStock(kw, cb){
   var fn='__emSug'+(++_sugN), s=document.createElement('script'), done=false;
@@ -634,8 +635,8 @@ function suggestStock(kw, cb){
     var hit=null;
     for(var i=0;i<list.length;i++){
       var d=list[i];
-      if(d.Classify==='BK')continue;                         // 跳过板块/概念，保留A股+ETF+基金
-      if(/^\d{6}$/.test(kw) && d.Code!==kw)continue;         // 输6位代码时精确匹配
+      if(d.Classify==='BK')continue;                         // 璺宠繃鏉垮潡/姒傚康锛屼繚鐣橝鑲?ETF+鍩洪噾
+      if(/^\d{6}$/.test(kw) && d.Code!==kw)continue;         // 杈?浣嶄唬鐮佹椂绮剧‘鍖归厤
       hit=d; break;
     }
     cb(hit);
@@ -651,66 +652,66 @@ function addHold(){
   var inp=document.getElementById('h-in'), cst=document.getElementById('h-cost');
   if(!inp)return;
   var kw=(inp.value||'').trim();
-  if(!kw){ holdTip('先输入代码或名称'); return; }
-  holdTip('查询中…');
+  if(!kw){ holdTip('鍏堣緭鍏ヤ唬鐮佹垨鍚嶇О'); return; }
+  holdTip('鏌ヨ涓€?);
   suggestStock(kw, function(d){
     if(!d){
-      // 搜索源不通或该代码未收录：若输入是6位代码，允许手动直接添加（不依赖外网）
+      // 鎼滅储婧愪笉閫氭垨璇ヤ唬鐮佹湭鏀跺綍锛氳嫢杈撳叆鏄?浣嶄唬鐮侊紝鍏佽鎵嬪姩鐩存帴娣诲姞锛堜笉渚濊禆澶栫綉锛?
       if(/^\d{6}$/.test(kw)){
-        var nm=prompt('未自动识别「'+kw+'」，可直接添加。请输入名称（可留空）：', '');
-        if(nm===null){ holdTip('已取消'); return; }
-        var m=/^(6|9|5)/.test(kw)?'1':'0';   // 5开头=沪市ETF/基金，其余按深市
+        var nm=prompt('鏈嚜鍔ㄨ瘑鍒€?+kw+'銆嶏紝鍙洿鎺ユ坊鍔犮€傝杈撳叆鍚嶇О锛堝彲鐣欑┖锛夛細', '');
+        if(nm===null){ holdTip('宸插彇娑?); return; }
+        var m=/^(6|9|5)/.test(kw)?'1':'0';   // 5寮€澶?娌競ETF/鍩洪噾锛屽叾浣欐寜娣卞競
         HOLD.push({code:kw, name:(nm&&nm.trim())||kw, mkt:m, cost:0, board:holdBoard(kw)});
-        saveHold(); renderHold(); quoteOnly();   // 立即刷行情
-        setTimeout(function(){ quoteOnly(); }, 1000);   // 1s 重试（覆盖网络抖动）
-        setTimeout(function(){ quoteOnly(); }, 3000);   // 3s 重试
+        saveHold(); renderHold(); quoteOnly();   // 绔嬪嵆鍒疯鎯?
+        setTimeout(function(){ quoteOnly(); }, 1000);   // 1s 閲嶈瘯锛堣鐩栫綉缁滄姈鍔級
+        setTimeout(function(){ quoteOnly(); }, 3000);   // 3s 閲嶈瘯
         setTimeout(function(){
           quoteOnly().then(function(){
             var last=HOLD[HOLD.length-1];
-            if(last && last.code===kw && last.price==null) holdTip('⚠ '+kw+' 行情暂未拉到，5s后自动重试');
+            if(last && last.code===kw && last.price==null) holdTip('鈿?'+kw+' 琛屾儏鏆傛湭鎷夊埌锛?s鍚庤嚜鍔ㄩ噸璇?);
           });
         }, 6000);
-        cacheKline(kw, m);   // 预拉K线，首次点开即秒出
+        cacheKline(kw, m);   // 棰勬媺K绾匡紝棣栨鐐瑰紑鍗崇鍑?
         inp.value=''; if(cst)cst.value='';
-        holdTip('已手动添加 '+kw+'，K线已缓存');
-        toast('已添加 '+kw);
+        holdTip('宸叉墜鍔ㄦ坊鍔?'+kw+'锛孠绾垮凡缂撳瓨');
+        toast('宸叉坊鍔?'+kw);
         return;
       }
-      holdTip('没找到这只股票，换个代码或全名试试'); return;
+      holdTip('娌℃壘鍒拌繖鍙偂绁紝鎹釜浠ｇ爜鎴栧叏鍚嶈瘯璇?); return;
     }
-    for(var i=0;i<HOLD.length;i++){ if(HOLD[i].code===d.Code){ holdTip(d.Name+' 已在持仓里'); return; } }
+    for(var i=0;i<HOLD.length;i++){ if(HOLD[i].code===d.Code){ holdTip(d.Name+' 宸插湪鎸佷粨閲?); return; } }
     var m=(d.QuoteID&&String(d.QuoteID).split('.')[0])||(/^(6|9)/.test(d.Code)?'1':'0');
     var c=parseFloat(cst&&cst.value)||0;
     HOLD.push({code:d.Code, name:d.Name, mkt:String(m), cost:c, board:holdBoard(d.Code)});
-    saveHold(); renderHold(); quoteOnly();   // 立即刷行情
-    setTimeout(function(){ quoteOnly(); }, 1000);   // 1s 重试（覆盖网络抖动）
-    setTimeout(function(){ quoteOnly(); }, 3000);   // 3s 重试
+    saveHold(); renderHold(); quoteOnly();   // 绔嬪嵆鍒疯鎯?
+    setTimeout(function(){ quoteOnly(); }, 1000);   // 1s 閲嶈瘯锛堣鐩栫綉缁滄姈鍔級
+    setTimeout(function(){ quoteOnly(); }, 3000);   // 3s 閲嶈瘯
     setTimeout(function(){
       quoteOnly().then(function(){
         var last=HOLD[HOLD.length-1];
-        if(last && last.code===d.Code && last.price==null) holdTip('⚠ '+d.Code+' 行情暂未拉到，5s后自动重试');
+        if(last && last.code===d.Code && last.price==null) holdTip('鈿?'+d.Code+' 琛屾儏鏆傛湭鎷夊埌锛?s鍚庤嚜鍔ㄩ噸璇?);
       });
     }, 6000);
-    cacheKline(d.Code, String(m));   // 预拉K线，首次点开即秒出
+    cacheKline(d.Code, String(m));   // 棰勬媺K绾匡紝棣栨鐐瑰紑鍗崇鍑?
     inp.value=''; if(cst)cst.value='';
-    holdTip('已添加 '+d.Name+'（'+d.Code+'），K线已缓存');
-    toast('已添加 '+d.Name);
+    holdTip('宸叉坊鍔?'+d.Name+'锛?+d.Code+'锛夛紝K绾垮凡缂撳瓨');
+    toast('宸叉坊鍔?'+d.Name);
   });
 }
 function delHold(code){
   var h=null;
   for(var i=0;i<HOLD.length;i++){ if(HOLD[i].code===code){ h=HOLD[i]; break; } }
   if(!h)return;
-  if(!confirm('从持仓里删除 '+h.name+'？'))return;
+  if(!confirm('浠庢寔浠撻噷鍒犻櫎 '+h.name+'锛?))return;
   HOLD=HOLD.filter(function(x){ return x.code!==code; });
   saveHold(); renderHold();
-  toast('已删除 '+h.name);
+  toast('宸插垹闄?'+h.name);
 }
 function editCost(code){
   var h=null;
   for(var i=0;i<HOLD.length;i++){ if(HOLD[i].code===code){ h=HOLD[i]; break; } }
   if(!h)return;
-  var v=prompt(h.name+' 的成本价：', h.cost>0?h.cost:'');
+  var v=prompt(h.name+' 鐨勬垚鏈环锛?, h.cost>0?h.cost:'');
   if(v===null)return;
   h.cost=parseFloat(v)||0;
   saveHold(); renderHold();
@@ -720,7 +721,7 @@ document.addEventListener('click', function(e){
   if(d){ delHold(d.dataset.del); return; }
   var c=e.target.closest('.cost');
   if(c){ editCost(c.dataset.cost); return; }
-  var a=e.target.closest('.al');            // 红/黄感叹号 → 弹出跌破提醒理由
+  var a=e.target.closest('.al');            // 绾?榛勬劅鍙瑰彿 鈫?寮瑰嚭璺岀牬鎻愰啋鐞嗙敱
   if(a){ showHoldAlert(a.dataset.al); return; }
 });
 (function(){
@@ -728,12 +729,12 @@ document.addEventListener('click', function(e){
   if(btn) btn.addEventListener('click', addHold);
   var inp=document.getElementById('h-in');
   if(inp) inp.addEventListener('keydown', function(e){ if(e.key==='Enter') addHold(); });
-  // 选股数量显示已按用户要求移除
+  // 閫夎偂鏁伴噺鏄剧ず宸叉寜鐢ㄦ埛瑕佹眰绉婚櫎
   renderHold(); refreshHoldQuote();
-  // 纯手机本地：持仓只存本机 localStorage，不再依赖电脑隧道/云端（用户最后只用手机）
+  // 绾墜鏈烘湰鍦帮細鎸佷粨鍙瓨鏈満 localStorage锛屼笉鍐嶄緷璧栫數鑴戦毀閬?浜戠锛堢敤鎴锋渶鍚庡彧鐢ㄦ墜鏈猴級
 })();
 
-// 复制
+// 澶嶅埗
 function copyText(t){
   const ta=document.createElement('textarea');
   ta.value=t;ta.style.position='fixed';ta.style.opacity='0';
@@ -742,7 +743,7 @@ function copyText(t){
   document.body.removeChild(ta);
   if(navigator.clipboard){navigator.clipboard.writeText(t).catch(()=>{})}
 }
-// 行情截至时间：每次行情刷新成功后更新为"当前几点几分"（用户要求看的是刷新时刻，不是数据日期）
+// 琛屾儏鎴嚦鏃堕棿锛氭瘡娆¤鎯呭埛鏂版垚鍔熷悗鏇存柊涓?褰撳墠鍑犵偣鍑犲垎"锛堢敤鎴疯姹傜湅鐨勬槸鍒锋柊鏃跺埢锛屼笉鏄暟鎹棩鏈燂級
 function updateQTime(){
   var el=document.getElementById('qtime');
   if(!el) return;
@@ -760,22 +761,22 @@ document.addEventListener('click', e=>{
   const ar=e.target.closest('.amv-ref');
   if(ar){ refreshAMV(true); return; }
   const t=e.target.closest('.cd');
-  if(t){copyText(t.dataset.code);toast('已复制 '+t.dataset.code)}
+  if(t){copyText(t.dataset.code);toast('宸插鍒?'+t.dataset.code)}
 });
 document.getElementById('copyall').addEventListener('click', ()=>{
   const names=ALL.map(s=>s.name).join(' ');
   copyText(names);
-  toast('已复制 9 个名称');
+  toast('宸插鍒?9 涓悕绉?);
 });
-// === 统一刷新：选股 + 持仓 一律当"股票"看待，一次拉最新价 + K线并写入本机缓存（不依赖定时任务）===
-function mktOf(code){ return /^6|^68|^9/.test(code)?'1':'0'; }          // 市场判定：与 showKline 保持一致
-function allStocks(){ return [].concat(B1, QB, HOLD); }                // 选股 + 持仓，统一对待
+// === 缁熶竴鍒锋柊锛氶€夎偂 + 鎸佷粨 涓€寰嬪綋"鑲＄エ"鐪嬪緟锛屼竴娆℃媺鏈€鏂颁环 + K绾垮苟鍐欏叆鏈満缂撳瓨锛堜笉渚濊禆瀹氭椂浠诲姟锛?==
+function mktOf(code){ return /^6|^68|^9/.test(code)?'1':'0'; }          // 甯傚満鍒ゅ畾锛氫笌 showKline 淇濇寔涓€鑷?
+function allStocks(){ return [].concat(B1, QB, HOLD); }                // 閫夎偂 + 鎸佷粨锛岀粺涓€瀵瑰緟
 
-// KDJ(9,3,3) 手机本地计算：输入日K行 [{d,o,c,h,l}]（按时间正序），返回 {j, jp}（J 与昨日 J）
+// KDJ(9,3,3) 鎵嬫満鏈湴璁＄畻锛氳緭鍏ユ棩K琛?[{d,o,c,h,l}]锛堟寜鏃堕棿姝ｅ簭锛夛紝杩斿洖 {j, jp}锛圝 涓庢槰鏃?J锛?
 function calcKDJ(rows){
   var n=9, k=50, d=50, js=[];
   var lows=[], highs=[];
-  var IDX={o:1,c:2,h:3,l:4};   // 缓存数组行=[d,o,c,h,l]
+  var IDX={o:1,c:2,h:3,l:4};   // 缂撳瓨鏁扮粍琛?[d,o,c,h,l]
   function pv(r, k){ return Array.isArray(r) ? r[IDX[k]] : r[k]; }
   for(var i=0;i<rows.length;i++){
     var r=rows[i];
@@ -794,28 +795,28 @@ function calcKDJ(rows){
   if(j==null || !isFinite(j)) return null;
   return { j: j, jp: jp };
 }
-function applyQuoteTo(stocks, map){                                    // 把行情写回股票对象（选股/持仓同一套）
+function applyQuoteTo(stocks, map){                                    // 鎶婅鎯呭啓鍥炶偂绁ㄥ璞★紙閫夎偂/鎸佷粨鍚屼竴濂楋級
   stocks.forEach(function(s){
-    // 兼容东财 f12 各种格式：纯6位 / sz|sh 前缀 / 0.|1. 前缀
+    // 鍏煎涓滆储 f12 鍚勭鏍煎紡锛氱函6浣?/ sz|sh 鍓嶇紑 / 0.|1. 鍓嶇紑
     var d=map[s.code]||map['sz'+s.code]||map['sh'+s.code]||map['0.'+s.code]||map['1.'+s.code];
     if(!d)return;
     var _p=Number(d.f2); if(isFinite(_p)&&_p>0) s.price=_p;
     var _c=Number(d.f3); if(isFinite(_c)) s.chg=_c;
-    var _m=Number(d.f20); if(isFinite(_m)&&_m>0) s.mkNow=(_m/1e8).toFixed(0)+'亿';
+    var _m=Number(d.f20); if(isFinite(_m)&&_m>0) s.mkNow=(_m/1e8).toFixed(0)+'浜?;
     var _n=saneName(d.f14); if(_n) s.name=_n;
   });
 }
-// 单股行情兜底（东财单股接口）：批量 ulist 漏掉的股票用它补，确保新加持仓不空
+// 鍗曡偂琛屾儏鍏滃簳锛堜笢璐㈠崟鑲℃帴鍙ｏ級锛氭壒閲?ulist 婕忔帀鐨勮偂绁ㄧ敤瀹冭ˉ锛岀‘淇濇柊鍔犳寔浠撲笉绌?
 function quoteOne(code, mkt){
   return fetchWithTimeout('https://push2.eastmoney.com/api/qt/stock/get?secid='+mkt+'.'+code+'&fields=f43,f58,f60,f116,f170&fltt=2',{},8000)
     .then(function(r){ return r.json(); }).then(function(j){
       var d=j&&j.data; if(!d) return null;
-      var p=Number(d.f43); if(!isFinite(p) || p<=0) return null;   // 兼容东财返回字符串/'-'，不再因类型误杀
+      var p=Number(d.f43); if(!isFinite(p) || p<=0) return null;   // 鍏煎涓滆储杩斿洖瀛楃涓?'-'锛屼笉鍐嶅洜绫诲瀷璇潃
       var chg=Number(d.f170), mk=Number(d.f116);
-      return { price:p, chg:isFinite(chg)?chg:null, mk:isFinite(mk)?(mk/1e8).toFixed(0)+'亿':null, name:saneName(d.f58) };
+      return { price:p, chg:isFinite(chg)?chg:null, mk:isFinite(mk)?(mk/1e8).toFixed(0)+'浜?:null, name:saneName(d.f58) };
     }).catch(function(){ return null; });
 }
-// 腾讯接口返回 GBK，r.text() 按 UTF-8 解会乱码 → 必须显式按 GBK 解码
+// 鑵捐鎺ュ彛杩斿洖 GBK锛宺.text() 鎸?UTF-8 瑙ｄ細涔辩爜 鈫?蹇呴』鏄惧紡鎸?GBK 瑙ｇ爜
 function decodeGbk(buf){
   try{ return new TextDecoder('gbk').decode(buf); }catch(e){}
   try{ return new TextDecoder('utf-8').decode(buf); }catch(e){}
@@ -823,18 +824,18 @@ function decodeGbk(buf){
   for(var i=0;i<u.length;i++) o+=String.fromCharCode(u[i]);
   return o;
 }
-// 名称"卫生检查"：解码失败/含替换字符/控制字符 → 判为乱码，返回空（不覆盖原有正确名称）
+// 鍚嶇О"鍗敓妫€鏌?锛氳В鐮佸け璐?鍚浛鎹㈠瓧绗?鎺у埗瀛楃 鈫?鍒や负涔辩爜锛岃繑鍥炵┖锛堜笉瑕嗙洊鍘熸湁姝ｇ‘鍚嶇О锛?
 function saneName(n){
   if(n==null) return '';
   n=String(n).trim();
   if(!n) return '';
   if(n.indexOf('\ufffd')>=0) return '';
   if(/[\u0000-\u001f\u007f]/.test(n)) return '';
-  if(/^[\u4e00-\u9fa5A-Za-z0-9 .*STN_·\-]{1,20}$/.test(n)) return n;
+  if(/^[\u4e00-\u9fa5A-Za-z0-9 .*STN_路\-]{1,20}$/.test(n)) return n;
   return '';
 }
-// 单股行情兜底（腾讯 qt.gtimg.cn，与K线同源）：东财不通时用腾讯补——手机K线能拉通腾讯，这条必通
-// 实测简版 s_ 接口字段（~ 分隔）：p[3]=现价 p[4]=涨跌额 p[5]=涨跌幅% p[9]=总市值(亿)
+// 鍗曡偂琛屾儏鍏滃簳锛堣吘璁?qt.gtimg.cn锛屼笌K绾垮悓婧愶級锛氫笢璐笉閫氭椂鐢ㄨ吘璁ˉ鈥斺€旀墜鏈篕绾胯兘鎷夐€氳吘璁紝杩欐潯蹇呴€?
+// 瀹炴祴绠€鐗?s_ 鎺ュ彛瀛楁锛垀 鍒嗛殧锛夛細p[3]=鐜颁环 p[4]=娑ㄨ穼棰?p[5]=娑ㄨ穼骞? p[9]=鎬诲競鍊?浜?
 function quoteTencent(code, mkt){
   var sym=(mkt==='1'?'sh':'sz')+code;
   return fetchWithTimeout('https://qt.gtimg.cn/q=s_'+sym,{},8000)
@@ -843,12 +844,12 @@ function quoteTencent(code, mkt){
       var m=t.match(/="([^"]*)"/); if(!m) return null;
       var p=m[1].split('~'); if(!p || p.length<10) return null;
       var price=Number(p[3]); if(!isFinite(price) || price<=0) return null;
-      var chg=Number(p[5]);                        // 涨跌幅%
-      var mk=Number(p[9]);                         // 总市值（亿）
-      return { price:price, chg:isFinite(chg)?chg:null, mk:isFinite(mk)?mk.toFixed(0)+'亿':null, name:saneName(p[1]) };
+      var chg=Number(p[5]);                        // 娑ㄨ穼骞?
+      var mk=Number(p[9]);                         // 鎬诲競鍊硷紙浜匡級
+      return { price:price, chg:isFinite(chg)?chg:null, mk:isFinite(mk)?mk.toFixed(0)+'浜?:null, name:saneName(p[1]) };
     }).catch(function(){ return null; });
 }
-// 漏股补齐：腾讯单股 → 东财单股 双源依次试，谁成功用谁（腾讯与K线同源，手机网络通常必通；东财批量挂时不再先白等）
+// 婕忚偂琛ラ綈锛氳吘璁崟鑲?鈫?涓滆储鍗曡偂 鍙屾簮渚濇璇曪紝璋佹垚鍔熺敤璋侊紙鑵捐涓嶬绾垮悓婧愶紝鎵嬫満缃戠粶閫氬父蹇呴€氾紱涓滆储鎵归噺鎸傛椂涓嶅啀鍏堢櫧绛夛級
 function fillMissing(stock){
   return quoteTencent(stock.code, mktOf(stock.code)).then(function(q){
     if(q && q.price!=null) return q;
@@ -858,12 +859,12 @@ function fillMissing(stock){
     });
   });
 }
-// 刷新活跃市值 0AMV（数据在本机指南针，需经本机 pusher 隧道代算；不通则保留内嵌值）
-var AMV_LAST=0;   // 活跃市值节流：自动路径 1 分钟一次（与全量刷新同频，fde 数据源盘中每分钟才更新一条，1 分钟即"实时"）；force=true（打开卡片/手动按钮）绕过节流
+// 鍒锋柊娲昏穬甯傚€?0AMV锛堟暟鎹湪鏈満鎸囧崡閽堬紝闇€缁忔湰鏈?pusher 闅ч亾浠ｇ畻锛涗笉閫氬垯淇濈暀鍐呭祵鍊硷級
+var AMV_LAST=0;   // 娲昏穬甯傚€艰妭娴侊細鑷姩璺緞 1 鍒嗛挓涓€娆★紙涓庡叏閲忓埛鏂板悓棰戯紝fde 鏁版嵁婧愮洏涓瘡鍒嗛挓鎵嶆洿鏂颁竴鏉★紝1 鍒嗛挓鍗?瀹炴椂"锛夛紱force=true锛堟墦寮€鍗＄墖/鎵嬪姩鎸夐挳锛夌粫杩囪妭娴?
 function refreshAMV(force){
   if(typeof PUSH_API==='undefined' || !PUSH_API || PUSH_API.indexOf('http')!==0) return Promise.resolve(false);
   var _now=Date.now();
-  if(!force && _now-AMV_LAST < 60000) return Promise.resolve(false);  // 节流：1 分钟内跳过；本次未刷新
+  if(!force && _now-AMV_LAST < 60000) return Promise.resolve(false);  // 鑺傛祦锛? 鍒嗛挓鍐呰烦杩囷紱鏈鏈埛鏂?
   AMV_LAST=_now;
   return fetchWithTimeout(PUSH_API+'/api/amv',{},8000)
     .then(function(r){return r.json();})
@@ -873,37 +874,37 @@ function refreshAMV(force){
       AMV.date=a.date; AMV.close=a.close; AMV.prev=a.prev;
       AMV.zone=a.zone; AMV.since=a.since; AMV.sinceNote=a.sinceNote; AMV.days=a.days;
       AMV.intraday=a.intraday; AMV.time=a.time;
-      renderAMV();     // 重绘横幅：日期括号内即数据时刻（值对应的几月几日几分），盘中每分钟变、收盘定格——唯一时间，判断卡死就看它
+      renderAMV();     // 閲嶇粯妯箙锛氭棩鏈熸嫭鍙峰唴鍗虫暟鎹椂鍒伙紙鍊煎搴旂殑鍑犳湀鍑犳棩鍑犲垎锛夛紝鐩樹腑姣忓垎閽熷彉銆佹敹鐩樺畾鏍尖€斺€斿敮涓€鏃堕棿锛屽垽鏂崱姝诲氨鐪嬪畠
       return true;
     }).catch(function(){ return false; });
 }
-var REF_BUSY=false;    // 全量刷新防重入：K线拉取可能数十秒，避免 60s 定时器叠加
+var REF_BUSY=false;    // 鍏ㄩ噺鍒锋柊闃查噸鍏ワ細K绾挎媺鍙栧彲鑳芥暟鍗佺锛岄伩鍏?60s 瀹氭椂鍣ㄥ彔鍔?
 function refreshAll(opts){
   if(REF_BUSY) return Promise.resolve();
   REF_BUSY=true;
-  var silent=!!(opts&&opts.silent);          // 自动盯盘刷新：静默，不弹任何提醒
+  var silent=!!(opts&&opts.silent);          // 鑷姩鐩洏鍒锋柊锛氶潤榛橈紝涓嶅脊浠讳綍鎻愰啋
   var btn=document.getElementById('refresh');
   var stocks=allStocks();
-  if(!stocks.length){ REF_BUSY=false; if(!silent) toast('没有可刷新的股票'); return; }
+  if(!stocks.length){ REF_BUSY=false; if(!silent) toast('娌℃湁鍙埛鏂扮殑鑲＄エ'); return; }
   var stocks=allStocks();
-  if(!stocks.length){ if(!silent) toast('没有可刷新的股票'); return; }
-  if(btn){ btn.disabled=true; btn.textContent='正在拉取行情…'; }
+  if(!stocks.length){ if(!silent) toast('娌℃湁鍙埛鏂扮殑鑲＄エ'); return; }
+  if(btn){ btn.disabled=true; btn.textContent='姝ｅ湪鎷夊彇琛屾儏鈥?; }
   var secids=stocks.map(function(s){ return mktOf(s.code)+'.'+s.code; }).join(',');
   var quoteOK=false, klOK=0, amvOK=false;
-  // 逐个拉 K 线并写本机缓存（串行，避免瞬时并发过多）
-  var klc0=loadKLCache();   // 刷新前的缓存快照：有缓存的股票只增量抓最近40根
+  // 閫愪釜鎷?K 绾垮苟鍐欐湰鏈虹紦瀛橈紙涓茶锛岄伩鍏嶇灛鏃跺苟鍙戣繃澶氾級
+  var klc0=loadKLCache();   // 鍒锋柊鍓嶇殑缂撳瓨蹇収锛氭湁缂撳瓨鐨勮偂绁ㄥ彧澧為噺鎶撴渶杩?0鏍?
   var klDone=0;
   function step(idx, total){
     if(idx>=total) return Promise.resolve();
     var s=stocks[idx];
-    var lite=(klc0[s.code]&&klc0[s.code].length)?40:0;   // 0 = 全量 250
+    var lite=(klc0[s.code]&&klc0[s.code].length)?40:0;   // 0 = 鍏ㄩ噺 250
     return cacheKline(s.code, mktOf(s.code), lite).then(function(rows){
       if(rows) klOK++;
       klDone++;
-      if(btn) btn.textContent='刷新K线… '+klDone+'/'+total;
+      if(btn) btn.textContent='鍒锋柊K绾库€?'+klDone+'/'+total;
     });
   }
-  // 并行拉 K 线（并发3），比串行快 ~3 倍
+  // 骞惰鎷?K 绾匡紙骞跺彂3锛夛紝姣斾覆琛屽揩 ~3 鍊?
   function parallelStep(idx, total, concurrency){
     if(idx>=total) return Promise.resolve();
     var batch=[];
@@ -920,18 +921,18 @@ function refreshAll(opts){
     var map={}; diff.forEach(function(d){ if(d&&d.f12) map[d.f12]=d; });
     applyQuoteTo(stocks, map);
     quoteOK=Object.keys(map).length>0;
-    renderPicks(); renderMon(); renderHold();     // 统一重绘：选股列表 + 监测表 + 持仓
+    renderPicks(); renderMon(); renderHold();     // 缁熶竴閲嶇粯锛氶€夎偂鍒楄〃 + 鐩戞祴琛?+ 鎸佷粨
     if(quoteOK) updateQTime();
   }).catch(function(){ quoteOK=false; })
   .then(function(){
-    // 漏股双源兜底：东财批量失败/漏股 → 东财单股 → 腾讯单股，确保新加持仓不空
+    // 婕忚偂鍙屾簮鍏滃簳锛氫笢璐㈡壒閲忓け璐?婕忚偂 鈫?涓滆储鍗曡偂 鈫?鑵捐鍗曡偂锛岀‘淇濇柊鍔犳寔浠撲笉绌?
     var missing=stocks.filter(function(s){ return s.price==null; });
     if(missing.length){
       return Promise.all(missing.map(function(s){
         return fillMissing(s).then(function(q){
           if(q && q.price!=null){
             s.price=q.price; if(q.chg!=null) s.chg=q.chg; if(q.mk) s.mkNow=q.mk; if(q.name) s.name=q.name;
-            quoteOK=true;   // 兜底补上也算行情成功
+            quoteOK=true;   // 鍏滃簳琛ヤ笂涔熺畻琛屾儏鎴愬姛
           }
         });
       })).then(function(){
@@ -941,12 +942,12 @@ function refreshAll(opts){
     return null;
   })
   .then(function(){
-    if(btn) btn.textContent='刷新活跃市值…';
+    if(btn) btn.textContent='鍒锋柊娲昏穬甯傚€尖€?;
     return refreshAMV();
   })
   .then(function(ok){ amvOK=ok; return parallelStep(0, stocks.length, 5); })
   .then(function(){
-    // KDJ 手机本地计算：从刚拉的 K 线缓存算 J/昨日J，回填（不再依赖 tdx 自动化）
+    // KDJ 鎵嬫満鏈湴璁＄畻锛氫粠鍒氭媺鐨?K 绾跨紦瀛樼畻 J/鏄ㄦ棩J锛屽洖濉紙涓嶅啀渚濊禆 tdx 鑷姩鍖栵級
     var klc = loadKLCache();
     stocks.forEach(function(s){
       var rows = klc && klc[s.code];
@@ -959,48 +960,48 @@ function refreshAll(opts){
     return null;
   })
   .then(function(){
-    // K线弹窗开着就重开一次，直接看最新
+    // K绾垮脊绐楀紑鐫€灏遍噸寮€涓€娆★紝鐩存帴鐪嬫渶鏂?
     if(typeof klIdx!=='undefined' && klIdx>=0 && !document.getElementById('kl-modal').hidden){
       var cur=allStocks()[klIdx];
       if(cur) showKline(cur.code, cur.name);
     }
     var parts=[];
-    if(quoteOK) parts.push('行情');
-    if(klOK>0) parts.push('K线'+klOK+'/'+stocks.length);
-    if(amvOK) parts.push('活跃市值');
+    if(quoteOK) parts.push('琛屾儏');
+    if(klOK>0) parts.push('K绾?+klOK+'/'+stocks.length);
+    if(amvOK) parts.push('娲昏穬甯傚€?);
     var msg, tip;
     if(parts.length){
-      msg='✅ 已刷新：'+parts.join('+');
-      tip='已刷新 '+parts.join('、')+'，K线已写入本机缓存';
-      if(!amvOK) tip+='（活跃市值未刷新，沿用缓存值）';
+      msg='鉁?宸插埛鏂帮細'+parts.join('+');
+      tip='宸插埛鏂?'+parts.join('銆?)+'锛孠绾垮凡鍐欏叆鏈満缂撳瓨';
+      if(!amvOK) tip+='锛堟椿璺冨競鍊兼湭鍒锋柊锛屾部鐢ㄧ紦瀛樺€硷級';
     } else {
-      msg='❌ 刷新失败';
-      tip='网络不通，行情/活跃市值/K线均未拉到';
+      msg='鉂?鍒锋柊澶辫触';
+      tip='缃戠粶涓嶉€氾紝琛屾儏/娲昏穬甯傚€?K绾垮潎鏈媺鍒?;
     }
     if(btn){ btn.disabled=false; btn.textContent=msg; }
-    setTimeout(function(){ if(btn) btn.textContent='🔄 刷新行情（最新价+K线）'; }, 2400);
-    if(!silent) toast(tip);                  // 自动刷新不打扰；仅用户主动触发才提示
+    setTimeout(function(){ if(btn) btn.textContent='馃攧 鍒锋柊琛屾儏锛堟渶鏂颁环+K绾匡級'; }, 2400);
+    if(!silent) toast(tip);                  // 鑷姩鍒锋柊涓嶆墦鎵帮紱浠呯敤鎴蜂富鍔ㄨЕ鍙戞墠鎻愮ず
     REF_BUSY=false;
   }).catch(function(){
-    // 链中任何一步出错都要释放锁，否则 refreshAll 将永远被防重入挡住
+    // 閾句腑浠讳綍涓€姝ュ嚭閿欓兘瑕侀噴鏀鹃攣锛屽惁鍒?refreshAll 灏嗘案杩滆闃查噸鍏ユ尅浣?
     if(btn) btn.disabled=false;
     REF_BUSY=false;
   });
 }
-// === 盯盘模式：前台自动定时刷行情 + 涨跌幅提醒（声音/震动/闪烁）===
-var WATCH = { t:null, rt:null, last:{} };         // last: 上次行情快照 {code:{price,chg,hit}}（无开关按钮，打开即盯盘）
-var WATCH_INT = 5000;                              // 行情续刷间隔（毫秒，5s，方案A）
-var REFRESH_INT = 60000;                             // 全量刷新间隔（毫秒，1分钟：KDJ+活跃市值，方案A）
+// === 鐩洏妯″紡锛氬墠鍙拌嚜鍔ㄥ畾鏃跺埛琛屾儏 + 娑ㄨ穼骞呮彁閱掞紙澹伴煶/闇囧姩/闂儊锛?==
+var WATCH = { t:null, rt:null, last:{} };         // last: 涓婃琛屾儏蹇収 {code:{price,chg,hit}}锛堟棤寮€鍏虫寜閽紝鎵撳紑鍗崇洴鐩橈級
+var WATCH_INT = 5000;                              // 琛屾儏缁埛闂撮殧锛堟绉掞紝5s锛屾柟妗圓锛?
+var REFRESH_INT = 60000;                             // 鍏ㄩ噺鍒锋柊闂撮殧锛堟绉掞紝1鍒嗛挓锛欿DJ+娲昏穬甯傚€硷紝鏂规A锛?
 
-var QUOTE_BUSY=false;   // 行情刷新防重入：上一次未完成则本次跳过，避免 5s 定时器 + 慢网络堆积
-// 只刷行情（不拉K线，快）：东财 ulist 批量；批量失败/空 → 全部股票走腾讯单股兜底（手机腾讯与K线同源，必通）
+var QUOTE_BUSY=false;   // 琛屾儏鍒锋柊闃查噸鍏ワ細涓婁竴娆℃湭瀹屾垚鍒欐湰娆¤烦杩囷紝閬垮厤 5s 瀹氭椂鍣?+ 鎱㈢綉缁滃爢绉?
+// 鍙埛琛屾儏锛堜笉鎷塊绾匡紝蹇級锛氫笢璐?ulist 鎵归噺锛涙壒閲忓け璐?绌?鈫?鍏ㄩ儴鑲＄エ璧拌吘璁崟鑲″厹搴曪紙鎵嬫満鑵捐涓嶬绾垮悓婧愶紝蹇呴€氾級
 function quoteOnly(){
   if(QUOTE_BUSY) return Promise.resolve(false);
   QUOTE_BUSY=true;
   var stocks = allStocks();
   if(!stocks.length){ QUOTE_BUSY=false; return Promise.resolve(false); }
   var secids = stocks.map(function(s){ return mktOf(s.code)+'.'+s.code; }).join(',');
-  // 批量接口：成功与否都继续（失败也不放弃），漏股统一走双源兜底
+  // 鎵归噺鎺ュ彛锛氭垚鍔熶笌鍚﹂兘缁х画锛堝け璐ヤ篃涓嶆斁寮冿級锛屾紡鑲＄粺涓€璧板弻婧愬厹搴?
   return fetchWithTimeout('https://push2.eastmoney.com/api/qt/ulist.np/get?secids='+secids+'&fields=f2,f3,f12,f14,f20&fltt=2',{},5000)
     .then(function(r){ return r.json(); }).then(function(j){
       var diff=(j&&j.data&&j.data.diff)||[];
@@ -1009,8 +1010,8 @@ function quoteOnly(){
       return Object.keys(map).length>0;
     }).catch(function(){ return false; })
     .then(function(batchOK){
-      // 批量失败/空（东财被限流或不通）→ 全部股票走腾讯兜底，确保涨幅持续刷新，绝不冻结
-      // 批量成功但有漏股（price==null）→ 只补漏股
+      // 鎵归噺澶辫触/绌猴紙涓滆储琚檺娴佹垨涓嶉€氾級鈫?鍏ㄩ儴鑲＄エ璧拌吘璁厹搴曪紝纭繚娑ㄥ箙鎸佺画鍒锋柊锛岀粷涓嶅喕缁?
+      // 鎵归噺鎴愬姛浣嗘湁婕忚偂锛坧rice==null锛夆啋 鍙ˉ婕忚偂
       var missing = batchOK
         ? stocks.filter(function(s){ return s.price==null; })
         : stocks;
@@ -1032,7 +1033,7 @@ function quoteOnly(){
       })).then(function(results){
         renderPicks(); renderMon(); renderHold();
         holdBreachCheck();
-        // 至少补上一只才算成功（调用方可据此提示）
+        // 鑷冲皯琛ヤ笂涓€鍙墠绠楁垚鍔燂紙璋冪敤鏂瑰彲鎹鎻愮ず锛?
         var ok = results.some(function(x){ return x===true; }) || batchOK;
         if(ok) updateQTime();
         QUOTE_BUSY=false;
@@ -1040,24 +1041,24 @@ function quoteOnly(){
       });
     });
 }
-// ===== 持仓跌破提醒（2026-08-30 替换原 ±7% 涨跌幅提醒）=====
-// 只对持仓股判定；只在"跌破"时显示角标；无声、无震动、无 toast
-//   红：现价跌破【多空线】(MA14+MA28+MA57+MA114)/4  → 中期多头结构破坏
-//   黄：现价跌破【短期趋势线】EMA(EMA(C,10),10)      → 短期转弱，建议减仓
-// 能判什么判什么：K线不足114根算不出多空线时只判趋势线（需≥10根）
+// ===== 鎸佷粨璺岀牬鎻愰啋锛?026-08-30 鏇挎崲鍘?卤7% 娑ㄨ穼骞呮彁閱掞級=====
+// 鍙鎸佷粨鑲″垽瀹氾紱鍙湪"璺岀牬"鏃舵樉绀鸿鏍囷紱鏃犲０銆佹棤闇囧姩銆佹棤 toast
+//   绾細鐜颁环璺岀牬銆愬绌虹嚎銆?MA14+MA28+MA57+MA114)/4  鈫?涓湡澶氬ご缁撴瀯鐮村潖
+//   榛勶細鐜颁环璺岀牬銆愮煭鏈熻秼鍔跨嚎銆慐MA(EMA(C,10),10)      鈫?鐭湡杞急锛屽缓璁噺浠?
+// 鑳藉垽浠€涔堝垽浠€涔堬細K绾夸笉瓒?14鏍圭畻涓嶅嚭澶氱┖绾挎椂鍙垽瓒嬪娍绾匡紙闇€鈮?0鏍癸級
 function holdBreachCheck(){
   var klc = (typeof loadKLCache==='function') ? loadKLCache() : null;
   if(!klc || !HOLD.length) return;
   HOLD.forEach(function(h){
     if(h.price==null) return;
     var rows = klc[h.code];
-    if(!rows || rows.length < 10) return;                 // 至少10根才能算趋势线
-    var cs = rows.map(function(r){ return Array.isArray(r) ? r[2] : r.c; });   // 收盘价序列（缓存行 [d,o,c,h,l]）
+    if(!rows || rows.length < 10) return;                 // 鑷冲皯10鏍规墠鑳界畻瓒嬪娍绾?
+    var cs = rows.map(function(r){ return Array.isArray(r) ? r[2] : r.c; });   // 鏀剁洏浠峰簭鍒楋紙缂撳瓨琛?[d,o,c,h,l]锛?
     var last = cs.length-1;
     var trend = calcEMA(calcEMA(cs,10),10);
     var tVal = trend[last];
     var bVal = null;
-    if(cs.length >= 114){                                  // 多空线需 114 根
+    if(cs.length >= 114){                                  // 澶氱┖绾块渶 114 鏍?
       var m14=calcMA(cs,14), m28=calcMA(cs,28), m57=calcMA(cs,57), m114=calcMA(cs,114);
       if(m114[last]!=null) bVal=(m14[last]+m28[last]+m57[last]+m114[last])/4;
     }
@@ -1068,35 +1069,35 @@ function holdBreachCheck(){
     HOLD_ALERT[h.code]=st;
   });
 }
-// 点开角标 → 显示提醒理由
+// 鐐瑰紑瑙掓爣 鈫?鏄剧ず鎻愰啋鐞嗙敱
 function showHoldAlert(code){
   var st=HOLD_ALERT[code]; if(!st) return;
   var nm=code; for(var i=0;i<HOLD.length;i++){ if(HOLD[i].code===code){ nm=HOLD[i].name; break; } }
   var items=[];
   if(st.bullBelow && st.bullVal!=null){
-    items.push({k:'bull', title:'跌破多空线',
-      line:'现价 '+(st.price!=null?st.price.toFixed(2):'—')+' 跌破多空线 '+st.bullVal.toFixed(2)+'（'+((st.price/st.bullVal-1)*100).toFixed(2)+'%）',
-      desc:'多空线 (MA14+MA28+MA57+MA114)/4，跌破代表中期多头结构破坏'});
+    items.push({k:'bull', title:'璺岀牬澶氱┖绾?,
+      line:'鐜颁环 '+(st.price!=null?st.price.toFixed(2):'鈥?)+' 璺岀牬澶氱┖绾?'+st.bullVal.toFixed(2)+'锛?+((st.price/st.bullVal-1)*100).toFixed(2)+'%锛?,
+      desc:'澶氱┖绾?(MA14+MA28+MA57+MA114)/4锛岃穼鐮翠唬琛ㄤ腑鏈熷澶寸粨鏋勭牬鍧?});
   }
   if(st.trendBelow && st.trendVal!=null){
-    items.push({k:'trend', title:'跌破短期趋势线',
-      line:'现价 '+(st.price!=null?st.price.toFixed(2):'—')+' 跌破趋势线 '+st.trendVal.toFixed(2)+'（'+((st.price/st.trendVal-1)*100).toFixed(2)+'%）',
-      desc:'趋势线 EMA(EMA(C,10),10)，短期转弱，建议减仓'});
+    items.push({k:'trend', title:'璺岀牬鐭湡瓒嬪娍绾?,
+      line:'鐜颁环 '+(st.price!=null?st.price.toFixed(2):'鈥?)+' 璺岀牬瓒嬪娍绾?'+st.trendVal.toFixed(2)+'锛?+((st.price/st.trendVal-1)*100).toFixed(2)+'%锛?,
+      desc:'瓒嬪娍绾?EMA(EMA(C,10),10)锛岀煭鏈熻浆寮憋紝寤鸿鍑忎粨'});
   }
   if(!items.length) return;
   var box=document.getElementById('al-modal');
   if(!box) return;
-  box.innerHTML = '<div class="al-card"><div class="al-hd">'+nm+'（'+code+'）</div>' +
+  box.innerHTML = '<div class="al-card"><div class="al-hd">'+nm+'锛?+code+'锛?/div>' +
     items.map(function(it){
       return '<div class="al-item"><span class="al-dot '+it.k+'">!</span><div>' +
              '<div class="al-t">'+it.title+'</div><div class="al-v">'+it.line+'</div><div class="al-d">'+it.desc+'</div></div></div>';
     }).join('') +
-    '<button class="al-close" id="al-close">知道了</button></div>';
+    '<button class="al-close" id="al-close">鐭ラ亾浜?/button></div>';
   box.hidden=false;
   var cb=document.getElementById('al-close');
   if(cb) cb.addEventListener('click', function(){ box.hidden=true; });
 }
-// 蜂鸣（Web Audio，不依赖音频文件）
+// 铚傞福锛圵eb Audio锛屼笉渚濊禆闊抽鏂囦欢锛?
 var _act=null;
 function beep(n){
   try{
@@ -1116,35 +1117,35 @@ function beep(n){
     }, 340);
   }catch(_){}
 }
-// 清理历史留存的行情：选中股(B1/QB)+持仓(HOLD) 的价格/涨幅/市值/KDJ 一律清空，
-// 进卡片后统一由 quoteOnly 从最新拉取（1秒内到位），不再显示上次留下的旧值。
-// base（选股日收盘基准）与 name/board/sec/reason 等静态信息保留。
+// 娓呯悊鍘嗗彶鐣欏瓨鐨勮鎯咃細閫変腑鑲?B1/QB)+鎸佷粨(HOLD) 鐨勪环鏍?娑ㄥ箙/甯傚€?KDJ 涓€寰嬫竻绌猴紝
+// 杩涘崱鐗囧悗缁熶竴鐢?quoteOnly 浠庢渶鏂版媺鍙栵紙1绉掑唴鍒颁綅锛夛紝涓嶅啀鏄剧ず涓婃鐣欎笅鐨勬棫鍊笺€?
+// base锛堥€夎偂鏃ユ敹鐩樺熀鍑嗭級涓?name/board/sec/reason 绛夐潤鎬佷俊鎭繚鐣欍€?
 function clearStaleQuote(){
   [].concat(B1, QB, HOLD).forEach(function(s){
     s.price=null; s.chg=null; s.mkNow=''; s.kdj={j:null,jp:null};
   });
 }
-// 打开卡片即盯盘（无开关按钮）：先全量刷一次（行情+KDJ+市值，手机直连东财，不依赖电脑），再每30s续刷行情+提醒
+// 鎵撳紑鍗＄墖鍗崇洴鐩橈紙鏃犲紑鍏虫寜閽級锛氬厛鍏ㄩ噺鍒蜂竴娆★紙琛屾儏+KDJ+甯傚€硷紝鎵嬫満鐩磋繛涓滆储锛屼笉渚濊禆鐢佃剳锛夛紝鍐嶆瘡30s缁埛琛屾儏+鎻愰啋
 function watchAuto(){
-  if(WATCH.t) return;                             // 防重复启动
-  clearStaleQuote();                              // 先清历史留存，保证显示的是本次实时行情
-  renderPicks(); renderMon(); renderHold();       // 清完立即重绘（价格位显示 … 占位）
-  quoteOnly();                                    // 先轻量刷行情（东财→腾讯双源兜底，1-2秒出新旧持仓价格）
-  refreshAll({silent:true});                      // 再全量：K线/KDJ/活跃市值后台补（不挡行情显示）
-  refreshAMV(true);                              // 打开卡片立即拉一次活跃市值（force 绕过节流，盘中可用）
+  if(WATCH.t) return;                             // 闃查噸澶嶅惎鍔?
+  clearStaleQuote();                              // 鍏堟竻鍘嗗彶鐣欏瓨锛屼繚璇佹樉绀虹殑鏄湰娆″疄鏃惰鎯?
+  renderPicks(); renderMon(); renderHold();       // 娓呭畬绔嬪嵆閲嶇粯锛堜环鏍间綅鏄剧ず 鈥?鍗犱綅锛?
+  quoteOnly();                                    // 鍏堣交閲忓埛琛屾儏锛堜笢璐⑩啋鑵捐鍙屾簮鍏滃簳锛?-2绉掑嚭鏂版棫鎸佷粨浠锋牸锛?
+  refreshAll({silent:true});                      // 鍐嶅叏閲忥細K绾?KDJ/娲昏穬甯傚€煎悗鍙拌ˉ锛堜笉鎸¤鎯呮樉绀猴級
+  refreshAMV(true);                              // 鎵撳紑鍗＄墖绔嬪嵆鎷変竴娆℃椿璺冨競鍊硷紙force 缁曡繃鑺傛祦锛岀洏涓彲鐢級
   WATCH.t=setInterval(function(){
-    if(!document.hidden) quoteOnly();             // 前台每5s续刷行情（东财批量→失败全量走腾讯，确保涨幅持续刷新）
+    if(!document.hidden) quoteOnly();             // 鍓嶅彴姣?s缁埛琛屾儏锛堜笢璐㈡壒閲忊啋澶辫触鍏ㄩ噺璧拌吘璁紝纭繚娑ㄥ箙鎸佺画鍒锋柊锛?
   }, WATCH_INT);
-  WATCH.rt=setInterval(function(){                // 每1分钟全量刷新：KDJ+活跃市值+行情
+  WATCH.rt=setInterval(function(){                // 姣?鍒嗛挓鍏ㄩ噺鍒锋柊锛欿DJ+娲昏穬甯傚€?琛屾儏
     if(!document.hidden) refreshAll({silent:true});
   }, REFRESH_INT);
 }
-// 回到前台立即续刷（后台可能被暂停，回来马上补最新）
+// 鍥炲埌鍓嶅彴绔嬪嵆缁埛锛堝悗鍙板彲鑳借鏆傚仠锛屽洖鏉ラ┈涓婅ˉ鏈€鏂帮級
 document.addEventListener('visibilitychange', function(){
   if(WATCH.t && !document.hidden) quoteOnly();
 });
-watchAuto();   // 页面加载即开始盯盘
-// 刷新按钮手动全刷后，把盯盘快照复位（避免用旧快照误判）
+watchAuto();   // 椤甸潰鍔犺浇鍗冲紑濮嬬洴鐩?
+// 鍒锋柊鎸夐挳鎵嬪姩鍏ㄥ埛鍚庯紝鎶婄洴鐩樺揩鐓у浣嶏紙閬垮厤鐢ㄦ棫蹇収璇垽锛?
 var _raf=refreshAll;
 window.refreshAll=function(){
   WATCH.last={};
@@ -1152,7 +1153,7 @@ window.refreshAll=function(){
 };
 
 
-// === 后台推送订阅已停用（改用飞书机器人通知，见 pusher/server.js）===
+// === 鍚庡彴鎺ㄩ€佽闃呭凡鍋滅敤锛堟敼鐢ㄩ涔︽満鍣ㄤ汉閫氱煡锛岃 pusher/server.js锛?==
 (function(){ return;
   if(!('serviceWorker' in navigator) || !('PushManager' in window)) return;
   function urlB64ToUint8Array(b64){
@@ -1178,38 +1179,38 @@ window.refreshAll=function(){
   }
   function markSubscribed(){
     var b=document.getElementById('subbtn');
-    if(b){ b.textContent='✓ 已开启红点提醒'; b.disabled=true; b.style.opacity='.7'; }
+    if(b){ b.textContent='鉁?宸插紑鍚孩鐐规彁閱?; b.disabled=true; b.style.opacity='.7'; }
   }
   if(localStorage.getItem('pick_sub_ok')) markSubscribed();
   var btn=document.getElementById('subbtn');
   if(btn){
     btn.addEventListener('click', function(){
-      if(!PUSHER_URL){ toast('提醒服务未配置'); return; }
-      if(Notification.permission==='denied'){ toast('通知权限被拒绝，请在浏览器设置开启'); return; }
-      btn.disabled=true; btn.textContent='开启中…';
+      if(!PUSHER_URL){ toast('鎻愰啋鏈嶅姟鏈厤缃?); return; }
+      if(Notification.permission==='denied'){ toast('閫氱煡鏉冮檺琚嫆缁濓紝璇峰湪娴忚鍣ㄨ缃紑鍚?); return; }
+      btn.disabled=true; btn.textContent='寮€鍚腑鈥?;
       if(Notification.permission==='default'){
         Notification.requestPermission().then(function(p){
-          if(p==='granted'){ subscribe().then(function(ok){ btn.disabled=false; if(ok){ markSubscribed(); toast('已开启，新选股会亮红点'); } else { btn.textContent='🔔 开启红点提醒（关App也亮）'; toast('开启失败：网络连不上推送服务，换网络或稍后重试'); } }); }
-          else { btn.disabled=false; btn.textContent='🔔 开启红点提醒（关App也亮）'; toast('未授权通知'); }
+          if(p==='granted'){ subscribe().then(function(ok){ btn.disabled=false; if(ok){ markSubscribed(); toast('宸插紑鍚紝鏂伴€夎偂浼氫寒绾㈢偣'); } else { btn.textContent='馃敂 寮€鍚孩鐐规彁閱掞紙鍏矨pp涔熶寒锛?; toast('寮€鍚け璐ワ細缃戠粶杩炰笉涓婃帹閫佹湇鍔★紝鎹㈢綉缁滄垨绋嶅悗閲嶈瘯'); } }); }
+          else { btn.disabled=false; btn.textContent='馃敂 寮€鍚孩鐐规彁閱掞紙鍏矨pp涔熶寒锛?; toast('鏈巿鏉冮€氱煡'); }
         });
       } else {
         subscribe().then(function(ok){
           btn.disabled=false;
-          if(ok){ markSubscribed(); toast('已开启，新选股会亮红点'); }
-          else { btn.textContent='🔔 开启红点提醒（关App也亮）'; toast('开启失败：网络连不上推送服务，换网络或稍后重试'); }
+          if(ok){ markSubscribed(); toast('宸插紑鍚紝鏂伴€夎偂浼氫寒绾㈢偣'); }
+          else { btn.textContent='馃敂 寮€鍚孩鐐规彁閱掞紙鍏矨pp涔熶寒锛?; toast('寮€鍚け璐ワ細缃戠粶杩炰笉涓婃帹閫佹湇鍔★紝鎹㈢綉缁滄垨绋嶅悗閲嶈瘯'); }
         });
       }
     });
   }
-  // 已授权且之前成功：自动续订（SW 更新/订阅失效时刷新）
+  // 宸叉巿鏉冧笖涔嬪墠鎴愬姛锛氳嚜鍔ㄧ画璁紙SW 鏇存柊/璁㈤槄澶辨晥鏃跺埛鏂帮級
   if(Notification.permission==='granted' && localStorage.getItem('pick_sub_ok') && PUSHER_URL){
     navigator.serviceWorker.ready.then(function(){ subscribe(); });
   }
 })();
 
-// === 点击股票弹出 K 线（实时拉东方财富前复权日K，支持缩放/平移）===
-// 叠加指标：知行短期趋势线 EMA(EMA(C,10),10)；知行多空线 (MA14+MA28+MA57+MA114)/4
-// 买点：KDJ J<14 标 ▲；涨停（C/前收>=1.098 且 C=H）实心红K，普通阳线空心红（仿通达信）
+// === 鐐瑰嚮鑲＄エ寮瑰嚭 K 绾匡紙瀹炴椂鎷変笢鏂硅储瀵屽墠澶嶆潈鏃锛屾敮鎸佺缉鏀?骞崇Щ锛?==
+// 鍙犲姞鎸囨爣锛氱煡琛岀煭鏈熻秼鍔跨嚎 EMA(EMA(C,10),10)锛涚煡琛屽绌虹嚎 (MA14+MA28+MA57+MA114)/4
+// 涔扮偣锛欿DJ J<14 鏍?鈻诧紱娑ㄥ仠锛圕/鍓嶆敹>=1.098 涓?C=H锛夊疄蹇冪孩K锛屾櫘閫氶槼绾跨┖蹇冪孩锛堜豢閫氳揪淇★級
 function calcEMA(vals,n){
   var out=new Array(vals.length);
   if(!vals.length)return out;
@@ -1248,7 +1249,7 @@ var KLCHART={
     var m14=calcMA(c,14),m28=calcMA(c,28),m57=calcMA(c,57),m114=calcMA(c,114);
     this.bull=rows.map(function(_,i){ return m114[i]==null?null:(m14[i]+m28[i]+m57[i]+m114[i])/4; });
     this.jj=calcKDJJ(rows,9,3,3);
-    this.i1=rows.length-1; this.i0=Math.max(0, rows.length-this.defBars);   // 默认只看最近 defBars 根
+    this.i1=rows.length-1; this.i0=Math.max(0, rows.length-this.defBars);   // 榛樿鍙湅鏈€杩?defBars 鏍?
     this.draw();
   },
   len:function(){ return this.i1-this.i0+1; },
@@ -1264,7 +1265,7 @@ var KLCHART={
     var nl=Math.round(len*f);
     nl=Math.max(15,Math.min(this.rows.length,nl));
     var last=this.rows.length-1;
-    // 只要"最新一根"原本就在屏幕内，缩放后就把视窗右端钉在它上面，保证最新一天始终可见
+    // 鍙"鏈€鏂颁竴鏍?鍘熸湰灏卞湪灞忓箷鍐咃紝缂╂斁鍚庡氨鎶婅绐楀彸绔拤鍦ㄥ畠涓婇潰锛屼繚璇佹渶鏂颁竴澶╁缁堝彲瑙?
     var pinRight=(this.i1>=last);
     var ni0;
     if(pinRight){
@@ -1279,7 +1280,7 @@ var KLCHART={
     if(pinRight && this.i1<last){ this.i1=last; this.i0=Math.max(0,last-nl+1); }
     if(!noDraw)this.draw();
   },
-  pinLatest:function(noDraw){   // 把视窗右端钉回最新一根
+  pinLatest:function(noDraw){   // 鎶婅绐楀彸绔拤鍥炴渶鏂颁竴鏍?
     var last=this.rows.length-1;
     if(!this.rows.length)return;
     var len=this.len();
@@ -1292,11 +1293,11 @@ var KLCHART={
     var rows=this.rows;
     if(!rows.length)return;
     var W=this.W,H=this.H,L=8,R=58,T=32,B=26;
-    // 纵向拆分：主图(价格)占上部 ~52%，成交量+砖型图占下部 ~48%
+    // 绾靛悜鎷嗗垎锛氫富鍥?浠锋牸)鍗犱笂閮?~52%锛屾垚浜ら噺+鐮栧瀷鍥惧崰涓嬮儴 ~48%
     var splitRatio=0.52, gap=8;
     var tot=H-T-B;
     var mainH=Math.round(tot*splitRatio), subH=tot-mainH-gap;
-    var subTop=T+mainH+gap;                     // 副图区域顶部
+    var subTop=T+mainH+gap;                     // 鍓浘鍖哄煙椤堕儴
     var cw=W-L-R,ch=mainH;
     var i0=this.i0,i1=this.i1,i;
     var mn=Infinity,mx=-Infinity;
@@ -1337,7 +1338,7 @@ var KLCHART={
         g+='<rect x="'+(cx-bw/2).toFixed(1)+'" y="'+top.toFixed(1)+'" width="'+bw.toFixed(1)+'" height="'+hgt.toFixed(1)+'" fill="'+dn+'"/>';
       }
       if(this.jj[i]!=null && this.jj[i]<14){
-        g+='<text x="'+cx.toFixed(1)+'" y="'+(y(r.l)+10).toFixed(1)+'" fill="'+up+'" font-size="9" text-anchor="middle">▲</text>';
+        g+='<text x="'+cx.toFixed(1)+'" y="'+(y(r.l)+10).toFixed(1)+'" fill="'+up+'" font-size="9" text-anchor="middle">鈻?/text>';
       }
     }
     function pathOf(arr){
@@ -1352,7 +1353,7 @@ var KLCHART={
     }
     g+='<path d="'+pathOf(this.trend)+'" fill="none" stroke="var(--sub)" stroke-width="1.2"/>';
     g+='<path d="'+pathOf(this.bull)+'" fill="none" stroke="#e23b3b" stroke-width="1.6"/>';
-    // 当前价（视窗最右一根收盘）：虚线 + 右侧价格标签
+    // 褰撳墠浠凤紙瑙嗙獥鏈€鍙充竴鏍规敹鐩橈級锛氳櫄绾?+ 鍙充晶浠锋牸鏍囩
     var lastC=rows[i1].c, lastRef=(i1>0?rows[i1-1].c:rows[i1].o);
     var lcCol=lastC>=lastRef?up:dn;
     var lyv=Math.max(T+8,Math.min(T+mainH-8,y(lastC)));
@@ -1369,38 +1370,38 @@ var KLCHART={
     if(hc>0){
       var cy2=y(hc).toFixed(1);
       g+='<line x1="'+L+'" y1="'+cy2+'" x2="'+(L+cw)+'" y2="'+cy2+'" stroke="#f0a020" stroke-width="1.2" stroke-dasharray="6 4"/>';
-      g+='<text x="'+(L+cw-3)+'" y="'+(parseFloat(cy2)-4)+'" fill="#f0a020" font-size="10" text-anchor="end">成本 '+hc.toFixed(2)+'</text>';
+      g+='<text x="'+(L+cw-3)+'" y="'+(parseFloat(cy2)-4)+'" fill="#f0a020" font-size="10" text-anchor="end">鎴愭湰 '+hc.toFixed(2)+'</text>';
     }
     var lt=this.trend[this.i1],lb=this.bull[this.i1];
-    g+='<text x="'+(L+4)+'" y="12" font-size="10" fill="var(--sub)">趋势 '+(lt!=null?lt.toFixed(2):'--')+'</text>';
-    g+='<text x="'+(L+132)+'" y="12" font-size="10" fill="#e23b3b">多空 '+(lb!=null?lb.toFixed(2):'--')+'</text>';
-    g+='<text x="'+(L+264)+'" y="12" font-size="10" fill="#e23b3b">▲J&lt;14 买点</text>';
-    g+='<text x="'+(W-R)+'" y="12" font-size="10" fill="var(--muted)" text-anchor="end">'+this.len()+'/'+rows.length+'根</text>';
-    // ↓↓↓ 下部副图：成交量柱（红涨绿跌·涨停红实心）+ 砖型图红绿柱（红持绿空） ↓↓↓
+    g+='<text x="'+(L+4)+'" y="12" font-size="10" fill="var(--sub)">瓒嬪娍 '+(lt!=null?lt.toFixed(2):'--')+'</text>';
+    g+='<text x="'+(L+132)+'" y="12" font-size="10" fill="#e23b3b">澶氱┖ '+(lb!=null?lb.toFixed(2):'--')+'</text>';
+    g+='<text x="'+(L+264)+'" y="12" font-size="10" fill="#e23b3b">鈻睯&lt;14 涔扮偣</text>';
+    g+='<text x="'+(W-R)+'" y="12" font-size="10" fill="var(--muted)" text-anchor="end">'+this.len()+'/'+rows.length+'鏍?/text>';
+    // 鈫撯啌鈫?涓嬮儴鍓浘锛氭垚浜ら噺鏌憋紙绾㈡定缁胯穼路娑ㄥ仠绾㈠疄蹇冿級+ 鐮栧瀷鍥剧孩缁挎煴锛堢孩鎸佺豢绌猴級 鈫撯啌鈫?
     g=drawVolBrick(this,i0,i1,L,R,cw,subTop,subH,rows,g);
     el.innerHTML='<svg viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="xMidYMid meet" style="width:100%;height:auto;display:block">'+g+'</svg>';
   }
 };
-// ── 副图：成交量 + 砖型图（通达信公式移植）──
-// 砖型图口径（源自用户公式）：
+// 鈹€鈹€ 鍓浘锛氭垚浜ら噺 + 鐮栧瀷鍥撅紙閫氳揪淇″叕寮忕Щ妞嶏級鈹€鈹€
+// 鐮栧瀷鍥惧彛寰勶紙婧愯嚜鐢ㄦ埛鍏紡锛夛細
 //   VAR1A=(HHV(H,4)-C)/(HHV(H,4)-LLV(L,4))*100-90
 //   VAR2A=SMA(VAR1A,4,1)+100
 //   VAR3A=(C-LLV(L,4))/(HHV(H,4)-LLV(L,4))*100
 //   VAR4A=SMA(VAR3A,6,1)
 //   VAR5A=SMA(VAR4A,6,1)+100
 //   VAR6A=VAR5A-VAR2A
-//   砖型图=IF(VAR6A>4,VAR6A-4,0)   （上分）
-//   红=砖型图>前砖（持多） 绿=砖型图<前砖（持空）
+//   鐮栧瀷鍥?IF(VAR6A>4,VAR6A-4,0)   锛堜笂鍒嗭級
+//   绾?鐮栧瀷鍥?鍓嶇爾锛堟寔澶氾級 缁?鐮栧瀷鍥?鍓嶇爾锛堟寔绌猴級
 function drawVolBrick(kl, i0, i1, L, R, cw, subTop, subH, rows, g){
   var slot=kl.geo.slot, bw=Math.max(1.2, slot*0.5);
   var up='#e23b3b', dn='#1ea672', ztc='#ff2a2a';
   var code=(kl&&KLCUR)?KLCUR.code:'';
-  // 分界线 y 坐标（成交量0 与 砖型图0 共用 subTop 底）
+  // 鍒嗙晫绾?y 鍧愭爣锛堟垚浜ら噺0 涓?鐮栧瀷鍥? 鍏辩敤 subTop 搴曪級
   var yZero=subTop+subH;
   function suby(vN, vMax){ return yZero - (vN/vMax)*subH; }
-  // ── 1) 成交量与砖型图公共最大值（砖型图取 |砖型| 与上一值差；量取最大量）──
-  // 砖型序列
-  function smaSeries(v, n, mult){            // mult: +1/-1 加在结果上（对应 +100）
+  // 鈹€鈹€ 1) 鎴愪氦閲忎笌鐮栧瀷鍥惧叕鍏辨渶澶у€硷紙鐮栧瀷鍥惧彇 |鐮栧瀷| 涓庝笂涓€鍊煎樊锛涢噺鍙栨渶澶ч噺锛夆攢鈹€
+  // 鐮栧瀷搴忓垪
+  function smaSeries(v, n, mult){            // mult: +1/-1 鍔犲湪缁撴灉涓婏紙瀵瑰簲 +100锛?
     var out=[],k=0;
     for(var i=0;i<v.length;i++){
       k=(v[i]+(n-1)*(i?k:0))/n;
@@ -1421,25 +1422,25 @@ function drawVolBrick(kl, i0, i1, L, R, cw, subTop, subH, rows, g){
   var4=smaSeries(var3,6,0);
   var5=smaSeries(var4,6,100);
   var6=var5.map(function(x,j){ return x-var2[j]; });
-  // 砖型（>4 取 x-4，否则 0）
+  // 鐮栧瀷锛?4 鍙?x-4锛屽惁鍒?0锛?
   var brick=C.map(function(_,i){ var x=var6[i]; return (x>4)?(x-4):0; });
-  // 副图坐标：成交量单独缩放，砖型图叠加在量柱之上/或下方（用独立比例，但共用底部）
+  // 鍓浘鍧愭爣锛氭垚浜ら噺鍗曠嫭缂╂斁锛岀爾鍨嬪浘鍙犲姞鍦ㄩ噺鏌变箣涓?鎴栦笅鏂癸紙鐢ㄧ嫭绔嬫瘮渚嬶紝浣嗗叡鐢ㄥ簳閮級
   var vMax=1; for(i=i0;i<=i1;i++){ var vv=rows[i].v||0; if(vv>vMax)vMax=vv; }
   var bMax=1; for(i=i0;i<=i1;i++){ var bb=Math.abs(brick[i]); if(bb>bMax)bMax=bb; }
   if(vMax<=0)vMax=1;
-  // 副图纵向分区（互不遮挡）：量柱区 subTop~brickTop（0轴在分隔线向上），砖型区 brickTop~yZero（0轴在副图底）
-  // 旧版量/砖都以 yZero 为轴、同高 → 两套柱体重叠，砖型被量柱盖住；现改各占一半副图
-  var subHv=Math.round(subH*0.52);   // 量区高度（上部）
-  var brickTop=subTop+subHv;         // 分隔线 = 量区底 = 砖区顶
-  var brickH=subH-subHv;             // 砖区高度（下部）
-  function subyV(vN){ return brickTop - (vN/vMax)*subHv; }    // 量柱：贴分隔线向上长
-  function subyB(vN){ return yZero - (vN/bMax)*brickH; }      // 砖柱：贴副图底向上长
-  // 分界线
+  // 鍓浘绾靛悜鍒嗗尯锛堜簰涓嶉伄鎸★級锛氶噺鏌卞尯 subTop~brickTop锛?杞村湪鍒嗛殧绾垮悜涓婏級锛岀爾鍨嬪尯 brickTop~yZero锛?杞村湪鍓浘搴曪級
+  // 鏃х増閲?鐮栭兘浠?yZero 涓鸿酱銆佸悓楂?鈫?涓ゅ鏌变綋閲嶅彔锛岀爾鍨嬭閲忔煴鐩栦綇锛涚幇鏀瑰悇鍗犱竴鍗婂壇鍥?
+  var subHv=Math.round(subH*0.52);   // 閲忓尯楂樺害锛堜笂閮級
+  var brickTop=subTop+subHv;         // 鍒嗛殧绾?= 閲忓尯搴?= 鐮栧尯椤?
+  var brickH=subH-subHv;             // 鐮栧尯楂樺害锛堜笅閮級
+  function subyV(vN){ return brickTop - (vN/vMax)*subHv; }    // 閲忔煴锛氳创鍒嗛殧绾垮悜涓婇暱
+  function subyB(vN){ return yZero - (vN/bMax)*brickH; }      // 鐮栨煴锛氳创鍓浘搴曞悜涓婇暱
+  // 鍒嗙晫绾?
   g+='<line x1="'+L+'" y1="'+yZero.toFixed(1)+'" x2="'+(L+cw)+'" y2="'+yZero.toFixed(1)+'" stroke="var(--line)" stroke-width="1"/>';
   g+='<line x1="'+L+'" y1="'+brickTop.toFixed(1)+'" x2="'+(L+cw)+'" y2="'+brickTop.toFixed(1)+'" stroke="var(--line)" stroke-dasharray="3 3" opacity=".5"/>';
-  // 标签
-  g+='<text x="'+(L+4)+'" y="'+(subTop+11)+'" font-size="10" fill="var(--sub)">量·砖</text>';
-  // ── 成交量柱 ──
+  // 鏍囩
+  g+='<text x="'+(L+4)+'" y="'+(subTop+11)+'" font-size="10" fill="var(--sub)">閲徛风爾</text>';
+  // 鈹€鈹€ 鎴愪氦閲忔煴 鈹€鈹€
   for(i=i0;i<=i1;i++){
     var r=rows[i], cx=L+slot*((i-i0)+0.5);
     var vv=r.v||0; if(vv<=0)continue;
@@ -1453,36 +1454,36 @@ function drawVolBrick(kl, i0, i1, L, R, cw, subTop, subH, rows, g){
       g+='<rect x="'+(cx-bw/2).toFixed(1)+'" y="'+yT.toFixed(1)+'" width="'+bw.toFixed(1)+'" height="'+Math.max(1,(yB-yT)).toFixed(1)+'" fill="'+(isUp?up:dn)+'" opacity="'+(isUp?0.85:0.85)+'"/>';
     }
   }
-  // ── 砖型图红绿柱（红持：砖>前砖；绿空：砖<前砖）──
+  // 鈹€鈹€ 鐮栧瀷鍥剧孩缁挎煴锛堢孩鎸侊細鐮?鍓嶇爾锛涚豢绌猴細鐮?鍓嶇爾锛夆攢鈹€
   for(i=i0;i<=i1;i++){
     var bx=L+slot*((i-i0)+0.5), bw2=Math.max(1.2, slot*0.36);
     var bcur=brick[i], bprev=(i>i0)?brick[i-1]:0;
-    if(bcur===0){ // 无砖时不画
+    if(bcur===0){ // 鏃犵爾鏃朵笉鐢?
       // g+=''; 
       continue;
     }
-    var isRed=bcur>=bprev;     // 红持=柱向上；绿空=柱向下
+    var isRed=bcur>=bprev;     // 绾㈡寔=鏌卞悜涓婏紱缁跨┖=鏌卞悜涓?
     var yT=subyB(Math.abs(bcur)), yB=subyB(0);
-    // 逻辑：红持从底部向上涨；绿空从0向下 — 这里按通达信 STICKLINE(砖型值, REF(砖型值)) 画为从 prev 值到当前值的柱
+    // 閫昏緫锛氱孩鎸佷粠搴曢儴鍚戜笂娑紱缁跨┖浠?鍚戜笅 鈥?杩欓噷鎸夐€氳揪淇?STICKLINE(鐮栧瀷鍊? REF(鐮栧瀷鍊?) 鐢讳负浠?prev 鍊煎埌褰撳墠鍊肩殑鏌?
     var py1=subyB(Math.abs(bprev)), py2=subyB(Math.abs(bcur));
     g+='<rect x="'+(bx-bw2/2).toFixed(1)+'" y="'+Math.min(py1,py2).toFixed(1)+'" width="'+bw2.toFixed(1)+'" height="'+Math.max(1.5,Math.abs(py2-py1)).toFixed(1)+'" fill="'+(isRed?up:dn)+'" stroke="'+(isRed?up:dn)+'" stroke-width="1"/>';
   }
-  // 右侧刻度（量）
+  // 鍙充晶鍒诲害锛堥噺锛?
   g+='<text x="'+(L+cw+4)+'" y="'+(subyV(vMax)+3).toFixed(1)+'" fill="var(--muted)" font-size="9" text-anchor="start">'+fmtVol(vMax)+'</text>';
-  g+='<text x="'+(L+cw+4)+'" y="'+(subTop+subH+8).toFixed(1)+'" fill="var(--muted)" font-size="9" text-anchor="start">红持/绿空</text>';
+  g+='<text x="'+(L+cw+4)+'" y="'+(subTop+subH+8).toFixed(1)+'" fill="var(--muted)" font-size="9" text-anchor="start">绾㈡寔/缁跨┖</text>';
   return g;
 }
-// 涨停阈值：主板10% / 创业板(300/301)/科创(688/689)/北交(8开头?) 默认 20%；ST 5% 由名称判断
+// 娑ㄥ仠闃堝€硷細涓绘澘10% / 鍒涗笟鏉?300/301)/绉戝垱(688/689)/鍖椾氦(8寮€澶?) 榛樿 20%锛汼T 5% 鐢卞悕绉板垽鏂?
 function ztThresh(code){
   if(!code) return 10;
-  if(/^688|^689|^30[01]/.test(code)) return 20;   // 科创/创业板 20%
-  if(/^8|^4/.test(code)) return 30;               // 北交所 30%
-  return 10;                                      // 主板 10%
+  if(/^688|^689|^30[01]/.test(code)) return 20;   // 绉戝垱/鍒涗笟鏉?20%
+  if(/^8|^4/.test(code)) return 30;               // 鍖椾氦鎵€ 30%
+  return 10;                                      // 涓绘澘 10%
 }
-// 成交量格式化：手 → 万手/亿手缩写
+// 鎴愪氦閲忔牸寮忓寲锛氭墜 鈫?涓囨墜/浜挎墜缂╁啓
 function fmtVol(v){
-  if(v>=1e8) return (v/1e8).toFixed(1)+'亿手';
-  if(v>=1e4) return (v/1e4).toFixed(1)+'万手';
+  if(v>=1e8) return (v/1e8).toFixed(1)+'浜挎墜';
+  if(v>=1e4) return (v/1e4).toFixed(1)+'涓囨墜';
   return String(v);
 }
 function klFoot(rows){
@@ -1490,10 +1491,10 @@ function klFoot(rows){
   var chg=ft.o?((f.c/ft.o-1)*100):0;
   var lref=rows.length>1?rows[rows.length-2].c:rows[0].o;
   var lchg=lref?((f.c/lref-1)*100):0;
-  return '现价 '+f.c.toFixed(2)+'（'+(lchg>0?'+':'')+lchg.toFixed(2)+'%） ｜ '+ft.d+' → '+f.d+' 区间 '+chg.toFixed(2)+'% ｜ 左右滑=平移 · 上下滑=缩放 · 点一下显/隐准星（准星时左右滑=逐日移动） · 或 ‹ › 翻页';
+  return '鐜颁环 '+f.c.toFixed(2)+'锛?+(lchg>0?'+':'')+lchg.toFixed(2)+'%锛?锝?'+ft.d+' 鈫?'+f.d+' 鍖洪棿 '+chg.toFixed(2)+'% 锝?宸﹀彸婊?骞崇Щ 路 涓婁笅婊?缂╂斁 路 鐐逛竴涓嬫樉/闅愬噯鏄燂紙鍑嗘槦鏃跺乏鍙虫粦=閫愭棩绉诲姩锛?路 鎴?鈥?鈥?缈婚〉';
 }
 
-// ── 分时图：腾讯分时接口 → 价格线 + 均价线 + 昨收基准，SVG 绘制 ──
+// 鈹€鈹€ 鍒嗘椂鍥撅細鑵捐鍒嗘椂鎺ュ彛 鈫?浠锋牸绾?+ 鍧囦环绾?+ 鏄ㄦ敹鍩哄噯锛孲VG 缁樺埗 鈹€鈹€
 function fetchMinute(code, mkt){
   var sym=(mkt==='1'||mkt==='9'?'sh':'sz')+code;
   var url='https://web.ifzq.gtimg.cn/appstock/app/minute/query?code='+sym;
@@ -1501,9 +1502,9 @@ function fetchMinute(code, mkt){
     var dd=j&&j.data&&j.data[sym];
     if(!dd||!dd.data||!dd.data.data) throw new Error('empty');
     var pts=dd.data.data.map(function(s){ var a=s.split(' '); return {t:a[0], p:+a[1], vol:+a[2], amt:+a[3]}; });
-    // 均价 = 累计额/累计量
-    pts.forEach(function(p){ p.avg = p.vol>0 ? p.amt/(p.vol*100) : p.p; });   // vol单位=手，amt=元 → 均价=amt/(vol*100)
-    // 昨收：qt[sym][4]
+    // 鍧囦环 = 绱棰?绱閲?
+    pts.forEach(function(p){ p.avg = p.vol>0 ? p.amt/(p.vol*100) : p.p; });   // vol鍗曚綅=鎵嬶紝amt=鍏?鈫?鍧囦环=amt/(vol*100)
+    // 鏄ㄦ敹锛歲t[sym][4]
     var q=dd.qt&&dd.qt[sym]; var prev = (q&&q[4])?+q[4]:null;
     if(!prev && pts.length) prev=pts[0].p;
     KLMIN={ rows:pts, date:dd.data.date, prev:prev };
@@ -1515,7 +1516,7 @@ function drawMinute(){
   var rows=KLMIN.rows;
   if(!el||!rows||!rows.length) return;
   var W=el.clientWidth||320, H=el.clientHeight||240;
-  var L=40,R=54,T=16,B=20, cw=W-L-R, ch=H-T-B;   // L=40 左侧价格刻度区
+  var L=40,R=54,T=16,B=20, cw=W-L-R, ch=H-T-B;   // L=40 宸︿晶浠锋牸鍒诲害鍖?
   var prev=KLMIN.prev||rows[0].p;
   var mn=Math.min.apply(null,rows.map(function(r){return r.p;}).concat([prev])),
       mx=Math.max.apply(null,rows.map(function(r){return r.p;}).concat([prev]));
@@ -1529,7 +1530,7 @@ function drawMinute(){
   }
   var up=rows[rows.length-1].p>=prev;
   var g='';
-  // 网格 + 左侧价格刻度（4 档）+ 右侧涨幅%刻度（以昨收为 0% 对称）
+  // 缃戞牸 + 宸︿晶浠锋牸鍒诲害锛? 妗ｏ級+ 鍙充晶娑ㄥ箙%鍒诲害锛堜互鏄ㄦ敹涓?0% 瀵圭О锛?
   var yN=4;
   var maxPct=Math.max(Math.abs(mn/prev-1),Math.abs(mx/prev-1))*100;
   if(maxPct<0.6) maxPct=0.6;
@@ -1548,64 +1549,64 @@ function drawMinute(){
     if(pct===0) plabel='0%';
     g+='<text x="'+(L+cw+4)+'" y="'+(+py+3)+'" fill="'+(pct===0?'var(--muted)':'var(--muted)')+'" font-size="10">'+plabel+'</text>';
   }
-  // 昨收基准线（标签放图内，避开左右刻度区）
+  // 鏄ㄦ敹鍩哄噯绾匡紙鏍囩鏀惧浘鍐咃紝閬垮紑宸﹀彸鍒诲害鍖猴級
   var midY=y(prev).toFixed(1);
   g+='<line x1="'+L+'" y1="'+midY+'" x2="'+(L+cw)+'" y2="'+midY+'" stroke="'+(up?'#e23b3b':'#1ea672')+'" stroke-width="1" stroke-dasharray="4 4"/>';
-  g+='<text x="'+(L+cw-2)+'" y="'+(+midY-4)+'" fill="'+(up?'#e23b3b':'#1ea672')+'" font-size="10" text-anchor="end">昨收 '+prev.toFixed(2)+'</text>';
-  // 价格线
+  g+='<text x="'+(L+cw-2)+'" y="'+(+midY-4)+'" fill="'+(up?'#e23b3b':'#1ea672')+'" font-size="10" text-anchor="end">鏄ㄦ敹 '+prev.toFixed(2)+'</text>';
+  // 浠锋牸绾?
   g+='<path d="'+pathOf('p')+'" fill="none" stroke="'+(up?'#e23b3b':'#1ea672')+'" stroke-width="1.4"/>';
-  // 均价线
+  // 鍧囦环绾?
   g+='<path d="'+pathOf('avg')+'" fill="none" stroke="#f0a020" stroke-width="1"/>';
-  // 时间刻度
+  // 鏃堕棿鍒诲害
   var labN=4;
   for(var k=0;k<labN;k++){
     var idx=Math.round(k*(n-1)/(labN-1));
     g+='<text x="'+(L+slot*idx).toFixed(1)+'" y="'+(H-6)+'" fill="var(--muted)" font-size="10" text-anchor="middle">'+rows[idx].t+'</text>';
   }
-  // 分时十字准星：对准的时间点 → 竖线+横线+圆点
+  // 鍒嗘椂鍗佸瓧鍑嗘槦锛氬鍑嗙殑鏃堕棿鐐?鈫?绔栫嚎+妯嚎+鍦嗙偣
   if(typeof MINCROSS!=='undefined' && MINCROSS.idx!=null && MINCROSS.idx>=0 && MINCROSS.idx<n){
     var xi=(L+slot*MINCROSS.idx).toFixed(1), yi=y(rows[MINCROSS.idx].p).toFixed(1);
     g+='<line x1="'+xi+'" y1="'+T+'" x2="'+xi+'" y2="'+(T+ch)+'" stroke="#999" stroke-width="1" stroke-dasharray="3 3"/>';
     g+='<line x1="'+L+'" y1="'+yi+'" x2="'+(L+cw)+'" y2="'+yi+'" stroke="#999" stroke-width="1" stroke-dasharray="3 3"/>';
     g+='<circle cx="'+xi+'" cy="'+yi+'" r="3.5" fill="'+(up?'#e23b3b':'#1ea672')+'" stroke="#fff" stroke-width="1"/>';
   }
-  // 右上：大号当前涨幅 + 现价
+  // 鍙充笂锛氬ぇ鍙峰綋鍓嶆定骞?+ 鐜颁环
   var last=rows[rows.length-1];
   var chg=(prev?((last.p/prev-1)*100):0);
   g+='<text x="'+(L+cw)+'" y="'+(T+6)+'" font-size="19" font-weight="bold" fill="'+(up?'#e23b3b':'#1ea672')+'" text-anchor="end">'+(chg>0?'+':'')+chg.toFixed(2)+'%</text>';
-  g+='<text x="'+(L+cw)+'" y="'+(T+20)+'" font-size="11" fill="var(--muted)" text-anchor="end">现价 '+last.p.toFixed(2)+'</text>';
+  g+='<text x="'+(L+cw)+'" y="'+(T+20)+'" font-size="11" fill="var(--muted)" text-anchor="end">鐜颁环 '+last.p.toFixed(2)+'</text>';
   el.innerHTML='<svg viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="xMidYMid meet" style="width:100%;height:auto;display:block">'+g+'</svg>';
 }
-// 切换周期：day / week / min
+// 鍒囨崲鍛ㄦ湡锛歞ay / week / min
 var _setKLPeriod0=setKLPeriod;
 window.setKLPeriod=function(p){
   if(p==='min'){
     KLPERIOD='min'; syncPeriodBtn();
     var cur=KLCUR||((typeof klIdx!=='undefined'&&klIdx>=0)?allStocks()[klIdx]:null);
     if(!cur) return;
-    document.getElementById('kl-tip').innerHTML='<span>加载分时…</span>';
+    document.getElementById('kl-tip').innerHTML='<span>鍔犺浇鍒嗘椂鈥?/span>';
     fetchMinute(cur.code, mktOf(cur.code)).then(function(){
       if(KLPERIOD!=='min' || (document.getElementById('kl-modal')&&document.getElementById('kl-modal').hidden)) return;
       drawMinute();
-      document.getElementById('kl-tip').innerHTML='<span>'+KLMIN.date+'</span><span>昨收 '+KLMIN.prev.toFixed(2)+'</span>';
+      document.getElementById('kl-tip').innerHTML='<span>'+KLMIN.date+'</span><span>鏄ㄦ敹 '+KLMIN.prev.toFixed(2)+'</span>';
     }).catch(function(){
       if(KLPERIOD!=='min') return;
-      document.getElementById('kl-tip').innerHTML='<span>分时加载失败</span>';
+      document.getElementById('kl-tip').innerHTML='<span>鍒嗘椂鍔犺浇澶辫触</span>';
     });
     return;
   }
   return _setKLPeriod0(p);
 };
-// ── 通达信式十字瞄准：点住/悬停某根K线 → 竖线+横线定位，K线上方浮窗显示 涨幅 / 至今涨幅 ──
+// 鈹€鈹€ 閫氳揪淇″紡鍗佸瓧鐬勫噯锛氱偣浣?鎮仠鏌愭牴K绾?鈫?绔栫嚎+妯嚎瀹氫綅锛孠绾夸笂鏂规诞绐楁樉绀?娑ㄥ箙 / 鑷充粖娑ㄥ箙 鈹€鈹€
 function hideCrosshair(){
   if(typeof KLCROSS!=='undefined') KLCROSS.idx=null;
   ['kl-cv','kl-chl'].forEach(function(id){
     var e=document.getElementById(id); if(e) e.style.display='none';
   });
-  // 信息栏常驻（在图上方不遮挡），收起准星后回到最新一根
+  // 淇℃伅鏍忓父椹伙紙鍦ㄥ浘涓婃柟涓嶉伄鎸★級锛屾敹璧峰噯鏄熷悗鍥炲埌鏈€鏂颁竴鏍?
   renderTip(KLCHART.rows?KLCHART.rows.length-1:0);
 }
-// 持仓成本：K线图上画一条成本价线（虚线）。无成本（非持仓/未填）返回 0
+// 鎸佷粨鎴愭湰锛欿绾垮浘涓婄敾涓€鏉℃垚鏈环绾匡紙铏氱嚎锛夈€傛棤鎴愭湰锛堥潪鎸佷粨/鏈～锛夎繑鍥?0
 function holdCostOf(code){
   if(!code || typeof HOLD==='undefined' || !Array.isArray(HOLD)) return 0;
   for(var i=0;i<HOLD.length;i++){
@@ -1613,7 +1614,7 @@ function holdCostOf(code){
   }
   return 0;
 }
-// 行情信息栏（固定在K线图上方，永不遮挡）：渲染某一根K线的关键数据
+// 琛屾儏淇℃伅鏍忥紙鍥哄畾鍦↘绾垮浘涓婃柟锛屾案涓嶉伄鎸★級锛氭覆鏌撴煇涓€鏍筀绾跨殑鍏抽敭鏁版嵁
 function renderTip(idx){
   var tip=document.getElementById('kl-tip');
   if(!tip)return;
@@ -1623,21 +1624,21 @@ function renderTip(idx){
   var r=rows[idx];
   var prev=idx>0?rows[idx-1].c:(r.o||r.c);
   var last=rows[rows.length-1].c;
-  var dchg=prev?((r.c/prev-1)*100):0;        // 当日涨幅
-  var tchg=r.c?((last/r.c-1)*100):0;         // 至今涨幅：该日收盘 → 最新收盘
+  var dchg=prev?((r.c/prev-1)*100):0;        // 褰撴棩娑ㄥ箙
+  var tchg=r.c?((last/r.c-1)*100):0;         // 鑷充粖娑ㄥ箙锛氳鏃ユ敹鐩?鈫?鏈€鏂版敹鐩?
   var cls=function(v){ return v>0?'up':(v<0?'dn':'flat'); };
   var sg=function(v){ return (v>0?'+':'')+v.toFixed(2)+'%'; };
   tip.innerHTML=
     '<span class="rd">'+r.d+'</span>'+
-    '<span>高 '+r.h.toFixed(2)+'</span>'+
-    '<span>低 '+r.l.toFixed(2)+'</span>'+
-    '<span>收 <b>'+r.c.toFixed(2)+'</b></span>'+
-    '<span><span class="tk">涨幅</span><span class="'+cls(dchg)+'">'+sg(dchg)+'</span></span>'+
-    '<span><span class="tk">至今</span><span class="'+cls(tchg)+'">'+sg(tchg)+'</span></span>';
+    '<span>楂?'+r.h.toFixed(2)+'</span>'+
+    '<span>浣?'+r.l.toFixed(2)+'</span>'+
+    '<span>鏀?<b>'+r.c.toFixed(2)+'</b></span>'+
+    '<span><span class="tk">娑ㄥ箙</span><span class="'+cls(dchg)+'">'+sg(dchg)+'</span></span>'+
+    '<span><span class="tk">鑷充粖</span><span class="'+cls(tchg)+'">'+sg(tchg)+'</span></span>';
   var hc=(typeof KLCUR!=='undefined'&&KLCUR)?holdCostOf(KLCUR.code):0;
   if(hc>0 && r.c){
     var pnl=(r.c/hc-1)*100;
-    tip.innerHTML+='<span class="tk">成本</span><span>'+hc.toFixed(2)+'</span>'+'<span><span class="'+cls(pnl)+'">'+sg(pnl)+'</span></span>';
+    tip.innerHTML+='<span class="tk">鎴愭湰</span><span>'+hc.toFixed(2)+'</span>'+'<span><span class="'+cls(pnl)+'">'+sg(pnl)+'</span></span>';
   }
   tip.style.display='flex';
 }
@@ -1650,13 +1651,13 @@ function showCrosshair(idx){
   if(!rows||!rows.length||!geo||!geo.n){ hideCrosshair(); return; }
   idx=Math.max(KLCHART.i0,Math.min(KLCHART.i1,idx));
   var r=rows[idx];
-  var s=wrap.clientWidth/(geo.W||680);       // viewBox → CSS 像素缩放
+  var s=wrap.clientWidth/(geo.W||680);       // viewBox 鈫?CSS 鍍忕礌缂╂斁
   if(!s||!isFinite(s)||s<=0) return;
   var cxVB=geo.L+geo.slot*((idx-KLCHART.i0)+0.5);
   var yOf=function(p){ return geo.T+(geo.mx-p)/((geo.mx-geo.mn)||1)*geo.ch; };
   var cxPx=cxVB*s, clPx=yOf(r.c)*s;
   cv.style.display='block'; cv.style.left=cxPx.toFixed(1)+'px';
-  // 竖线从主图顶贯穿到副图底（副图量·砖区也带瞄准竖线，通达信风格）
+  // 绔栫嚎浠庝富鍥鹃《璐┛鍒板壇鍥惧簳锛堝壇鍥鹃噺路鐮栧尯涔熷甫鐬勫噯绔栫嚎锛岄€氳揪淇￠鏍硷級
   var subBot=(geo.subTop!=null && geo.subH!=null)?(geo.subTop+geo.subH):(geo.T+geo.ch);
   cv.style.top=(geo.T*s).toFixed(1)+'px';
   cv.style.height=Math.max(1,(subBot-geo.T)*s).toFixed(1)+'px';
@@ -1665,10 +1666,10 @@ function showCrosshair(idx){
   renderTip(idx);
 }
 
-function klCacheKey(p){ return (p==='week')?'klcache_wk_v2':'klcache_v2'; }   // v2: 缓存含成交量(6字段)，旧 v1 缓存(5字段无量)自动作废
+function klCacheKey(p){ return (p==='week')?'klcache_wk_v2':'klcache_v2'; }   // v2: 缂撳瓨鍚垚浜ら噺(6瀛楁)锛屾棫 v1 缂撳瓨(5瀛楁鏃犻噺)鑷姩浣滃簾
 function loadKLCache(p){ try{ return JSON.parse(localStorage.getItem(klCacheKey(p))||'{}'); }catch(e){ return {}; } }
 function saveKLCache(c,p){ try{ localStorage.setItem(klCacheKey(p), JSON.stringify(c)); }catch(e){} }
-// 带超时的 fetch（手机网络差时不会永久挂起）
+// 甯﹁秴鏃剁殑 fetch锛堟墜鏈虹綉缁滃樊鏃朵笉浼氭案涔呮寕璧凤級
 function fetchWithTimeout(url, opts, ms){
   opts=opts||{}; ms=ms||8000;
   var ctrl=null;
@@ -1676,8 +1677,8 @@ function fetchWithTimeout(url, opts, ms){
   var tmr=setTimeout(function(){ if(ctrl) ctrl.abort(); }, ms);
   return fetch(url, opts).then(function(r){ clearTimeout(tmr); return r; }).catch(function(e){ clearTimeout(tmr); throw e; });
 }
-// 拉取并缓存某只K线。候选：本机隧道 /api/kline（经本机电脑转发，最稳定） → 腾讯直连 → 东财直连。缓存格式 [d,o,c,h,l]
-// 把新抓到的尾部K线按日期合并进已有缓存（只在末尾 TAIL 根内匹配，避免跨年同月日误撞）
+// 鎷夊彇骞剁紦瀛樻煇鍙狵绾裤€傚€欓€夛細鏈満闅ч亾 /api/kline锛堢粡鏈満鐢佃剳杞彂锛屾渶绋冲畾锛?鈫?鑵捐鐩磋繛 鈫?涓滆储鐩磋繛銆傜紦瀛樻牸寮?[d,o,c,h,l]
+// 鎶婃柊鎶撳埌鐨勫熬閮↘绾挎寜鏃ユ湡鍚堝苟杩涘凡鏈夌紦瀛橈紙鍙湪鏈熬 TAIL 鏍瑰唴鍖归厤锛岄伩鍏嶈法骞村悓鏈堟棩璇挒锛?
 function mergeKLTail(oldArr, newArr){
   var TAIL=60;
   if(!oldArr||!oldArr.length) return newArr;
@@ -1693,8 +1694,8 @@ function mergeKLTail(oldArr, newArr){
   });
   return head.concat(tail, extra);
 }
-// n = 抓取根数；省略/0 = 全量 250。增量刷新传 40，只拉最近40根再合并，速度快数倍
-// n = 抓取根数（默认 500）；period = 'day' | 'week'
+// n = 鎶撳彇鏍规暟锛涚渷鐣?0 = 鍏ㄩ噺 250銆傚閲忓埛鏂颁紶 40锛屽彧鎷夋渶杩?0鏍瑰啀鍚堝苟锛岄€熷害蹇暟鍊?
+// n = 鎶撳彇鏍规暟锛堥粯璁?500锛夛紱period = 'day' | 'week'
 function cacheKline(code, mkt, n, period){
   var N=(n&&n>0)?n:500;
   var per=(period==='week')?'week':'day';
@@ -1709,7 +1710,7 @@ function cacheKline(code, mkt, n, period){
   function parseEM(kl){ return kl.map(function(s){ var p=s.split(','); return {d:fmtDate(p[0]),o:+p[1],c:+p[2],h:+p[3],l:+p[4],v:p[5]?+p[5]:0}; }); }
   function parseTX(j){
     var tj=(j&&j.data&&j.data[sym])||{};
-    var list=tj['qfq'+per]||tj[per]||[];          // 日K=qfqday / 周K=qfqweek
+    var list=tj['qfq'+per]||tj[per]||[];          // 鏃=qfqday / 鍛↘=qfqweek
     if(!list.length) throw new Error('empty');
     return list.map(function(a){ return {d:fmtDate(a[0]),o:+a[1],c:+a[2],h:+a[3],l:+a[4],v:a[5]?+a[5]:0}; });
   }
@@ -1728,16 +1729,16 @@ function cacheKline(code, mkt, n, period){
   return p.then(function(rows){
     var c=loadKLCache(per);
     var fresh=rows.map(function(r){ return [r.d,r.o,r.c,r.h,r.l,r.v||0]; });
-    // 增量模式（N<500）按日期合并进已有缓存；全量模式直接覆盖
+    // 澧為噺妯″紡锛圢<500锛夋寜鏃ユ湡鍚堝苟杩涘凡鏈夌紦瀛橈紱鍏ㄩ噺妯″紡鐩存帴瑕嗙洊
     c[code]=(N<500 && c[code] && c[code].length)?mergeKLTail(c[code],fresh):fresh;
     saveKLCache(c,per);
     return c[code].map(function(r){ return {d:r[0],o:r[1],c:r[2],h:r[3],l:r[4],v:r[5]||0}; });
   }).catch(function(){ return null; });
 }
-var KLPERIOD='day';                                  // 当前K线周期：day / week / min(分时)
-var KLMIN={rows:null,date:null,prev:null};               // 分时数据缓存 {rows:[{t,p,avg}], date, prev}
-var MINCROSS={idx:null};                                 // 分时十字准星：对准的分时点索引
-// 分时准星：clientX → 分时点索引（与 drawMinute 的 L=40/R=54 布局一致）
+var KLPERIOD='day';                                  // 褰撳墠K绾垮懆鏈燂細day / week / min(鍒嗘椂)
+var KLMIN={rows:null,date:null,prev:null};               // 鍒嗘椂鏁版嵁缂撳瓨 {rows:[{t,p,avg}], date, prev}
+var MINCROSS={idx:null};                                 // 鍒嗘椂鍗佸瓧鍑嗘槦锛氬鍑嗙殑鍒嗘椂鐐圭储寮?
+// 鍒嗘椂鍑嗘槦锛歝lientX 鈫?鍒嗘椂鐐圭储寮曪紙涓?drawMinute 鐨?L=40/R=54 甯冨眬涓€鑷达級
 function minBarAt(clientX){
   var el=document.getElementById('kl-chart');
   if(!el)return 0;
@@ -1747,11 +1748,11 @@ function minBarAt(clientX){
   if(!rect.width)return rows.length-1;
   var W=rect.width, L2=40, R2=54;
   var cw2=W-L2-R2;
-  var gx=(clientX-rect.left)/rect.width*W;      // CSS → viewBox 同比例
+  var gx=(clientX-rect.left)/rect.width*W;      // CSS 鈫?viewBox 鍚屾瘮渚?
   var n=rows.length, slot2=cw2/(n-1||1);
   return Math.max(0,Math.min(n-1,Math.round((gx-L2)/slot2)));
 }
-// 分时准星：信息栏显示 对准时间点的 时间/价格/涨幅/均价
+// 鍒嗘椂鍑嗘槦锛氫俊鎭爮鏄剧ず 瀵瑰噯鏃堕棿鐐圭殑 鏃堕棿/浠锋牸/娑ㄥ箙/鍧囦环
 function minTip(idx){
   var tip=document.getElementById('kl-tip');
   if(!tip||!KLMIN.rows||!KLMIN.rows.length) return;
@@ -1761,18 +1762,18 @@ function minTip(idx){
   var cls=chg>0?'up':(chg<0?'dn':'flat');
   tip.style.display='flex';
   tip.innerHTML='<span class="rd">'+r.t+'</span>'+
-    '<span>价格 <b>'+r.p.toFixed(2)+'</b></span>'+
+    '<span>浠锋牸 <b>'+r.p.toFixed(2)+'</b></span>'+
     '<span><span class="'+cls+'">'+(chg>0?'+':'')+chg.toFixed(2)+'%</span></span>'+
-    '<span>均价 '+r.avg.toFixed(2)+'</span>';
+    '<span>鍧囦环 '+r.avg.toFixed(2)+'</span>';
 }
-// 分时准星收起 → 信息栏恢复 日期/昨收
+// 鍒嗘椂鍑嗘槦鏀惰捣 鈫?淇℃伅鏍忔仮澶?鏃ユ湡/鏄ㄦ敹
 function minRestoreTip(){
   var tip=document.getElementById('kl-tip');
-  if(tip&&KLMIN.date) tip.innerHTML='<span>'+KLMIN.date+'</span><span>昨收 '+KLMIN.prev.toFixed(2)+'</span>';
+  if(tip&&KLMIN.date) tip.innerHTML='<span>'+KLMIN.date+'</span><span>鏄ㄦ敹 '+KLMIN.prev.toFixed(2)+'</span>';
 }
-var KLCUR=null;                                       // 当前弹窗显示的股票 {code,name}
-var KLFOOT_SUF='';                                    // 脚注后缀（数据来源说明）
-// 脚注按「当前可视窗口」计算，避免 500 根数据时显示 2 年区间、与屏幕上的 150 根对不上
+var KLCUR=null;                                       // 褰撳墠寮圭獥鏄剧ず鐨勮偂绁?{code,name}
+var KLFOOT_SUF='';                                    // 鑴氭敞鍚庣紑锛堟暟鎹潵婧愯鏄庯級
+// 鑴氭敞鎸夈€屽綋鍓嶅彲瑙嗙獥鍙ｃ€嶈绠楋紝閬垮厤 500 鏍规暟鎹椂鏄剧ず 2 骞村尯闂淬€佷笌灞忓箷涓婄殑 150 鏍瑰涓嶄笂
 function updateKLFoot(){
   var el=document.getElementById('kl-foot'), r=KLCHART.rows;
   if(!el||!r||!r.length) return;
@@ -1791,7 +1792,7 @@ function setKLPeriod(p){
   p=(p==='week')?'week':'day';
   if(KLPERIOD===p) return;
   KLPERIOD=p; syncPeriodBtn();
-  // 优先用"当前弹窗正在显示的股票"，其次才退回 klIdx（直接调 showKline 打开时 klIdx 可能未设）
+  // 浼樺厛鐢?褰撳墠寮圭獥姝ｅ湪鏄剧ず鐨勮偂绁?锛屽叾娆℃墠閫€鍥?klIdx锛堢洿鎺ヨ皟 showKline 鎵撳紑鏃?klIdx 鍙兘鏈锛?
   var cur=KLCUR || ((typeof klIdx!=='undefined' && klIdx>=0)?allStocks()[klIdx]:null);
   if(cur) showKline(cur.code, cur.name);
 }
@@ -1806,30 +1807,30 @@ function showKline(code,name){
   syncPeriodBtn();
   var per=(KLPERIOD==='week')?'week':'day';
   var mkt=/^6|^68|^9/.test(code)?'1':'0';
-  var hasEmbed=(per==='day' && !!KL_DATA[code]);        // 内嵌快照只有日K
+  var hasEmbed=(per==='day' && !!KL_DATA[code]);        // 鍐呭祵蹇収鍙湁鏃
   var KLCACHE=loadKLCache(per);
-  // 1) 日K 内嵌快照优先：零运行时外网依赖，手机点开即渲染（数据每行 [d,o,h,l,c]）
+  // 1) 鏃 鍐呭祵蹇収浼樺厛锛氶浂杩愯鏃跺缃戜緷璧栵紝鎵嬫満鐐瑰紑鍗虫覆鏌擄紙鏁版嵁姣忚 [d,o,h,l,c]锛?
   if(hasEmbed){
     var erows=KL_DATA[code].map(function(r){ return {d:r[0],o:r[1],c:r[4],h:r[2],l:r[3],v:r[5]||0}; });
     KLCHART.setRows(erows);
-    KLFOOT_SUF=' ｜ 内嵌快照（离线可用）'; updateKLFoot();
-  // 1b) 本机缓存次之：首次联网抓到后存下，之后点开即秒开（不依赖内嵌、不依赖再次联网）
+    KLFOOT_SUF=' 锝?鍐呭祵蹇収锛堢绾垮彲鐢級'; updateKLFoot();
+  // 1b) 鏈満缂撳瓨娆′箣锛氶娆¤仈缃戞姄鍒板悗瀛樹笅锛屼箣鍚庣偣寮€鍗崇寮€锛堜笉渚濊禆鍐呭祵銆佷笉渚濊禆鍐嶆鑱旂綉锛?
   } else if(KLCACHE[code]){
     var crows=KLCACHE[code].map(function(r){ return {d:r[0],o:r[1],c:r[2],h:r[3],l:r[4],v:r[5]||0}; });
     KLCHART.setRows(crows);
-    KLFOOT_SUF=' ｜ 本机缓存（即时）'; updateKLFoot();
+    KLFOOT_SUF=' 锝?鏈満缂撳瓨锛堝嵆鏃讹級'; updateKLFoot();
   } else {
-    chartEl.innerHTML='<div style="padding:60px 0;text-align:center;color:var(--sub)">加载'+(per==='week'?'周':'日')+'K线…</div>';
+    chartEl.innerHTML='<div style="padding:60px 0;text-align:center;color:var(--sub)">鍔犺浇'+(per==='week'?'鍛?:'鏃?)+'K绾库€?/div>';
   }
-  // 2) 后台尝试网络刷新到最新（成功后写入本机缓存，下次即秒开；失败给明确提示）
+  // 2) 鍚庡彴灏濊瘯缃戠粶鍒锋柊鍒版渶鏂帮紙鎴愬姛鍚庡啓鍏ユ湰鏈虹紦瀛橈紝涓嬫鍗崇寮€锛涘け璐ョ粰鏄庣‘鎻愮ず锛?
   cacheKline(code, mkt, 0, per).then(function(rows){
-    if(KLPERIOD!==per || modal.hidden) return;          // 已切周期或已关闭 → 丢弃这次结果
+    if(KLPERIOD!==per || modal.hidden) return;          // 宸插垏鍛ㄦ湡鎴栧凡鍏抽棴 鈫?涓㈠純杩欐缁撴灉
     if(rows){
       KLCHART.setRows(rows);
-      KLFOOT_SUF=' ｜ 已刷新至最新'; updateKLFoot();
+      KLFOOT_SUF=' 锝?宸插埛鏂拌嚦鏈€鏂?; updateKLFoot();
     } else if(!hasEmbed && !KLCACHE[code]){
-      chartEl.innerHTML='<div style="padding:60px 20px;text-align:center;color:var(--sub)">加载失败<br><span style="font-size:13px">网络不通或响应超时，请检查网络后重试</span></div>';
-      KLFOOT_SUF=''; document.getElementById('kl-foot').textContent='加载失败，请检查网络';
+      chartEl.innerHTML='<div style="padding:60px 20px;text-align:center;color:var(--sub)">鍔犺浇澶辫触<br><span style="font-size:13px">缃戠粶涓嶉€氭垨鍝嶅簲瓒呮椂锛岃妫€鏌ョ綉缁滃悗閲嶈瘯</span></div>';
+      KLFOOT_SUF=''; document.getElementById('kl-foot').textContent='鍔犺浇澶辫触锛岃妫€鏌ョ綉缁?;
     }
   });
 }
@@ -1853,9 +1854,9 @@ function klStep(){ return Math.max(1,Math.round(KLCHART.len()*0.15)); }
 document.getElementById('kl-left').addEventListener('click', function(){ KLCHART.pan(-klStep()); });
 document.getElementById('kl-right').addEventListener('click', function(){ KLCHART.pan(klStep()); });
 
-// K线弹窗内左右切换股票（按 ALL 顺序，首尾循环）
+// K绾垮脊绐楀唴宸﹀彸鍒囨崲鑲＄エ锛堟寜 ALL 椤哄簭锛岄灏惧惊鐜級
 var klIdx=-1;
-function klList(){ return [].concat(B1, QB, HOLD); }   // K线切换顺序：B1 → 鼎美搬砖 → 持仓股
+function klList(){ return [].concat(B1, QB, HOLD); }   // K绾垮垏鎹㈤『搴忥細B1 鈫?榧庣編鎼爾 鈫?鎸佷粨鑲?
 function openAt(i){
   var list=klList();
   if(!list.length)return;
@@ -1874,7 +1875,7 @@ document.addEventListener('keydown', function(e){
   else if(e.key==='Escape'){ modal.hidden=true; }
 });
 
-// K线图交互：单指横向=平移、纵向=缩放（准星开着时横向交给准星逐日移动） / 双指=平移+捏合缩放 / 鼠标=拖动平移+上下缩放 / 滚轮缩放
+// K绾垮浘浜や簰锛氬崟鎸囨í鍚?骞崇Щ銆佺旱鍚?缂╂斁锛堝噯鏄熷紑鐫€鏃舵í鍚戜氦缁欏噯鏄熼€愭棩绉诲姩锛?/ 鍙屾寚=骞崇Щ+鎹忓悎缂╂斁 / 榧犳爣=鎷栧姩骞崇Щ+涓婁笅缂╂斁 / 婊氳疆缂╂斁
 (function(){
   var el=document.getElementById('kl-chart');
   var CW=680-8-58;
@@ -1893,7 +1894,7 @@ document.addEventListener('keydown', function(e){
     return Math.max(KLCHART.i0,Math.min(KLCHART.i1,k));
   }
   el.addEventListener('pointerdown',function(e){
-    if(KLPERIOD==='min') return;                  // 分时图无K线手势（避免用旧rows重绘成K线）
+    if(KLPERIOD==='min') return;                  // 鍒嗘椂鍥炬棤K绾挎墜鍔匡紙閬垮厤鐢ㄦ棫rows閲嶇粯鎴怟绾匡級
     ptrs[e.pointerId]={x:e.clientX,y:e.clientY};
     try{ el.setPointerCapture(e.pointerId); }catch(_){}
     var ids=Object.keys(ptrs);
@@ -1901,13 +1902,13 @@ document.addEventListener('keydown', function(e){
     if(ids.length===1){
       ptype=e.pointerType||'touch';
       sx=lx=e.clientX; sy=ly=e.clientY;
-      anchor=barAt(e.clientX);   // 锚点K线在按下时就锁定，整段手势内横向漂移不再影响画面
+      anchor=barAt(e.clientX);   // 閿氱偣K绾垮湪鎸変笅鏃跺氨閿佸畾锛屾暣娈垫墜鍔垮唴妯悜婕傜Щ涓嶅啀褰卞搷鐢婚潰
     }
     if(ids.length>=2){
       lastDist=Math.abs(ptrs[ids[0]].x-ptrs[ids[1]].x)||1;
       lastMid=(ptrs[ids[0]].x+ptrs[ids[1]].x)/2;
       startMid=lastMid;
-      pinStart=(KLCHART.rows.length>0 && KLCHART.i1>=KLCHART.rows.length-1); // 手势开始时最新一根是否在屏内
+      pinStart=(KLCHART.rows.length>0 && KLCHART.i1>=KLCHART.rows.length-1); // 鎵嬪娍寮€濮嬫椂鏈€鏂颁竴鏍规槸鍚﹀湪灞忓唴
     }
     e.preventDefault();
   });
@@ -1921,42 +1922,42 @@ document.addEventListener('keydown', function(e){
       if(lastDist>0) KLCHART.zoom(lastDist/d,barAt(mid),true);
       var pb2=pxPerBar();
       if(lastMid!=null && pb2>0) KLCHART.pan(-(mid-lastMid)/pb2,true);
-      // 捏合时若最新一根本在屏内、且双指中点几乎没整体位移，收尾把右端钉回最新一根
+      // 鎹忓悎鏃惰嫢鏈€鏂颁竴鏍规湰鍦ㄥ睆鍐呫€佷笖鍙屾寚涓偣鍑犱箮娌℃暣浣撲綅绉伙紝鏀跺熬鎶婂彸绔拤鍥炴渶鏂颁竴鏍?
       if(pinStart && startMid!=null && Math.abs(mid-startMid)<12) KLCHART.pinLatest(true);
       KLCHART.draw();
       lastDist=d; lastMid=mid;
       return;
     }
     var tdx=e.clientX-sx, tdy=e.clientY-sy;
-    var adx=Math.abs(e.clientX-lx), ady=Math.abs(e.clientY-ly);   // 相对上一次移动的增量
+    var adx=Math.abs(e.clientX-lx), ady=Math.abs(e.clientY-ly);   // 鐩稿涓婁竴娆＄Щ鍔ㄧ殑澧為噺
     var crossOn=(typeof KLCROSS!=='undefined' && KLCROSS.idx!=null);
     if(ptype==='touch' && crossOn){
-      // 准星开着：每次移动都重新判定方向，不一次性锁死。
-      // （旧逻辑只在首次移动锁一次，起手一点纵向抖动就把整段手势锁成缩放 → 横滑十字不动）
-      if(adx<1 && ady<1) return;                                  // 忽略亚像素抖动
-      mode=(ady>=3 && ady>adx*2) ? 'zoom' : 'cross';              // 只有明显纵向才缩放，其余交给准星
+      // 鍑嗘槦寮€鐫€锛氭瘡娆＄Щ鍔ㄩ兘閲嶆柊鍒ゅ畾鏂瑰悜锛屼笉涓€娆℃€ч攣姝汇€?
+      // 锛堟棫閫昏緫鍙湪棣栨绉诲姩閿佷竴娆★紝璧锋墜涓€鐐圭旱鍚戞姈鍔ㄥ氨鎶婃暣娈垫墜鍔块攣鎴愮缉鏀?鈫?妯粦鍗佸瓧涓嶅姩锛?
+      if(adx<1 && ady<1) return;                                  // 蹇界暐浜氬儚绱犳姈鍔?
+      mode=(ady>=3 && ady>adx*2) ? 'zoom' : 'cross';              // 鍙湁鏄庢樉绾靛悜鎵嶇缉鏀撅紝鍏朵綑浜ょ粰鍑嗘槦
     }else if(mode===null){
       if(ptype==='touch'){
-        // 单指：横向=平移，纵向=缩放
+        // 鍗曟寚锛氭í鍚?骞崇Щ锛岀旱鍚?缂╂斁
         if(Math.abs(tdx)<6 && Math.abs(tdy)<6) return;
         mode=(Math.abs(tdx)>Math.abs(tdy)*1.4)?'pan':'zoom';
       }else{
-        // 鼠标/触控笔：按主方向锁定（横向拖平移、上下拖缩放），锁定后另一方向不再响应
+        // 榧犳爣/瑙︽帶绗旓細鎸変富鏂瑰悜閿佸畾锛堟í鍚戞嫋骞崇Щ銆佷笂涓嬫嫋缂╂斁锛夛紝閿佸畾鍚庡彟涓€鏂瑰悜涓嶅啀鍝嶅簲
         if(Math.abs(tdx)+Math.abs(tdy)<14) return;
         mode=(Math.abs(tdx)>Math.abs(tdy)*1.4)?'pan':'zoom';
       }
       lx=e.clientX; ly=e.clientY;
       return;
     }
-    if(mode==='cross'){ lx=e.clientX; ly=e.clientY; return; }   // 准星自己处理，不平移不缩放
+    if(mode==='cross'){ lx=e.clientX; ly=e.clientY; return; }   // 鍑嗘槦鑷繁澶勭悊锛屼笉骞崇Щ涓嶇缉鏀?
     var dx=e.clientX-lx, dy=e.clientY-ly;
     if(mode==='pan'){
       var pb=pxPerBar();
       if(pb>0) KLCHART.pan(-dx/pb);
     }else{
-      var f=Math.exp(dy/200);                                // 上滑(dy<0)放大，下滑缩小
+      var f=Math.exp(dy/200);                                // 涓婃粦(dy<0)鏀惧ぇ锛屼笅婊戠缉灏?
       f=Math.max(0.6,Math.min(1.6,f));
-      KLCHART.zoom(f,anchor);                                // 固定锚点，横向漂移不影响
+      KLCHART.zoom(f,anchor);                                // 鍥哄畾閿氱偣锛屾í鍚戞紓绉讳笉褰卞搷
     }
     lx=e.clientX; ly=e.clientY;
   });
@@ -1974,7 +1975,7 @@ document.addEventListener('keydown', function(e){
 })();
 
 
-// 十字瞄准交互：鼠标悬停=跟随 / 手指点住=显示（横向拖动可连续移动准星，纵向仍归缩放）
+// 鍗佸瓧鐬勫噯浜や簰锛氶紶鏍囨偓鍋?璺熼殢 / 鎵嬫寚鐐逛綇=鏄剧ず锛堟í鍚戞嫋鍔ㄥ彲杩炵画绉诲姩鍑嗘槦锛岀旱鍚戜粛褰掔缉鏀撅級
 var KLCROSS={idx:null};
 (function(){
   var el=document.getElementById('kl-chart');
@@ -1992,26 +1993,26 @@ var KLCROSS={idx:null};
     var k=KLCHART.i0+Math.round((gx-8)/slot-0.5);
     return Math.max(KLCHART.i0,Math.min(KLCHART.i1,k));
   }
-  // 缩放/平移后准星跟随重绘，避免残留错位
+  // 缂╂斁/骞崇Щ鍚庡噯鏄熻窡闅忛噸缁橈紝閬垮厤娈嬬暀閿欎綅
   var _draw=KLCHART.draw;
   KLCHART.draw=function(){
     _draw.apply(KLCHART,arguments);
     if(KLCROSS.idx!=null) showCrosshair(KLCROSS.idx);
-    else renderTip(KLCHART.rows?KLCHART.rows.length-1:0);   // 换股/刷新后信息栏回到最新
-    if(typeof updateKLFoot==='function') updateKLFoot();    // 脚注跟随可视窗口
+    else renderTip(KLCHART.rows?KLCHART.rows.length-1:0);   // 鎹㈣偂/鍒锋柊鍚庝俊鎭爮鍥炲埌鏈€鏂?
+    if(typeof updateKLFoot==='function') updateKLFoot();    // 鑴氭敞璺熼殢鍙绐楀彛
   };
   var downId=null,downX=0,downY=0,moved=false,lastX=0,lastY=0;
   el.addEventListener('pointerdown',function(e){
-    if(KLPERIOD==='min'){                         // 分时：按下记录，抬手判定显示/隐藏准星
+    if(KLPERIOD==='min'){                         // 鍒嗘椂锛氭寜涓嬭褰曪紝鎶墜鍒ゅ畾鏄剧ず/闅愯棌鍑嗘槦
       downId=e.pointerId; downX=e.clientX; downY=e.clientY; moved=false; lastX=e.clientX;
       return;
     }
     downId=e.pointerId; downX=e.clientX; downY=e.clientY; moved=false;
     lastX=e.clientX; lastY=e.clientY;
-    // 按下时不显示，等抬手才判定 —— 这样缩放/平移手势完全不受影响
+    // 鎸変笅鏃朵笉鏄剧ず锛岀瓑鎶墜鎵嶅垽瀹?鈥斺€?杩欐牱缂╂斁/骞崇Щ鎵嬪娍瀹屽叏涓嶅彈褰卞搷
   });
   el.addEventListener('pointermove',function(e){
-    if(KLPERIOD==='min'){                         // 分时：拖动逐点移动准星 / 鼠标悬停跟随
+    if(KLPERIOD==='min'){                         // 鍒嗘椂锛氭嫋鍔ㄩ€愮偣绉诲姩鍑嗘槦 / 榧犳爣鎮仠璺熼殢
       if(e.pointerId===downId){
         var mdx=Math.abs(e.clientX-downX), mdy=Math.abs(e.clientY-downY);
         if(mdx>10||mdy>10) moved=true;
@@ -2027,17 +2028,17 @@ var KLCROSS={idx:null};
     if(e.pointerId===downId){
       var mdx=Math.abs(e.clientX-downX), mdy=Math.abs(e.clientY-downY);
       if(mdx>10||mdy>10) moved=true;
-      // 准星开着：只要横向有位移就跟随（不再比对纵向累计量，避免斜着滑时十字不动）
+      // 鍑嗘槦寮€鐫€锛氬彧瑕佹í鍚戞湁浣嶇Щ灏辫窡闅忥紙涓嶅啀姣斿绾靛悜绱閲忥紝閬垮厤鏂滅潃婊戞椂鍗佸瓧涓嶅姩锛?
       if(typeof KLCROSS!=='undefined' && KLCROSS.idx!=null && Math.abs(e.clientX-lastX)>0){
         showCrosshair(barAt(e.clientX));
       }
       lastX=e.clientX; lastY=e.clientY;
       return;
     }
-    if(e.pointerType==='mouse') showCrosshair(barAt(e.clientX));   // 鼠标悬停仍可跟随
+    if(e.pointerType==='mouse') showCrosshair(barAt(e.clientX));   // 榧犳爣鎮仠浠嶅彲璺熼殢
   });
   function up(e){
-    if(KLPERIOD==='min'){                         // 分时：触屏点一下显示/再点消失；鼠标点击定位
+    if(KLPERIOD==='min'){                         // 鍒嗘椂锛氳Е灞忕偣涓€涓嬫樉绀?鍐嶇偣娑堝け锛涢紶鏍囩偣鍑诲畾浣?
       if(e.pointerId!==downId)return;
       downId=null;
       if(moved)return;
@@ -2049,10 +2050,10 @@ var KLCROSS={idx:null};
     }
     if(e.pointerId!==downId)return;
     downId=null;
-    if(moved)return;                                   // 拖过 = 缩放/平移，不算点击
-    // 鼠标：悬停已驱动准星，点击只定位
+    if(moved)return;                                   // 鎷栬繃 = 缂╂斁/骞崇Щ锛屼笉绠楃偣鍑?
+    // 榧犳爣锛氭偓鍋滃凡椹卞姩鍑嗘槦锛岀偣鍑诲彧瀹氫綅
     if(e.pointerType==='mouse'){ showCrosshair(barAt(e.clientX)); return; }
-    // 触屏：点一下显示，再点一下（任意位置）消失
+    // 瑙﹀睆锛氱偣涓€涓嬫樉绀猴紝鍐嶇偣涓€涓嬶紙浠绘剰浣嶇疆锛夋秷澶?
     if(typeof KLCROSS!=='undefined' && KLCROSS.idx!=null) hideCrosshair();
     else showCrosshair(barAt(e.clientX));
   }
@@ -2064,7 +2065,7 @@ var KLCROSS={idx:null};
   });
 })();
 
-// Service Worker 注册（支撑后台推送与角标）
+// Service Worker 娉ㄥ唽锛堟敮鎾戝悗鍙版帹閫佷笌瑙掓爣锛?
 if('serviceWorker' in navigator){
   window.addEventListener('load', function(){ navigator.serviceWorker.register('sw.js').catch(function(){}); });
 }
