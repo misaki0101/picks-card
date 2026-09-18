@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#0f1115" />
 <link rel="manifest" href="manifest.webmanifest" />
 <link rel="apple-touch-icon" href="icon.svg" />
-<title>閫夎偂鏃ヨ 路 2026-09-16</title>
+<title>选股日记 · 2026-09-17</title>
 <style>
   :root{
     --bg:#0f1115; --card:#1a1d24; --card2:#22262f; --line:#2a2f3a;
@@ -352,7 +352,7 @@
 // 瑙勫垯锛氬崟鏃モ墺+4% 鎴?杩炵画2鏃ョ孩绱鈮?4% 鎴?杩炵画3鏃ョ孩绱鈮?4% 鈫?澶氬ご锛涘崟鏃モ墹-2.3% 鈫?绌哄ご锛涘尯闂存寔缁嚦鍙嶅悜瑙﹀彂
 // since = 杩涘叆褰撳墠鍖洪棿鐨勬棩鏈燂紱days = 鏈€杩?涓氦鏄撴棩 {d:鏃ユ湡, chg:褰撴棩娑ㄨ穼%}
 // UPDATED_AT锛氭渶杩戜竴娆?鏂伴€夎偂"鏇存柊鏃堕棿锛堣嚜鍔ㄥ寲鍐欏叆锛屾牸寮?YYYY-MM-DD HH:MM锛夛紝鐢ㄤ簬鎵嬫満瑙掓爣/妯箙
-const UPDATED_AT = "2026-09-16 16:45";
+const UPDATED_AT = "2026-09-18 12:45";
 const REASONS = {}; // 閫夎偂鐞嗙敱鍏滃簳锛堣嚜鍔ㄥ寲閲嶅啓 B1/QB 鏃舵琛ㄤ繚鐣欙紝鏂囨。鏈夌悊鐢辩殑鑲＄エ鍦ㄦ鐧昏锛?
 const PUSHER_URL = "https://pill-attorneys-brothers-round.trycloudflare.com"; // 鎺ㄩ€佹湇鍔?鏈満缁廲loudflared闅ч亾鏆撮湶)锛涢噸鍚毀閬撲細鍙橈紝灞婃椂闇€鍚屾鏇存柊姝ゅ
 const AMV = {
@@ -361,24 +361,20 @@ const AMV = {
   days:[{d:"08-27",chg:2.32},{d:"08-28",chg:-1.1},{d:"08-31",chg:0.7},{d:"09-01",chg:-1.54},{d:"09-02",chg:-2.57}],
 };
 // 寰€鏈熼€夎偂锛氬畬鏁存祦绋嬫柊涓€鏈熸椂鎶婃棫 B1/QB 澶囦唤鍒版澶勶紝娓叉煋鍒?寰€鏈熼€夎偂"鎶樺彔鍖?
-const PREV_B1 = [
-  {name:"涓浗骞冲畨",code:"601318",board:"",sec:"淇濋櫓",mkNow:"5746浜?,chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
-  {name:"涓浗鐭冲寲",code:"600028",board:"",sec:"鐭冲寲",mkNow:"5139浜?,chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
-  {name:"涓浗浜轰繚",code:"601319",board:"",sec:"淇濋櫓",mkNow:"2744浜?,chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
-  {name:"涓浗澶繚",code:"601601",board:"",sec:"淇濋櫓",mkNow:"2233浜?,chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
-  {name:"娴锋补宸ョ▼",code:"600583",board:"",sec:"娌规皵",mkNow:"264浜?,chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
-  {name:"娴峰ぉ绮惧伐",code:"601882",board:"",sec:"鏈哄簥鍒堕€?,mkNow:"113浜?,chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},];
-const PREV_QB = [
-  {name:"鐢熺泭鐢靛瓙",code:"688183",board:"688",sec:"PCB",mkNow:"1054浜?,chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},];
+const PREV_B1 = [  {name:"中国平安",code:"601318",board:"",sec:"保险",mkNow:"5746亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
+  {name:"中国石化",code:"600028",board:"",sec:"石化",mkNow:"5139亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
+  {name:"中国人保",code:"601319",board:"",sec:"保险",mkNow:"2744亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
+  {name:"中国太保",code:"601601",board:"",sec:"保险",mkNow:"2233亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
+  {name:"海油工程",code:"600583",board:"",sec:"油气",mkNow:"264亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
+  {name:"海天精工",code:"601882",board:"",sec:"机床制造",mkNow:"113亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},];
+const PREV_QB = [  {name:"生益电子",code:"688183",board:"688",sec:"PCB",mkNow:"1054亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},];
 const PREV_DATE = "2026-09-15";
-const B1 = [
-  {name:"涓浗浜轰繚",code:"601319",board:"",sec:"淇濋櫓",mkNow:"2744浜?,chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
-  {name:"鐢熺泭鐢靛瓙",code:"688183",board:"688",sec:"PCB",mkNow:"1000浜?,chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
-  {name:"涓埅瑗块",code:"000768",board:"",sec:"鑸┖瑁呭",mkNow:"617浜?,chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},];
-const QB = [
-  {name:"娣寳鐭夸笟",code:"600985",board:"",sec:"鐒︾偔鐓?,mkNow:"448浜?,chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
-  {name:"楣忛紟鎺ц偂",code:"002938",board:"",sec:"PCB",mkNow:"2102浜?,chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
-  {name:"闀块鍏夌氦",code:"601869",board:"",sec:"鍏夌氦",mkNow:"1898浜?,chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},];
+const B1 = [  {name:"中国人保",code:"601319",board:"",sec:"保险",mkNow:"2744亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
+  {name:"生益电子",code:"688183",board:"688",sec:"PCB",mkNow:"1000亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
+  {name:"中航西飞",code:"000768",board:"",sec:"航空装备",mkNow:"617亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},];
+const QB = [  {name:"淮北矿业",code:"600985",board:"",sec:"焦炭煤",mkNow:"448亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
+  {name:"鹏鼎控股",code:"002938",board:"",sec:"PCB",mkNow:"2102亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
+  {name:"长飞光纤",code:"601869",board:"",sec:"光纤",mkNow:"1898亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},];
 const RULE = { takeProfit: 15, stopLoss: -8 }; // 姝㈢泩/姝㈡崯锛?锛夛紝鍙皟
 const ALL = [...B1, ...QB];
 
