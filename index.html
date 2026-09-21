@@ -122,7 +122,7 @@
   details.mon summary{padding:11px 13px;font-size:13px;color:var(--sub);cursor:pointer;list-style:none;
     display:flex;align-items:center;justify-content:space-between}
   details.mon summary::-webkit-details-marker{display:none}
-  details.mon summary::after{content:"灞曞紑鈻?;font-size:11px;color:var(--muted)}
+  details.mon summary::after{content:"鐏炴洖绱戦埢?;font-size:11px;color:var(--muted)}
   details.mon[open] summary::after{content:"鏀惰捣鈻?}
   .mod table{width:100%;border-collapse:collapse;font-size:12px;font-variant-numeric:tabular-nums}
   .mod th{font-size:10.5px;color:var(--muted);font-weight:600;padding:7px 6px;text-align:right;
@@ -189,7 +189,7 @@
     box-shadow:0 6px 20px rgba(0,0,0,.4)}
   #toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 
-  /* K绾垮脊绐?*/
+  /* K缁惧灝鑴婄粣?*/
   #kl-modal{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center}
   #kl-modal[hidden]{display:none}
   .kl-mask{position:absolute;inset:0;background:rgba(0,0,0,.62)}
@@ -267,7 +267,7 @@
 
   <!-- 妯″潡锛氫粖鏃ラ€夎偂 -->
   <details class="mod" open>
-    <summary>浠婃棩閫夎偂</summary>
+    <summary>娴犲﹥妫╅柅澶庡亗</summary>
     <div class="sec"><h3>B1</h3><span class="tag">鏍稿績</span></div>
     <div class="list" id="b1"></div>
     <div class="sec"><h3>鼎美搬砖</h3><span class="tag">短线</span></div>
@@ -293,7 +293,7 @@
 
   <!-- 妯″潡锛氭寔浠撹偂锛堣嚜宸辨坊鍔狅紝瀛樻湰鏈猴級 -->
   <details class="mod" open>
-    <summary>鎸佷粨鑲?/summary>
+    <summary>閹镐椒绮ㄩ懖?/summary>
     <div class="hadd">
       <input id="h-in" type="text" placeholder="输入代码或名称，如 603259 / 药明康德" autocomplete="off">
       <input id="h-cost" type="number" step="0.01" inputmode="decimal" placeholder="鎴愭湰浠?閫夊～)">
@@ -330,7 +330,7 @@
     </div>
     <div class="kl-per">
       <button class="pb on" id="kl-pday">日K</button>
-      <button class="pb" id="kl-pweek">鍛↘</button>
+      <button class="pb" id="kl-pweek">閸涒啒</button>
       <button class="pb" id="kl-pmin">鍒嗘椂</button>
     </div>
     <div id="kl-tip"></div>
@@ -428,7 +428,7 @@ function row(s){
       <span class="mk">甯傚€?<b>${s.mkNow||'鈥?}</b></span>
       <span class="kdj">J <b>${kj?s.kdj.j.toFixed(1):'鈥?}</b><span class="ar ${kd}">${ar}</span></span>
     </div>
-    ${reason?`<div class="l3"><span class="rs">馃搶 ${reason}</span></div>`:''}
+    ${reason?`<div class="l3"><span class="rs">棣冩惗 ${reason}</span></div>`:''}
   </div>`;
 }
 // 閫夎偂鍒楄〃娓叉煋锛堟娊鎴愬嚱鏁帮紝鍒锋柊琛屾儏鍚庡彲閲嶇粯锛?
@@ -448,7 +448,7 @@ function renderPrev(){
   if(!hasPrev){ mod.hidden = true; return; }
   mod.hidden = false;
   const allPrev = [...(PREV_B1||[]), ...(PREV_QB||[])];
-  // 鏁伴噺鏄剧ず宸叉寜鐢ㄦ埛瑕佹眰绉婚櫎
+  // 閺佷即鍣洪弰鍓с仛瀹稿弶瀵滈悽銊﹀煕鐟曚焦鐪扮粔濠氭珟
   body.innerHTML = `
     <div class="sec"><h3>B1</h3><span class="tag">鏍稿績</span></div>
     <div class="list">${(PREV_B1||[]).map(row).join('')}</div>
@@ -701,7 +701,7 @@ function delHold(code){
   if(!confirm('浠庢寔浠撻噷鍒犻櫎 '+h.name+'锛?))return;
   HOLD=HOLD.filter(function(x){ return x.code!==code; });
   saveHold(); renderHold();
-  toast('宸插垹闄?'+h.name);
+  toast('瀹告彃鍨归梽?'+h.name);
 }
 function editCost(code){
   var h=null;
@@ -827,7 +827,7 @@ function saneName(n){
   if(!n) return '';
   if(n.indexOf('\ufffd')>=0) return '';
   if(/[\u0000-\u001f\u007f]/.test(n)) return '';
-  if(/^[\u4e00-\u9fa5A-Za-z0-9 .*STN_路\-]{1,20}$/.test(n)) return n;
+  if(/^[\u4e00-\u9fa5A-Za-z0-9 .*STN_璺痋-]{1,20}$/.test(n)) return n;
   return '';
 }
 // 单股行情兜底（腾讯 qt.gtimg.cn，与K线同源）：东财不通时用腾讯补——手机K线能拉通腾讯，这条必通
@@ -840,7 +840,7 @@ function quoteTencent(code, mkt){
       var m=t.match(/="([^"]*)"/); if(!m) return null;
       var p=m[1].split('~'); if(!p || p.length<10) return null;
       var price=Number(p[3]); if(!isFinite(price) || price<=0) return null;
-      var chg=Number(p[5]);                        // 娑ㄨ穼骞?
+      var chg=Number(p[5]);                        // 濞戙劏绌奸獮?
       var mk=Number(p[9]);                         // 鎬诲競鍊硷紙浜匡級
       return { price:price, chg:isFinite(chg)?chg:null, mk:isFinite(mk)?mk.toFixed(0)+'浜?:null, name:saneName(p[1]) };
     }).catch(function(){ return null; });
@@ -1435,8 +1435,8 @@ function drawVolBrick(kl, i0, i1, L, R, cw, subTop, subH, rows, g){
   g+='<line x1="'+L+'" y1="'+yZero.toFixed(1)+'" x2="'+(L+cw)+'" y2="'+yZero.toFixed(1)+'" stroke="var(--line)" stroke-width="1"/>';
   g+='<line x1="'+L+'" y1="'+brickTop.toFixed(1)+'" x2="'+(L+cw)+'" y2="'+brickTop.toFixed(1)+'" stroke="var(--line)" stroke-dasharray="3 3" opacity=".5"/>';
   // 标签
-  g+='<text x="'+(L+4)+'" y="'+(subTop+11)+'" font-size="10" fill="var(--sub)">閲徛风爾</text>';
-  // 鈹€鈹€ 鎴愪氦閲忔煴 鈹€鈹€
+  g+='<text x="'+(L+4)+'" y="'+(subTop+11)+'" font-size="10" fill="var(--sub)">闁插緵椋庣埦</text>';
+  // 閳光偓閳光偓 閹存劒姘﹂柌蹇旂叴 閳光偓閳光偓
   for(i=i0;i<=i1;i++){
     var r=rows[i], cx=L+slot*((i-i0)+0.5);
     var vv=r.v||0; if(vv<=0)continue;
@@ -1500,7 +1500,7 @@ function fetchMinute(code, mkt){
     var pts=dd.data.data.map(function(s){ var a=s.split(' '); return {t:a[0], p:+a[1], vol:+a[2], amt:+a[3]}; });
     // 均价 = 累计额/累计量
     pts.forEach(function(p){ p.avg = p.vol>0 ? p.amt/(p.vol*100) : p.p; });   // vol鍗曚綅=鎵嬶紝amt=鍏?鈫?鍧囦环=amt/(vol*100)
-    // 鏄ㄦ敹锛歲t[sym][4]
+    // 閺勩劍鏁归敍姝瞭[sym][4]
     var q=dd.qt&&dd.qt[sym]; var prev = (q&&q[4])?+q[4]:null;
     if(!prev && pts.length) prev=pts[0].p;
     KLMIN={ rows:pts, date:dd.data.date, prev:prev };
@@ -1549,7 +1549,7 @@ function drawMinute(){
   var midY=y(prev).toFixed(1);
   g+='<line x1="'+L+'" y1="'+midY+'" x2="'+(L+cw)+'" y2="'+midY+'" stroke="'+(up?'#e23b3b':'#1ea672')+'" stroke-width="1" stroke-dasharray="4 4"/>';
   g+='<text x="'+(L+cw-2)+'" y="'+(+midY-4)+'" fill="'+(up?'#e23b3b':'#1ea672')+'" font-size="10" text-anchor="end">鏄ㄦ敹 '+prev.toFixed(2)+'</text>';
-  // 浠锋牸绾?
+  // 娴犻攱鐗哥痪?
   g+='<path d="'+pathOf('p')+'" fill="none" stroke="'+(up?'#e23b3b':'#1ea672')+'" stroke-width="1.4"/>';
   // 鍧囦环绾?
   g+='<path d="'+pathOf('avg')+'" fill="none" stroke="#f0a020" stroke-width="1"/>';
@@ -1573,7 +1573,7 @@ function drawMinute(){
   g+='<text x="'+(L+cw)+'" y="'+(T+20)+'" font-size="11" fill="var(--muted)" text-anchor="end">鐜颁环 '+last.p.toFixed(2)+'</text>';
   el.innerHTML='<svg viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="xMidYMid meet" style="width:100%;height:auto;display:block">'+g+'</svg>';
 }
-// 鍒囨崲鍛ㄦ湡锛歞ay / week / min
+// 閸掑洦宕查崨銊︽埂閿涙瓰ay / week / min
 var _setKLPeriod0=setKLPeriod;
 window.setKLPeriod=function(p){
   if(p==='min'){
@@ -1620,7 +1620,7 @@ function renderTip(idx){
   var r=rows[idx];
   var prev=idx>0?rows[idx-1].c:(r.o||r.c);
   var last=rows[rows.length-1].c;
-  var dchg=prev?((r.c/prev-1)*100):0;        // 褰撴棩娑ㄥ箙
+  var dchg=prev?((r.c/prev-1)*100):0;        // 瑜版挻妫╁☉銊ョ畽
   var tchg=r.c?((last/r.c-1)*100):0;         // 至今涨幅：该日收盘 → 最新收盘
   var cls=function(v){ return v>0?'up':(v<0?'dn':'flat'); };
   var sg=function(v){ return (v>0?'+':'')+v.toFixed(2)+'%'; };
@@ -2068,3 +2068,6 @@ if('serviceWorker' in navigator){
 </script>
 </body>
 </html>
+
+
+
