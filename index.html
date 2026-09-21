@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#0f1115" />
 <link rel="manifest" href="manifest.webmanifest" />
 <link rel="apple-touch-icon" href="icon.svg" />
-<title>选股日记 · 2026-09-20</title>
+<title>选股日记 · 2026-09-21</title>
 <style>
   :root{
     --bg:#0f1115; --card:#1a1d24; --card2:#22262f; --line:#2a2f3a;
@@ -257,7 +257,7 @@
 
   <div class="hd">
     <div class="t"><span class="dot"></span>选股日记</div>
-    <div class="d" id="hd-date">2026-09-20 选股 · 09-20 更新</div>
+    <div class="d" id="hd-date">2026-09-21 选股 · 09-21 更新</div>
   </div>
 
   <!-- 第一大行：活跃市值（多空区间） -->
@@ -361,24 +361,24 @@ const AMV = {
   days:[{d:"08-27",chg:2.32},{d:"08-28",chg:-1.1},{d:"08-31",chg:0.7},{d:"09-01",chg:-1.54},{d:"09-02",chg:-2.57}],
 };
 // 往期选股：完整流程新一期时把旧 B1/QB 备份到此处，渲染到"往期选股"折叠区
-const PREV_B1 = [  {name:"中国人保",code:"601319",board:"",sec:"保险",mkNow:"2744亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
-  {name:"生益电子",code:"688183",board:"688",sec:"PCB",mkNow:"1000亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
-  {name:"中航西飞",code:"000768",board:"",sec:"航空装备",mkNow:"617亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},];
-const PREV_QB = [  {name:"淮北矿业",code:"600985",board:"",sec:"焦炭煤",mkNow:"448亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
-  {name:"鹏鼎控股",code:"002938",board:"",sec:"PCB",mkNow:"2102亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
-  {name:"长飞光纤",code:"601869",board:"",sec:"光纤",mkNow:"1898亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},];
-const PREV_DATE = "2026-09-17";
-const B1 = [  {name:"招商银行",code:"600036",board:"",sec:"股份制银行",mkNow:"8300亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
+const PREV_B1 = [  {name:"招商银行",code:"600036",board:"",sec:"股份制银行",mkNow:"8300亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
   {name:"中国人保",code:"601319",board:"",sec:"保险",mkNow:"2776亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
   {name:"中国太保",code:"601601",board:"",sec:"保险",mkNow:"2196亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
   {name:"生益电子",code:"688183",board:"688",sec:"PCB",mkNow:"1015亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
   {name:"中航西飞",code:"000768",board:"",sec:"航天装备",mkNow:"621亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
   {name:"华电国际",code:"600027",board:"",sec:"火力发电",mkNow:"475亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
   {name:"航天南湖",code:"688552",board:"688",sec:"军工电子",mkNow:"104亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},];
-const QB = [  {name:"中远海发",code:"601866",board:"",sec:"航运",mkNow:"239亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
+const PREV_QB = [  {name:"中远海发",code:"601866",board:"",sec:"航运",mkNow:"239亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
   {name:"航天南湖",code:"688552",board:"688",sec:"军工电子",mkNow:"104亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
   {name:"中船防务",code:"600685",board:"",sec:"航海装备",mkNow:"236亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
   {name:"中国人保",code:"601319",board:"",sec:"保险",mkNow:"2776亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},];
+const PREV_DATE = "2026-09-20";
+const B1 = [  {name:"招商银行",code:"600036",board:"",sec:"股份制银行",mkNow:"8300亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
+  {name:"中航西飞",code:"000768",board:"",sec:"航天装备",mkNow:"621亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},];
+const QB = [  {name:"青岛银行",code:"002948",board:"",sec:"城商行",mkNow:"214亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
+  {name:"沪电股份",code:"002463",board:"",sec:"PCB",mkNow:"2425亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
+  {name:"中航沈飞",code:"600760",board:"",sec:"军工电子",mkNow:"1613亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},
+  {name:"航发动力",code:"600893",board:"",sec:"航天装备",mkNow:"1000亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},];
 const RULE = { takeProfit: 15, stopLoss: -8 }; // 止盈/止损（%），可调
 const ALL = [...B1, ...QB];
 
