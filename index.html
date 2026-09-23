@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#0f1115" />
 <link rel="manifest" href="manifest.webmanifest" />
 <link rel="apple-touch-icon" href="icon.svg" />
-<title>选股日记 · 2026-09-22</title>
+<title>选股日记 · 2026-9-23</title>
 <style>
   :root{
     --bg:#0f1115; --card:#1a1d24; --card2:#22262f; --line:#2a2f3a;
@@ -257,7 +257,7 @@
 
   <div class="hd">
     <div class="t"><span class="dot"></span>选股日记</div>
-    <div class="d" id="hd-date">2026-09-22 选股 · 09-22更新</div>
+    <div class="d" id="hd-date">2026-9-23 选股 · 9-23更新</div>
   </div>
 
   <!-- 第一大行：活跃市值（多空区间） -->
@@ -352,7 +352,7 @@
 // 规则：单日≥+4% 或 连续2日红累计≥+4% 或 连续3日红累计≥+4% → 多头；单日≤-2.3% → 空头；区间持续至反向触发
 // since = 进入当前区间的日期；days = 最近5个交易日 {d:日期, chg:当日涨跌%}
 // UPDATED_AT：最近一次"新选股"更新时间（自动化写入，格式 YYYY-MM-DD HH:MM），用于手机角标/横幅
-const UPDATED_AT = "2026-09-22 20:06";
+const UPDATED_AT = "2026-09-23 20:44";
 const REASONS = {}; // 选股理由兜底（自动化重写 B1/QB 时此表保留，文档有理由的股票在此登记）
 const PUSHER_URL = "https://pill-attorneys-brothers-round.trycloudflare.com"; // 推送服务(本机经cloudflared隧道暴露)；重启隧道会变，届时需同步更新此处
 const AMV = {
@@ -361,11 +361,11 @@ const AMV = {
   days:[{d:"08-27",chg:2.32},{d:"08-28",chg:-1.1},{d:"08-31",chg:0.7},{d:"09-01",chg:-1.54},{d:"09-02",chg:-2.57}],
 };
 // 往期选股：完整流程新一期时把旧 B1/QB 备份到此处，渲染到"往期选股"折叠区
-const PREV_B1 = [  {name:"航发控制",code:"000738",board:"",sec:"航空装备",mkNow:"252亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},];
-const PREV_QB = [  {name:"金安国纪",code:"002636",board:"",sec:"PCB",mkNow:"623亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},];
-const PREV_DATE = "2026-09-21";
-const B1 = [  {name:"航发控制",code:"000738",board:"",sec:"航空装备",mkNow:"252亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},];
-const QB = [  {name:"金安国纪",code:"002636",board:"",sec:"PCB",mkNow:"623亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""},];
+const PREV_B1 = [{name:"航发控制",code:"000738",board:"",sec:"航空装备",mkNow:"252亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""}, {name:"金安国纪",code:"002636",board:"",sec:"PCB",mkNow:"623亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""}];
+const PREV_QB = [];
+const PREV_DATE = "2026-09-22";
+const B1 = [{name:"航发控制",code:"",board:"",sec:"航空装备",mkNow:"252亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""}];
+const QB = [];
 const RULE = { takeProfit: 15, stopLoss: -8 }; // 止盈/止损（%），可调
 const ALL = [...B1, ...QB];
 
