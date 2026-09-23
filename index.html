@@ -364,7 +364,7 @@ const AMV = {
 const PREV_B1 = [{name:"航发控制",code:"000738",board:"",sec:"航空装备",mkNow:"252亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""}, {name:"金安国纪",code:"002636",board:"",sec:"PCB",mkNow:"623亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""}];
 const PREV_QB = [];
 const PREV_DATE = "2026-09-22";
-const B1 = [{name:"航发控制",code:"",board:"",sec:"航空装备",mkNow:"252亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""}];
+const B1 = [{name:"航发控制",code:"000738",board:"",sec:"航空装备",mkNow:"252亿",chg:0,price:0,base:0,kdj:{j:0,jp:0},reason:""}];
 const QB = [];
 const RULE = { takeProfit: 15, stopLoss: -8 }; // 止盈/止损（%），可调
 const ALL = [...B1, ...QB];
@@ -982,51 +982,95 @@ var REFRESH_INT = 60000;                             // 全量刷新间隔（毫
 
 var QUOTE_BUSY=false;   // 行情刷新防重入：上一次未完成则本次跳过，避免 5s 定时器 + 慢网络堆积
 // 只刷行情（不拉K线，快）：东财 ulist 批量；批量失败/空 → 全部股票走腾讯单股兜底（手机腾讯与K线同源，必通）
+// 解析腾讯批量行情数据（GBK编码）
+function parseTencentBatch(buf){
+  try{
+    var t=decodeGbk(buf);
+    var map={};
+    // 匹配每只股票的 v_sz/shxxxxx="..." 行
+    var re=/v_(?:sz|sh)(\d+)="([^"]*)"/g;
+    var m;
+    while((m=re.exec(t))!==null){
+      var code=m[1];
+      var p=m[2].split('~');
+      if(p.length<10) continue;
+      var price=Number(p[3]);
+      if(!isFinite(price)||price<=0) continue;
+      map[code]={
+        price:price,
+        chg:Number(p[5]),
+        mk:(Number(p[9])/1e8).toFixed(0)+'亿',
+        name:saneName(p[1])
+      };
+    }
+    return map;
+  }catch(e){ return {}; }
+}
+// 批量拉取腾讯行情（一次请求多只股票，速度快）
+function quoteTencentBatch(stocks){
+  var symbols=stocks.map(function(s){
+    return (mktOf(s.code)==='1'?'sh':'sz')+s.code;
+  }).join(',');
+  return fetchWithTimeout('https://qt.gtimg.cn/q='+symbols,{},5000)
+    .then(function(r){ return r.arrayBuffer(); })
+    .then(function(buf){ return parseTencentBatch(buf); })
+    .catch(function(){ return {}; });
+}
 function quoteOnly(){
   if(QUOTE_BUSY) return Promise.resolve(false);
   QUOTE_BUSY=true;
   var stocks = allStocks();
   if(!stocks.length){ QUOTE_BUSY=false; return Promise.resolve(false); }
-  var secids = stocks.map(function(s){ return mktOf(s.code)+'.'+s.code; }).join(',');
-  // 批量接口：成功与否都继续（失败也不放弃），漏股统一走双源兜底
-  return fetchWithTimeout('https://push2.eastmoney.com/api/qt/ulist.np/get?secids='+secids+'&fields=f2,f3,f12,f14,f20&fltt=2',{},5000)
-    .then(function(r){ return r.json(); }).then(function(j){
-      var diff=(j&&j.data&&j.data.diff)||[];
-      var map={}; diff.forEach(function(d){ if(d&&d.f12) map[d.f12]=d; });
-      applyQuoteTo(stocks, map);
-      return Object.keys(map).length>0;
-    }).catch(function(){ return false; })
-    .then(function(batchOK){
-      // 批量失败/空（东财被限流或不通）→ 全部股票走腾讯兜底，确保涨幅持续刷新，绝不冻结
-      // 批量成功但有漏股（price==null）→ 只补漏股
-      var missing = batchOK
-        ? stocks.filter(function(s){ return s.price==null; })
-        : stocks;
-      if(!missing.length){
-        renderPicks(); renderMon(); renderHold();
-        holdBreachCheck();
-        updateQTime();
-        QUOTE_BUSY=false;
-        return batchOK;
-      }
-      return Promise.all(missing.map(function(s){
-        return fillMissing(s).then(function(q){
-          if(q && q.price!=null){
-            s.price=q.price; if(q.chg!=null) s.chg=q.chg; if(q.mk) s.mkNow=q.mk; if(q.name) s.name=q.name;
-            return true;
-          }
-          return false;
-        });
-      })).then(function(results){
-        renderPicks(); renderMon(); renderHold();
-        holdBreachCheck();
-        // 至少补上一只才算成功（调用方可据此提示）
-        var ok = results.some(function(x){ return x===true; }) || batchOK;
-        if(ok) updateQTime();
-        QUOTE_BUSY=false;
-        return ok;
+  // 优先使用腾讯批量接口（0.15s响应，支持多只股票一次请求）
+  return quoteTencentBatch(stocks).then(function(map){
+    if(Object.keys(map).length>0){
+      // 腾讯批量成功，直接应用
+      stocks.forEach(function(s){
+        var q=map[s.code];
+        if(q){ s.price=q.price; s.chg=q.chg; s.mkNow=q.mk; s.name=q.name; }
       });
-    });
+      renderPicks(); renderMon(); renderHold();
+      holdBreachCheck(); updateQTime();
+      QUOTE_BUSY=false;
+      return true;
+    }
+    // 腾讯失败→走东财批量→单股兜底原逻辑
+    var secids = stocks.map(function(s){ return mktOf(s.code)+'.'+s.code; }).join(',');
+    return fetchWithTimeout('https://push2.eastmoney.com/api/qt/ulist.np/get?secids='+secids+'&fields=f2,f3,f12,f14,f20&fltt=2',{},5000)
+      .then(function(r){ return r.json(); }).then(function(j){
+        var diff=(j&&j.data&&j.data.diff)||[];
+        var map={}; diff.forEach(function(d){ if(d&&d.f12) map[d.f12]=d; });
+        applyQuoteTo(stocks, map);
+        return Object.keys(map).length>0;
+      }).catch(function(){ return false; })
+      .then(function(batchOK){
+        var missing = batchOK
+          ? stocks.filter(function(s){ return s.price==null; })
+          : stocks;
+        if(!missing.length){
+          renderPicks(); renderMon(); renderHold();
+          holdBreachCheck(); updateQTime();
+          QUOTE_BUSY=false;
+          return batchOK;
+        }
+        return Promise.all(missing.map(function(s){
+          return fillMissing(s).then(function(q){
+            if(q && q.price!=null){
+              s.price=q.price; if(q.chg!=null) s.chg=q.chg; if(q.mk) s.mkNow=q.mk; if(q.name) s.name=q.name;
+              return true;
+            }
+            return false;
+          });
+        })).then(function(results){
+          renderPicks(); renderMon(); renderHold();
+          holdBreachCheck();
+          var ok = results.some(function(x){ return x===true; }) || batchOK;
+          if(ok) updateQTime();
+          QUOTE_BUSY=false;
+          return ok;
+        });
+      });
+  });
 }
 // ===== 持仓跌破提醒（2026-08-30 替换原 ±7% 涨跌幅提醒）=====
 // 只对持仓股判定；只在"跌破"时显示角标；无声、无震动、无 toast
