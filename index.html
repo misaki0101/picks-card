@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#0f1115" />
 <link rel="manifest" href="manifest.webmanifest" />
 <link rel="apple-touch-icon" href="icon.svg" />
-<title>选股日记 · 2026-9-27</title>
+<title>选股日记 · 2026-9-28</title>
 <style>
   :root{
     --bg:#0f1115; --card:#1a1d24; --card2:#22262f; --line:#2a2f3a;
@@ -257,7 +257,7 @@
 
   <div class="hd">
     <div class="t"><span class="dot"></span>选股日记</div>
-    <div class="d" id="hd-date">2026-09-27 选股 · 9-27更新</div>
+    <div class="d" id="hd-date">2026-09-28 选股 · 9-28更新</div>
   </div>
 
   <!-- 第一大行：活跃市值（多空区间） -->
@@ -344,7 +344,7 @@
 </div>
 
 <script>
-// === 数据：2026-09-27 选股（文档更新于 2026-09-27，与文档一致）===
+// === 数据：2026-09-28 选股（文档更新于 2026-09-28，与文档一致）===
 // 字段：board 板块(688科创板/300创业板)，sec 板块概念，mkNow 最新总市值，
 // chg 最新一日涨幅，kdj {j,jp} 最新J值与昨日J值，reason 选股理由(文档有写才有)
 // AMV = 指南针活跃市值指数 Z_SK0AMV（来源：F:\指南针\unzipped\Z_SK0AMV_daily.csv，提取自本机指南针）
@@ -352,7 +352,7 @@
 // 规则：单日≥+4% 或 连续2日红累计≥+4% 或 连续3日红累计≥+4% → 多头；单日≤-2.3% → 空头；区间持续至反向触发
 // since = 进入当前区间的日期；days = 最近5个交易日 {d:日期, chg:当日涨跌%}
 // UPDATED_AT：最近一次"新选股"更新时间（自动化写入，格式 YYYY-MM-DD HH:MM），用于手机角标/横幅
-const UPDATED_AT = "2026-09-28 01:27";
+const UPDATED_AT = "2026-09-28 20:59";
 const REASONS = {}; // 选股理由兜底（自动化重写 B1/QB 时此表保留，文档有理由的股票在此登记）
 const PUSHER_URL = "https://pill-attorneys-brothers-round.trycloudflare.com"; // 推送服务(本机经cloudflared隧道暴露)；重启隧道会变，届时需同步更新此处
 const AMV = {
@@ -361,11 +361,11 @@ const AMV = {
   days:[{d:"08-27",chg:2.32},{d:"08-28",chg:-1.1},{d:"08-31",chg:0.7},{d:"09-01",chg:-1.54},{d:"09-02",chg:-2.57}],
 };
 // 往期选股：完整流程新一期时把旧 B1/QB 备份到此处，渲染到"往期选股"折叠区
-const PREV_B1 = [{name:"航发控制",code:"000738",board:"",sec:"航空装备",mkNow:"252亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:""}];
-const PREV_QB = [];
+const PREV_B1 = [{name:"生益科技",code:"600183",board:"",sec:"PCB",mkNow:"3336亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:"博弈黄线"}, {name:"源杰科技",code:"688498",board:"688",sec:"光芯片",mkNow:"2117亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:""}];
+const PREV_QB = [{name:"邮储银行",code:"601658",board:"",sec:"国有银行",mkNow:"5300亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:""}, {name:"一拖股份",code:"601038",board:"",sec:"农用机械",mkNow:"102亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:""}, {name:"长江电力",code:"600900",board:"",sec:"国有电力",mkNow:"6900亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:""}];
 const PREV_DATE = "2026-09-27";
-const B1 = [{name:"生益科技",code:"600183",board:"",sec:"PCB",mkNow:"3336亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:"博弈黄线"}, {name:"源杰科技",code:"688498",board:"688",sec:"光芯片",mkNow:"2117亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:""}];
-const QB = [{name:"邮储银行",code:"601658",board:"",sec:"国有银行",mkNow:"5300亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:""}, {name:"一拖股份",code:"601038",board:"",sec:"农用机械",mkNow:"102亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:""}, {name:"长江电力",code:"600900",board:"",sec:"国有电力",mkNow:"6900亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:""}];
+const B1 = [{name:"中国船舶",code:"600150",board:"",sec:"航海装备",mkNow:"2866亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:""}, {name:"福瑞医科",code:"300049",board:"300",sec:"医疗装备",mkNow:"121亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:""}, {name:"国科军工",code:"688543",board:"688",sec:"军工装备",mkNow:"105亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:""}];
+const QB = [];
 const RULE = { takeProfit: 15, stopLoss: -8 }; // 止盈/止损（%），可调
 const ALL = [...B1, ...QB];
 
