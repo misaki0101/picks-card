@@ -1000,7 +1000,7 @@ function parseTencentBatch(buf){
       if(!isFinite(price)||price<=0) continue;
       map[code]={
         price:price,
-        chg:Number(p[5]),
+        chg:Number(p[32]),
         mk:(Number(p[9])/1e8).toFixed(0)+'亿',
         name:saneName(p[1])
       };
