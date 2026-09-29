@@ -833,8 +833,8 @@ function quoteTencent(code, mkt){
       var m=t.match(/="([^"]*)"/); if(!m) return null;
       var p=m[1].split('~'); if(!p || p.length<10) return null;
       var price=Number(p[3]); if(!isFinite(price) || price<=0) return null;
-      var chg=Number(p[5]);                        // 涨跌幅%
-      var mk=Number(p[9]);                         // 总市值（亿）
+      var chg=Number(p[32]);                        // 涨跌幅%
+      var mk=Number(p[44]);                         // 总市值（亿）
       return { price:price, chg:isFinite(chg)?chg:null, mk:isFinite(mk)?mk.toFixed(0)+'亿':null, name:saneName(p[1]) };
     }).catch(function(){ return null; });
 }
@@ -1001,7 +1001,7 @@ function parseTencentBatch(buf){
       map[code]={
         price:price,
         chg:Number(p[32]),
-        mk:(Number(p[9])/1e8).toFixed(0)+'亿',
+        mk:Number(p[44]).toFixed(0)+'亿',
         name:saneName(p[1])
       };
     }
