@@ -283,7 +283,7 @@
 
   <!-- 模块：选后监测 -->
   <details class="mod">
-    <summary>选后监测 <span class="cnt">基准 2026-08-28</span></summary>
+    <summary>选后监测 <span class="cnt" id="benchmark-date">基准 <script>document.write(BENCHMARK_DATE)</script></span></summary>
     <table>
       <thead><tr><th>股票</th><th>基准</th><th>现价</th><th>盈亏</th><th>状态</th></tr></thead>
       <tbody id="mon"></tbody>
@@ -364,6 +364,8 @@ const AMV = {
 const PREV_B1 = [{name:"生益科技",code:"600183",board:"",sec:"PCB",mkNow:"3336亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:"博弈黄线"}, {name:"源杰科技",code:"688498",board:"688",sec:"光芯片",mkNow:"2117亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:""}];
 const PREV_QB = [{name:"邮储银行",code:"601658",board:"",sec:"国有银行",mkNow:"5300亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:""}, {name:"一拖股份",code:"601038",board:"",sec:"农用机械",mkNow:"102亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:""}, {name:"长江电力",code:"600900",board:"",sec:"国有电力",mkNow:"6900亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:""}];
 const PREV_DATE = "2026-09-27";
+// 基准日期用于选后监测：优先使用 PREV_DATE（上一期选股日期），回退到 B1 第一条股票的基准日
+var BENCHMARK_DATE = (typeof PREV_DATE !== 'undefined' && PREV_DATE) ? PREV_DATE : '2026-09-27';
 const B1 = [{name:"中国船舶",code:"600150",board:"",sec:"航海装备",mkNow:"2866亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:""}, {name:"福瑞医科",code:"300049",board:"300",sec:"医疗装备",mkNow:"121亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:""}, {name:"国科军工",code:"688543",board:"688",sec:"军工装备",mkNow:"105亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:""}];
 const QB = [];
 const RULE = { takeProfit: 15, stopLoss: -8 }; // 止盈/止损（%），可调
