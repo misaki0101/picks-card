@@ -823,8 +823,8 @@ function saneName(n){
   if(/^[\u4e00-\u9fa5A-Za-z0-9 .*STN_·\-]{1,20}$/.test(n)) return n;
   return '';
 }
-// 单股行情兜底（腾讯 qt.gtimg.cn，与K线同源）：东财不通时用腾讯补——手机K线能拉通腾讯，这条必通
-// 实测简版 s_ 接口字段（~ 分隔）：p[3]=现价 p[4]=涨跌额 p[5]=涨跌幅% p[9]=总市值(亿)
+// 单股行情兜底（腾讯简版s_接口，与K线同源）：东财不通时用腾讯补
+// 实测简版s_接口字段（~分隔）：p[3]=现价 p[4]=涨跌额 p[5]=涨跌幅% p[9]=总市值(亿)
 function quoteTencent(code, mkt){
   var sym=(mkt==='1'?'sh':'sz')+code;
   return fetchWithTimeout('https://qt.gtimg.cn/q=s_'+sym,{},8000)
@@ -833,8 +833,8 @@ function quoteTencent(code, mkt){
       var m=t.match(/="([^"]*)"/); if(!m) return null;
       var p=m[1].split('~'); if(!p || p.length<10) return null;
       var price=Number(p[3]); if(!isFinite(price) || price<=0) return null;
-      var chg=Number(p[32]);                        // 涨跌幅%
-      var mk=Number(p[44]);                         // 总市值（亿）
+      var chg=Number(p[5]);                         // 涨跌幅%
+      var mk=Number(p[9]);                          // 总市值（亿）
       return { price:price, chg:isFinite(chg)?chg:null, mk:isFinite(mk)?mk.toFixed(0)+'亿':null, name:saneName(p[1]) };
     }).catch(function(){ return null; });
 }
