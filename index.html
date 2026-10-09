@@ -257,7 +257,7 @@
 
   <div class="hd">
     <div class="t"><span class="dot"></span>选股日记</div>
-    <div class="d" id="hd-date">2026-09-28 选股 · 9-28更新</div>
+    <div class="d" id="hd-date">2026-10-08 选股 · 10-09更新</div>
   </div>
 
   <!-- 第一大行：活跃市值（多空区间） -->
@@ -344,7 +344,7 @@
 </div>
 
 <script>
-// === 数据：2026-09-28 选股（文档更新于 2026-09-28，与文档一致）===
+// === 数据：2026-10-08 选股（文档更新于 2026-10-09，与文档一致）===
 // 字段：board 板块(688科创板/300创业板)，sec 板块概念，mkNow 最新总市值，
 // chg 最新一日涨幅，kdj {j,jp} 最新J值与昨日J值，reason 选股理由(文档有写才有)
 // AMV = 指南针活跃市值指数 Z_SK0AMV（来源：F:\指南针\unzipped\Z_SK0AMV_daily.csv，提取自本机指南针）
@@ -352,7 +352,7 @@
 // 规则：单日≥+4% 或 连续2日红累计≥+4% 或 连续3日红累计≥+4% → 多头；单日≤-2.3% → 空头；区间持续至反向触发
 // since = 进入当前区间的日期；days = 最近5个交易日 {d:日期, chg:当日涨跌%}
 // UPDATED_AT：最近一次"新选股"更新时间（自动化写入，格式 YYYY-MM-DD HH:MM），用于手机角标/横幅
-const UPDATED_AT = "2026-09-29 21:27";
+const UPDATED_AT = "2026-10-09 19:43";
 const REASONS = {}; // 选股理由兜底（自动化重写 B1/QB 时此表保留，文档有理由的股票在此登记）
 const PUSHER_URL = "https://calculations-desired-facial-transparency.trycloudflare.com"; // 推送服务(本机经cloudflared隧道暴露)；重启隧道会变，届时需同步更新此处
 const AMV = {
@@ -366,8 +366,8 @@ const PREV_QB = [];
 const PREV_DATE = "2026-09-28";
 // 基准日期用于选后监测：优先使用 PREV_DATE（上一期选股日期），回退到 B1 第一条股票的基准日
 var BENCHMARK_DATE = (typeof PREV_DATE !== 'undefined' && PREV_DATE) ? PREV_DATE : '2026-09-27';
-const B1 = [{name:"中国船舶",code:"600150",board:"",sec:"航海装备",mkNow:"2931亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:""}, {name:"深南电路",code:"002916",board:"300",sec:"半导体封装",mkNow:"2553亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:""}, {name:"源杰科技",code:"688498",board:"688",sec:"光芯片",mkNow:"2040亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:""}, {name:"蓝晓科技",code:"300487",board:"300",sec:"合成树脂",mkNow:"349亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:""}, {name:"华兴源创",code:"688001",board:"688",sec:"专用设备",mkNow:"294亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:""}, {name:"中船防务",code:"600685",board:"",sec:"航海装备",mkNow:"233亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:""}];
-const QB = [];
+const B1 = [{name:"金安国纪",code:"002636",board:"",sec:"PCB",mkNow:"578亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:"图虽然不错，但是换手率过高，基本上没有长线资金，都是短线资金在做博弈，如果要做的话，可以快进快出。"}, {name:"行云科技",code:"300209",board:"300",sec:"算力租赁",mkNow:"313亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:""}];
+const QB = [{name:"TCL中环",code:"002129",board:"",sec:"光伏硅片",mkNow:"378亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:""}];
 const RULE = { takeProfit: 15, stopLoss: -8 }; // 止盈/止损（%），可调
 const ALL = [...B1, ...QB];
 
