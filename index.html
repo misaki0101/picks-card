@@ -353,6 +353,8 @@
 // since = 进入当前区间的日期；days = 最近5个交易日 {d:日期, chg:当日涨跌%}
 // UPDATED_AT：最近一次"新选股"更新时间（自动化写入，格式 YYYY-MM-DD HH:MM），用于手机角标/横幅
 const UPDATED_AT = "2026-10-14 02:25";
+// PICKS_SNAPSHOT：当前选股的机器可读快照（供自动化检测用，不渲染到页面）
+const PICKS_SNAPSHOT = {date:"2026-10-13",b1:["新城控股(601155)","西子洁能(002534)"],qb:["新世界(600628)"]};
 const REASONS = {}; // 选股理由兜底（自动化重写 B1/QB 时此表保留，文档有理由的股票在此登记）
 const PUSHER_URL = "https://childhood-horizontal-streaming-characterization.trycloudflare.com"; // 推送服务(本机经cloudflared隧道暴露)；重启隧道会变，届时需同步更新此处
 const AMV = {
