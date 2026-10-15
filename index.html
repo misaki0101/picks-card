@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#0f1115" />
 <link rel="manifest" href="manifest.webmanifest" />
 <link rel="apple-touch-icon" href="icon.svg" />
-<title>选股日记 · 2026-10-14</title>
+<title>选股日记 · 2026-10-15</title>
 <style>
   :root{
     --bg:#0f1115; --card:#1a1d24; --card2:#22262f; --line:#2a2f3a;
@@ -352,9 +352,9 @@
 // 规则：单日≥+4% 或 连续2日红累计≥+4% 或 连续3日红累计≥+4% → 多头；单日≤-2.3% → 空头；区间持续至反向触发
 // since = 进入当前区间的日期；days = 最近5个交易日 {d:日期, chg:当日涨跌%}
 // UPDATED_AT：最近一次"新选股"更新时间（自动化写入，格式 YYYY-MM-DD HH:MM），用于手机角标/横幅
-const UPDATED_AT = "2026-10-14 20:51";
+const UPDATED_AT = "2026-10-15 21:00";
 // PICKS_SNAPSHOT：当前选股的机器可读快照（供自动化检测用，不渲染到页面）
-const PICKS_SNAPSHOT = {date:"2026-10-14",b1:["游族网络(002174)","海尔生物(688139)"],qb:[]};
+const PICKS_SNAPSHOT = {date:"2026-10-15",b1:["招商蛇口(001979)","甘李药业(603087)"],qb:["合众思壮(002383)"]};
 const REASONS = {}; // 选股理由兜底（自动化重写 B1/QB 时此表保留，文档有理由的股票在此登记）
 const PUSHER_URL = "https://childhood-horizontal-streaming-characterization.trycloudflare.com"; // 推送服务(本机经cloudflared隧道暴露)；重启隧道会变，届时需同步更新此处
 const AMV = {
@@ -368,8 +368,8 @@ const PREV_QB = [{name:"TCL中环",code:"002129",board:"",sec:"光伏硅片",mkN
 const PREV_DATE = "2026-10-13";
 // 基准日期用于选后监测：优先使用 PREV_DATE（上一期选股日期），回退到 B1 第一条股票的基准日
 var BENCHMARK_DATE = (typeof PREV_DATE !== 'undefined' && PREV_DATE) ? PREV_DATE : '2026-09-27';
-const B1 = [{name:"游族网络",code:"002174",board:"",sec:"游戏",mkNow:"127亿",chg:1.91,price:12.82,base:0,kdj:{'j': 0, 'jp': 0},reason:""}, {name:"海尔生物",code:"688139",board:"688",sec:"医疗设备",mkNow:"106亿",chg:-2.79,price:33.49,base:0,kdj:{'j': 0, 'jp': 0},reason:""}];
-const QB = [];
+const B1 = [{name:"招商蛇口",code:"001979",board:"",sec:"房地产",mkNow:"660亿",chg:-2.14,price:7.32,base:0,kdj:{'j': 0, 'jp': 0},reason:""}, {name:"甘李药业",code:"603087",board:"",sec:"基因药物",mkNow:"415亿",chg:1.03,price:69.50,base:0,kdj:{'j': 0, 'jp': 0},reason:""}];
+const QB = [{name:"合众思壮",code:"002383",board:"",sec:"通信设备",mkNow:"56亿",chg:2.28,price:7.64,base:0,kdj:{'j': 0, 'jp': 0},reason:""}];
 const RULE = { takeProfit: 15, stopLoss: -8 }; // 止盈/止损（%），可调
 const ALL = [...B1, ...QB];
 
