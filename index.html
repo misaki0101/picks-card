@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#0f1115" />
 <link rel="manifest" href="manifest.webmanifest" />
 <link rel="apple-touch-icon" href="icon.svg" />
-<title>选股日记 · 2026-10-19</title>
+<title>选股日记 · 2026-10-25</title>
 <style>
   :root{
     --bg:#0f1115; --card:#1a1d24; --card2:#22262f; --line:#2a2f3a;
@@ -352,7 +352,7 @@
 // 规则：单日≥+4% 或 连续2日红累计≥+4% 或 连续3日红累计≥+4% → 多头；单日≤-2.3% → 空头；区间持续至反向触发
 // since = 进入当前区间的日期；days = 最近5个交易日 {d:日期, chg:当日涨跌%}
 // UPDATED_AT：最近一次"新选股"更新时间（自动化写入，格式 YYYY-MM-DD HH:MM），用于手机角标/横幅
-constUPDATED_AT = "2026-10-19 21:38";
+constUPDATED_AT = "2026-10-26 18:00";
 // PICKS_SNAPSHOT：当前选股的机器可读快照（供自动化检测用，不渲染到页面）
 const PICKS_SNAPSHOT = {date:"2026-10-19",b1:["移远通信(603236)","海翔药业(002099)","豪美新材(002988)"],qb:[]};
 const REASONS = {}; // 选股理由兜底（自动化重写 B1/QB 时此表保留，文档有理由的股票在此登记）
@@ -363,13 +363,13 @@ const AMV = {
   days:[{d:"08-27",chg:2.32},{d:"08-28",chg:-1.1},{d:"08-31",chg:0.7},{d:"09-01",chg:-1.54},{d:"09-02",chg:-2.57}],
 };
 // 往期选股：完整流程新一期时把旧 B1/QB 备份到此处，渲染到"往期选股"折叠区
-const PREV_B1 = [{name:"中国船舶",code:"600150",board:"",sec:"航海装备",mkNow:"2866亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:""}, {name:"福瑞医科",code:"300049",board:"300",sec:"医疗装备",mkNow:"121亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:""}, {name:"国科军工",code:"688543",board:"688",sec:"军工装备",mkNow:"105亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:""}, {name:"金安国纪",code:"002636",board:"",sec:"PCB",mkNow:"578亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:"图虽然不错，但是换手率过高，基本上没有长线资金，都是短线资金在做博弈，如果要做的话，可以快进快出。"}, {name:"行云科技",code:"300209",board:"300",sec:"算力租赁",mkNow:"313亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:""}, {name:"中国人保",code:"601319",board:"",sec:"保险",mkNow:"2770亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:""}, {name:"得邦照明",code:"603303",board:"",sec:"照明LED",mkNow:"136亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:""}, {name:"新城控股",code:"601155",board:"",sec:"房地产",mkNow:"275亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:""}, {name:"西子洁能",code:"002534",board:"",sec:"发电设备",mkNow:"137亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:""}];
-const PREV_QB = [{name:"TCL中环",code:"002129",board:"",sec:"光伏硅片",mkNow:"378亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:""}, {name:"方大炭素",code:"600516",board:"",sec:"冶钢辅材",mkNow:"217亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:""}, {name:"圆通速递",code:"600233",board:"",sec:"快递",mkNow:"623亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:""}, {name:"新世界",code:"600628",board:"",sec:"百货",mkNow:"42.3亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:""}];
+const PREV_B1 = [[{name:"中国船舶",code:"600150",board:"",sec:"航海装备",mkNow:"2866亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:""}, {name:"福瑞医科",code:"300049",board:"300",sec:"医疗装备",mkNow:"121亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:""}, {name:"国科军工",code:"688543",board:"688",sec:"军工装备",mkNow:"105亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:""}, {name:"金安国纪",code:"002636",board:"",sec:"PCB",mkNow:"578亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:"图虽然不错，但是换手率过高，基本上没有长线资金，都是短线资金在做博弈，如果要做的话，可以快进快出。"}, {name:"行云科技",code:"300209",board:"300",sec:"算力租赁",mkNow:"313亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:""}, {name:"中国人保",code:"601319",board:"",sec:"保险",mkNow:"2770亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:""}, {name:"得邦照明",code:"603303",board:"",sec:"照明LED",mkNow:"136亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:""}, {name:"新城控股",code:"601155",board:"",sec:"房地产",mkNow:"275亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:""}, {name:"西子洁能",code:"002534",board:"",sec:"发电设备",mkNow:"137亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:""}], {name:"移远通信",code:"603236",board:"",sec:"通信工程",mkNow:"281亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0}, {name:"海翔药业",code:"002099",board:"",sec:"原料药",mkNow:"96亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0}, {name:"豪美新材",code:"002988",board:"",sec:"铝",mkNow:"70亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0}];
+const PREV_QB = [[{name:"TCL中环",code:"002129",board:"",sec:"光伏硅片",mkNow:"378亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:""}, {name:"方大炭素",code:"600516",board:"",sec:"冶钢辅材",mkNow:"217亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:""}, {name:"圆通速递",code:"600233",board:"",sec:"快递",mkNow:"623亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:""}, {name:"新世界",code:"600628",board:"",sec:"百货",mkNow:"42.3亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:""}]];
 const PREV_DATE = "2026-10-15";
 // 基准日期用于选后监测：优先使用 PREV_DATE（上一期选股日期），回退到 B1 第一条股票的基准日
 var BENCHMARK_DATE = (typeof PREV_DATE !== 'undefined' && PREV_DATE) ? PREV_DATE : '2026-09-27';
-const B1 = [{name:"移远通信",code:"603236",board:"",sec:"通信工程",mkNow:"281亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:""}, {name:"海翔药业",code:"002099",board:"",sec:"原料药",mkNow:"96亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:""}, {name:"豪美新材",code:"002988",board:"",sec:"铝",mkNow:"70亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:""}];
-const QB = [];
+const B1 = [];
+const QB = [{name:"东软集团",code:"600718",board:"",sec:"软件",mkNow:"100亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:""}, {name:"安井食品",code:"603345",board:"",sec:"食品消费",mkNow:"243亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:""}, {name:"航发动力",code:"600893",board:"",sec:"航空装备",mkNow:"1000亿",chg:0,price:0,base:0,kdj:{'j': 0, 'jp': 0},reason:""}];
 const RULE = { takeProfit: 15, stopLoss: -8 } // 止盈/止损（%），可调
 const ALL = [...B1, ...QB];
 
